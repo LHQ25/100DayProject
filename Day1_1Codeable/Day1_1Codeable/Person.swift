@@ -8,11 +8,35 @@
 
 import Foundation
 
+class myCodingKey: NSObject, CodingKey {
+    
+    var stringValue: String{
+        get{
+            return v
+        }
+    }
+    
+    var intValue: Int?{
+        get{
+            return i
+        }
+    }
+    
+    private var v:String!
+    private var i: Int?
+    required init?(stringValue: String){
+        v = stringValue
+    }
+    
+    required init?(intValue: Int) {
+        i = intValue
+    }
+}
 
 /**
  Codable是Encodable和Decodable协议总和的别名。所以它既能编码也能解码
  */
-/// 建立模型
+/// 建立模型   基础
 struct Person : Decodable {
     
     let fullName: String
@@ -23,22 +47,47 @@ struct Person : Decodable {
     //    init(from decoder: Decoder) throws
 }
 
-
-enum BeerStyle : String, Codable {
-    case ipa
-    case stout
-    case kolsch
-    // ...
+struct Person2 : Decodable {
+    
+    let fullName: String
+    let id: Int
+    let twitter: URL
+    
+    ///日期
+    let date: Date?
+    ///时间戳
+    let time: Date?
+    ///毫秒 时间戳
+    let millTime: Date?
+}
+//MARK: - 属性映射  方式一
+struct Person3 : Decodable {
+    
+    let fullName: String
+    let id: Int
+    let twitter: URL
+    
+    let firstName: String
+    let _lastName_: String
+    
+    //属性每一个都要写到里面,  也可以不写，但要实现Decoder协议的方法,  枚举的名称 要为这个 CodingKeys，否则找不到对应的数据
+    enum CodingKeys: String, CodingKey {
+        case fullName , id , twitter
+        case firstName = "first_name"
+        case _lastName_ = "_last_name_"
+    }
 }
 
-struct Beer: Decodable {
-    let name: String
-    let brewery: String
-    let abv: Float
-    let style: BeerStyle
+struct Person5 : Decodable {
+    
+    let fullName: String
+    let id: Int
+    let twitter: URL
+    
+    let name: Data
 }
 
-
+//MARK: - 属性映射  方式二
 struct Swifter {
     let fullName: String
     let id: Int
@@ -70,6 +119,34 @@ extension Swifter: Decodable {
         self.init(fullName: fullName, id: id, twitter: twitter) // initializing our struct
     }
 }
+
+
+struct Person4 : Decodable {
+    
+    let fullName: String
+    let id: Int
+    let twitter: URL
+    let num: Float
+}
+
+
+//MARK: - 枚举 属性
+enum BeerStyle : String, Codable {
+    case ipa
+    case stout
+    case kolsch
+    // ...
+}
+
+struct Beer: Decodable {
+    let name: String
+    let brewery: String
+    let abv: Float
+    let style: BeerStyle
+}
+
+
+
 
 struct Swifter2: Decodable {
     let fullName: String
@@ -114,8 +191,73 @@ struct Swifter4: Decodable {
     let id: Int
     let twitter: URL
 }
+struct Swifter5: Decodable {
+    let fullName: String
+    let id: Int
+    let twitter: URL
+    let firstName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case fullName, id, twitter
+        case firstName = "first_name"
+    }
+}
 
 struct MoreComplexStruct: Decodable {
     let swifter: Swifter4
     let lovesSwift: Bool
+    let swifter_list: [Swifter5]
+}
+
+
+//MARK: - 解码
+struct People : Encodable {
+    
+    let fullName: String
+    let id: Int
+    let twitter: URL
+    var birthday: Date?
+    
+    ///协议方法  可以不写
+    //    init(from decoder: Decoder) throws
+    
+    init(name: String, i: Int, tw: URL) {
+        fullName = name
+        id = i
+        twitter = tw
+    }
+}
+
+struct People_list : Encodable {
+    
+    let list: [People]
+    init(l:[People]) {
+        list = l
+    }
+}
+
+class Person6 : Codable {
+    var name: String?
+    
+    private enum CodingKeys : String, CodingKey {
+        case name
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+    }
+}
+class Employee : Person6 {
+    var employeeID: String?
+    
+    private enum CodingKeys : String, CodingKey {
+        case employeeID = "emp_id"
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(employeeID, forKey: .employeeID)
+    }
 }
