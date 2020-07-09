@@ -18,6 +18,9 @@ class MainViewController: UITableViewController {
         searchController.searchBar.placeholder = "Find a country"
         searchController.searchBar.scopeButtonTitles = Year.allCases.map { $0.description }
         searchController.searchBar.delegate = self
+        
+        //搜索结果代理
+        searchController.searchResultsUpdater = self
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,5 +87,16 @@ extension MainViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         resultsTableViewController.countries = nil
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    
+    ///搜索结果更新
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        
+        //展示搜索结果的控制器
+        searchController.showsSearchResultsController = true
     }
 }
