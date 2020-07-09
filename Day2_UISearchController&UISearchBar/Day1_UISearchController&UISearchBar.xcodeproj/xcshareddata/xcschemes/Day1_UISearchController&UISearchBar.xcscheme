@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CBC8D35B24B5C61100FEDFBD"
-               BuildableName = "Day1_UISearchController&amp;UISearchBar.app"
+               BuildableName = "Day2_UISearchController&amp;UISearchBar.app"
                BlueprintName = "Day1_UISearchController&amp;UISearchBar"
                ReferencedContainer = "container:Day1_UISearchController&amp;UISearchBar.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CBC8D35B24B5C61100FEDFBD"
-            BuildableName = "Day1_UISearchController&amp;UISearchBar.app"
+            BuildableName = "Day2_UISearchController&amp;UISearchBar.app"
             BlueprintName = "Day1_UISearchController&amp;UISearchBar"
             ReferencedContainer = "container:Day1_UISearchController&amp;UISearchBar.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CBC8D35B24B5C61100FEDFBD"
-            BuildableName = "Day1_UISearchController&amp;UISearchBar.app"
+            BuildableName = "Day2_UISearchController&amp;UISearchBar.app"
             BlueprintName = "Day1_UISearchController&amp;UISearchBar"
             ReferencedContainer = "container:Day1_UISearchController&amp;UISearchBar.xcodeproj">
          </BuildableReference>
