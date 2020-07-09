@@ -2,10 +2,16 @@
 
 import UIKit
 
+protocol ResultsTableViewDelegate: class {
+    func didSelect(token: UISearchToken)
+}
+
 class ResultsTableViewController: UITableViewController {
     
     //UISearchToken 数组
     var searchTokens: [UISearchToken] = []
+    //Token 代理  点击事件
+    weak var delegate: ResultsTableViewDelegate?
     
     ///当前搜索的结果为空时  显示  UISearchToken
     var isFilteringByCountry: Bool {
@@ -22,6 +28,7 @@ class ResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //初始化Token
         makeTokens()
     }
     
@@ -43,6 +50,13 @@ class ResultsTableViewController: UITableViewController {
         }
         // 3
         return UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard !isFilteringByCountry else { return }
+        delegate?.didSelect(token: searchTokens[indexPath.row])
+        
     }
 }
 

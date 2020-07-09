@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CBC8D35C24B5C61100FEDFBD /* Day1_UISearchController&UISearchBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day1_UISearchController&UISearchBar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBC8D35C24B5C61100FEDFBD /* Day2_UISearchController&UISearchBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day2_UISearchController&UISearchBar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC8D35F24B5C61100FEDFBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBC8D36124B5C61100FEDFBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CBC8D36824B5C61500FEDFBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		CBC8D35D24B5C61100FEDFBD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CBC8D35C24B5C61100FEDFBD /* Day1_UISearchController&UISearchBar.app */,
+				CBC8D35C24B5C61100FEDFBD /* Day2_UISearchController&UISearchBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 			);
 			name = "Day1_UISearchController&UISearchBar";
 			productName = "Day1_UISearchController&UISearchBar";
-			productReference = CBC8D35C24B5C61100FEDFBD /* Day1_UISearchController&UISearchBar.app */;
+			productReference = CBC8D35C24B5C61100FEDFBD /* Day2_UISearchController&UISearchBar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -358,8 +358,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "HQ.Day1-UISearchController-UISearchBar";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "HQ.Day2-UISearchController-UISearchBar";
+				PRODUCT_NAME = "Day2_UISearchController&UISearchBar";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -375,8 +375,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "HQ.Day1-UISearchController-UISearchBar";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "HQ.Day2-UISearchController-UISearchBar";
+				PRODUCT_NAME = "Day2_UISearchController&UISearchBar";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
