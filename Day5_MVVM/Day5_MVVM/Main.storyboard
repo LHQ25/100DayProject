@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x6z-0E-Ysv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="uxP-cK-0cS">
+            <objects>
+                <viewController id="x6z-0E-Ysv" customClass="WeatherViewController" customModule="Day5_MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wuV-xE-8ca">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zQH-au-Nrb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="KYJ-h5-brn">
+                                        <rect key="frame" x="8" y="40" width="398" height="49.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVU-Kp-X94" userLabel="Change Location Button">
+                                                <rect key="frame" x="8" y="8" width="22" height="33.5"/>
+                                                <color key="tintColor" name="rw-light"/>
+                                                <state key="normal" image="location.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="promptForLocation:" destination="x6z-0E-Ysv" eventType="touchUpInside" id="MJ2-e8-jNc"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mc Gaheysville, VA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goz-rm-pmA" userLabel="City">
+                                                <rect key="frame" x="30" y="8" width="338" height="33.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" name="rw-light"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="30"/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, Nov 13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHY-5C-Rg9" userLabel="Date">
+                                        <rect key="frame" x="8" y="89.5" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="rw-light"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="sPG-Cf-ss6" userLabel="Current Icon">
+                                        <rect key="frame" x="8" y="110" width="398" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Zhs-qJ-BfP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny - 90℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7q-Ti-Kra" userLabel="Current Summary">
+                                        <rect key="frame" x="8" y="190" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" name="rw-light"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="1000" editable="NO" text="Sunny forecast" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRQ-nb-nWh" userLabel="Forecast Summary">
+                                        <rect key="frame" x="8" y="210.5" width="398" height="599.5"/>
+                                        <color key="backgroundColor" name="rw-green"/>
+                                        <inset key="scrollIndicatorInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="40" left="8" bottom="8" right="8"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="rw-green"/>
+                        <constraints>
+                            <constraint firstItem="zQH-au-Nrb" firstAttribute="top" secondItem="4JJ-nS-vuJ" secondAttribute="top" id="FGi-cH-R7g"/>
+                            <constraint firstItem="4JJ-nS-vuJ" firstAttribute="trailing" secondItem="zQH-au-Nrb" secondAttribute="trailing" id="RAi-ct-moI"/>
+                            <constraint firstItem="zQH-au-Nrb" firstAttribute="leading" secondItem="4JJ-nS-vuJ" secondAttribute="leading" id="t8C-PA-sf4"/>
+                            <constraint firstItem="4JJ-nS-vuJ" firstAttribute="bottom" secondItem="zQH-au-Nrb" secondAttribute="bottom" id="zCE-Xb-E13"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4JJ-nS-vuJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="goz-rm-pmA" id="k2e-Ze-nG8"/>
+                        <outlet property="currentIcon" destination="sPG-Cf-ss6" id="nyU-aL-9mu"/>
+                        <outlet property="currentSummaryLabel" destination="y7q-Ti-Kra" id="vGX-qR-xKt"/>
+                        <outlet property="dateLabel" destination="BHY-5C-Rg9" id="3S6-Xu-G9J"/>
+                        <outlet property="forecastSummary" destination="aRQ-nb-nWh" id="S3f-3s-kCa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smj-wx-RdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="141"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clear-day" width="128" height="128"/>
+        <image name="location.fill" catalog="system" width="128" height="115"/>
+        <namedColor name="rw-green">
+            <color red="0.0" green="0.40784313725490196" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="rw-light">
+            <color red="0.94901960784313721" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
