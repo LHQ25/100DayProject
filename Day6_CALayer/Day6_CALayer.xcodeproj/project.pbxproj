@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CBB5BDC924BBF20D00F4FE1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDC824BBF20D00F4FE1F /* SceneDelegate.swift */; };
+		CBB5BDCE24BBF20D00F4FE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDCC24BBF20D00F4FE1F /* Main.storyboard */; };
+		CBB5BDD024BBF20F00F4FE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDCF24BBF20F00F4FE1F /* Assets.xcassets */; };
+		CBB5BDD324BBF20F00F4FE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDD124BBF20F00F4FE1F /* LaunchScreen.storyboard */; };
+		CBB5BDDE24BBF26C00F4FE1F /* UITableViewCell+ZeroLayoutMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDDA24BBF26B00F4FE1F /* UITableViewCell+ZeroLayoutMargins.swift */; };
+		CBB5BDDF24BBF26C00F4FE1F /* colorfulStreak.m4v in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDDB24BBF26B00F4FE1F /* colorfulStreak.m4v */; };
+		CBB5BDE024BBF26C00F4FE1F /* Array+SortUIViewsInPlaceByTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDDC24BBF26B00F4FE1F /* Array+SortUIViewsInPlaceByTag.swift */; };
+		CBB5BDE124BBF26C00F4FE1F /* LayerPlayer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDDD24BBF26B00F4FE1F /* LayerPlayer.ttf */; };
+		CBB5BE0224BBF28C00F4FE1F /* ClassDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDE424BBF28C00F4FE1F /* ClassDescription.swift */; };
+		CBB5BE0324BBF28C00F4FE1F /* TrackBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDE524BBF28C00F4FE1F /* TrackBall.swift */; };
+		CBB5BE0424BBF28C00F4FE1F /* PlayerLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDE824BBF28C00F4FE1F /* PlayerLayerScene.storyboard */; };
+		CBB5BE0524BBF28C00F4FE1F /* ShapeLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDE924BBF28C00F4FE1F /* ShapeLayerScene.storyboard */; };
+		CBB5BE0624BBF28C00F4FE1F /* EmitterLayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDEA24BBF28C00F4FE1F /* EmitterLayer.storyboard */; };
+		CBB5BE0724BBF28C00F4FE1F /* ReplicatorLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDEB24BBF28C00F4FE1F /* ReplicatorLayerScene.storyboard */; };
+		CBB5BE0824BBF28C00F4FE1F /* ScrollLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDEC24BBF28C00F4FE1F /* ScrollLayerScene.storyboard */; };
+		CBB5BE0924BBF28C00F4FE1F /* GradientLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDED24BBF28C00F4FE1F /* GradientLayerScene.storyboard */; };
+		CBB5BE0A24BBF28C00F4FE1F /* TransformLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDEE24BBF28C00F4FE1F /* TransformLayerScene.storyboard */; };
+		CBB5BE0B24BBF28C00F4FE1F /* TextLayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDEF24BBF28C00F4FE1F /* TextLayerScene.storyboard */; };
+		CBB5BE0C24BBF28C00F4FE1F /* LayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5BDF024BBF28C00F4FE1F /* LayerScene.storyboard */; };
+		CBB5BE0F24BBF28C00F4FE1F /* ScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDF324BBF28C00F4FE1F /* ScrollingView.swift */; };
+		CBB5BE1024BBF28C00F4FE1F /* CAEmitterLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDF524BBF28C00F4FE1F /* CAEmitterLayerViewController.swift */; };
+		CBB5BE1124BBF28C00F4FE1F /* CAScrollLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDF624BBF28C00F4FE1F /* CAScrollLayerViewController.swift */; };
+		CBB5BE1224BBF28C00F4FE1F /* CAGradientLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDF724BBF28C00F4FE1F /* CAGradientLayerViewController.swift */; };
+		CBB5BE1324BBF28C00F4FE1F /* CATransformLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDF824BBF28C00F4FE1F /* CATransformLayerViewController.swift */; };
+		CBB5BE1424BBF28C00F4FE1F /* CALayerControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDF924BBF28C00F4FE1F /* CALayerControlsViewController.swift */; };
+		CBB5BE1524BBF28C00F4FE1F /* CALayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDFA24BBF28C00F4FE1F /* CALayerViewController.swift */; };
+		CBB5BE1624BBF28C00F4FE1F /* CAShapeLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDFB24BBF28C00F4FE1F /* CAShapeLayerViewController.swift */; };
+		CBB5BE1724BBF28C00F4FE1F /* CAReplicatorLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDFC24BBF28C00F4FE1F /* CAReplicatorLayerViewController.swift */; };
+		CBB5BE1824BBF28C00F4FE1F /* CAEmitterLayerControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDFD24BBF28C00F4FE1F /* CAEmitterLayerControlsViewController.swift */; };
+		CBB5BE1924BBF28C00F4FE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDFE24BBF28C00F4FE1F /* AppDelegate.swift */; };
+		CBB5BE1A24BBF28C00F4FE1F /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BDFF24BBF28C00F4FE1F /* ClassListViewController.swift */; };
+		CBB5BE1B24BBF28C00F4FE1F /* CATextLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BE0024BBF28C00F4FE1F /* CATextLayerViewController.swift */; };
+		CBB5BE1C24BBF28C00F4FE1F /* AVPlayerLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5BE0124BBF28C00F4FE1F /* AVPlayerLayerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CBB5BDC324BBF20D00F4FE1F /* Day6_CALayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day6_CALayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB5BDC824BBF20D00F4FE1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CBB5BDCD24BBF20D00F4FE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CBB5BDCF24BBF20F00F4FE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBB5BDD224BBF20F00F4FE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CBB5BDD424BBF20F00F4FE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB5BDDA24BBF26B00F4FE1F /* UITableViewCell+ZeroLayoutMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ZeroLayoutMargins.swift"; sourceTree = "<group>"; };
+		CBB5BDDB24BBF26B00F4FE1F /* colorfulStreak.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = colorfulStreak.m4v; sourceTree = "<group>"; };
+		CBB5BDDC24BBF26B00F4FE1F /* Array+SortUIViewsInPlaceByTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SortUIViewsInPlaceByTag.swift"; sourceTree = "<group>"; };
+		CBB5BDDD24BBF26B00F4FE1F /* LayerPlayer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LayerPlayer.ttf; sourceTree = "<group>"; };
+		CBB5BDE424BBF28C00F4FE1F /* ClassDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDescription.swift; sourceTree = "<group>"; };
+		CBB5BDE524BBF28C00F4FE1F /* TrackBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackBall.swift; sourceTree = "<group>"; };
+		CBB5BDE824BBF28C00F4FE1F /* PlayerLayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerLayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDE924BBF28C00F4FE1F /* ShapeLayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShapeLayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDEA24BBF28C00F4FE1F /* EmitterLayer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmitterLayer.storyboard; sourceTree = "<group>"; };
+		CBB5BDEB24BBF28C00F4FE1F /* ReplicatorLayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReplicatorLayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDEC24BBF28C00F4FE1F /* ScrollLayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScrollLayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDED24BBF28C00F4FE1F /* GradientLayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GradientLayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDEE24BBF28C00F4FE1F /* TransformLayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TransformLayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDEF24BBF28C00F4FE1F /* TextLayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextLayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDF024BBF28C00F4FE1F /* LayerScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LayerScene.storyboard; sourceTree = "<group>"; };
+		CBB5BDF324BBF28C00F4FE1F /* ScrollingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingView.swift; sourceTree = "<group>"; };
+		CBB5BDF524BBF28C00F4FE1F /* CAEmitterLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAEmitterLayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BDF624BBF28C00F4FE1F /* CAScrollLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAScrollLayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BDF724BBF28C00F4FE1F /* CAGradientLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAGradientLayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BDF824BBF28C00F4FE1F /* CATransformLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransformLayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BDF924BBF28C00F4FE1F /* CALayerControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerControlsViewController.swift; sourceTree = "<group>"; };
+		CBB5BDFA24BBF28C00F4FE1F /* CALayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BDFB24BBF28C00F4FE1F /* CAShapeLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAShapeLayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BDFC24BBF28C00F4FE1F /* CAReplicatorLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAReplicatorLayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BDFD24BBF28C00F4FE1F /* CAEmitterLayerControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAEmitterLayerControlsViewController.swift; sourceTree = "<group>"; };
+		CBB5BDFE24BBF28C00F4FE1F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CBB5BDFF24BBF28C00F4FE1F /* ClassListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
+		CBB5BE0024BBF28C00F4FE1F /* CATextLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATextLayerViewController.swift; sourceTree = "<group>"; };
+		CBB5BE0124BBF28C00F4FE1F /* AVPlayerLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerLayerViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBB5BDC024BBF20D00F4FE1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CBB5BDBA24BBF20D00F4FE1F = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDC524BBF20D00F4FE1F /* Day6_CALayer */,
+				CBB5BDC424BBF20D00F4FE1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBB5BDC424BBF20D00F4FE1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDC324BBF20D00F4FE1F /* Day6_CALayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBB5BDC524BBF20D00F4FE1F /* Day6_CALayer */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDF424BBF28C00F4FE1F /* Controllers */,
+				CBB5BDE324BBF28C00F4FE1F /* Models */,
+				CBB5BDE624BBF28C00F4FE1F /* Views */,
+				CBB5BDE224BBF27300F4FE1F /* Other */,
+				CBB5BDC824BBF20D00F4FE1F /* SceneDelegate.swift */,
+				CBB5BDCC24BBF20D00F4FE1F /* Main.storyboard */,
+				CBB5BDCF24BBF20F00F4FE1F /* Assets.xcassets */,
+				CBB5BDD124BBF20F00F4FE1F /* LaunchScreen.storyboard */,
+				CBB5BDD424BBF20F00F4FE1F /* Info.plist */,
+			);
+			path = Day6_CALayer;
+			sourceTree = "<group>";
+		};
+		CBB5BDE224BBF27300F4FE1F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDDC24BBF26B00F4FE1F /* Array+SortUIViewsInPlaceByTag.swift */,
+				CBB5BDDB24BBF26B00F4FE1F /* colorfulStreak.m4v */,
+				CBB5BDDD24BBF26B00F4FE1F /* LayerPlayer.ttf */,
+				CBB5BDDA24BBF26B00F4FE1F /* UITableViewCell+ZeroLayoutMargins.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		CBB5BDE324BBF28C00F4FE1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDE424BBF28C00F4FE1F /* ClassDescription.swift */,
+				CBB5BDE524BBF28C00F4FE1F /* TrackBall.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CBB5BDE624BBF28C00F4FE1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDE724BBF28C00F4FE1F /* Scenes */,
+				CBB5BDF324BBF28C00F4FE1F /* ScrollingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CBB5BDE724BBF28C00F4FE1F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDE824BBF28C00F4FE1F /* PlayerLayerScene.storyboard */,
+				CBB5BDE924BBF28C00F4FE1F /* ShapeLayerScene.storyboard */,
+				CBB5BDEA24BBF28C00F4FE1F /* EmitterLayer.storyboard */,
+				CBB5BDEB24BBF28C00F4FE1F /* ReplicatorLayerScene.storyboard */,
+				CBB5BDEC24BBF28C00F4FE1F /* ScrollLayerScene.storyboard */,
+				CBB5BDED24BBF28C00F4FE1F /* GradientLayerScene.storyboard */,
+				CBB5BDEE24BBF28C00F4FE1F /* TransformLayerScene.storyboard */,
+				CBB5BDEF24BBF28C00F4FE1F /* TextLayerScene.storyboard */,
+				CBB5BDF024BBF28C00F4FE1F /* LayerScene.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CBB5BDF424BBF28C00F4FE1F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBB5BDF524BBF28C00F4FE1F /* CAEmitterLayerViewController.swift */,
+				CBB5BDF624BBF28C00F4FE1F /* CAScrollLayerViewController.swift */,
+				CBB5BDF724BBF28C00F4FE1F /* CAGradientLayerViewController.swift */,
+				CBB5BDF824BBF28C00F4FE1F /* CATransformLayerViewController.swift */,
+				CBB5BDF924BBF28C00F4FE1F /* CALayerControlsViewController.swift */,
+				CBB5BDFA24BBF28C00F4FE1F /* CALayerViewController.swift */,
+				CBB5BDFB24BBF28C00F4FE1F /* CAShapeLayerViewController.swift */,
+				CBB5BDFC24BBF28C00F4FE1F /* CAReplicatorLayerViewController.swift */,
+				CBB5BDFD24BBF28C00F4FE1F /* CAEmitterLayerControlsViewController.swift */,
+				CBB5BDFE24BBF28C00F4FE1F /* AppDelegate.swift */,
+				CBB5BDFF24BBF28C00F4FE1F /* ClassListViewController.swift */,
+				CBB5BE0024BBF28C00F4FE1F /* CATextLayerViewController.swift */,
+				CBB5BE0124BBF28C00F4FE1F /* AVPlayerLayerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBB5BDC224BBF20D00F4FE1F /* Day6_CALayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBB5BDD724BBF20F00F4FE1F /* Build configuration list for PBXNativeTarget "Day6_CALayer" */;
+			buildPhases = (
+				CBB5BDBF24BBF20D00F4FE1F /* Sources */,
+				CBB5BDC024BBF20D00F4FE1F /* Frameworks */,
+				CBB5BDC124BBF20D00F4FE1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Day6_CALayer;
+			productName = Day6_CALayer;
+			productReference = CBB5BDC324BBF20D00F4FE1F /* Day6_CALayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBB5BDBB24BBF20D00F4FE1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "亿存";
+				TargetAttributes = {
+					CBB5BDC224BBF20D00F4FE1F = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = CBB5BDBE24BBF20D00F4FE1F /* Build configuration list for PBXProject "Day6_CALayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBB5BDBA24BBF20D00F4FE1F;
+			productRefGroup = CBB5BDC424BBF20D00F4FE1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBB5BDC224BBF20D00F4FE1F /* Day6_CALayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBB5BDC124BBF20D00F4FE1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5BE0824BBF28C00F4FE1F /* ScrollLayerScene.storyboard in Resources */,
+				CBB5BDD324BBF20F00F4FE1F /* LaunchScreen.storyboard in Resources */,
+				CBB5BDE124BBF26C00F4FE1F /* LayerPlayer.ttf in Resources */,
+				CBB5BE0524BBF28C00F4FE1F /* ShapeLayerScene.storyboard in Resources */,
+				CBB5BE0A24BBF28C00F4FE1F /* TransformLayerScene.storyboard in Resources */,
+				CBB5BE0424BBF28C00F4FE1F /* PlayerLayerScene.storyboard in Resources */,
+				CBB5BDD024BBF20F00F4FE1F /* Assets.xcassets in Resources */,
+				CBB5BE0B24BBF28C00F4FE1F /* TextLayerScene.storyboard in Resources */,
+				CBB5BE0624BBF28C00F4FE1F /* EmitterLayer.storyboard in Resources */,
+				CBB5BE0724BBF28C00F4FE1F /* ReplicatorLayerScene.storyboard in Resources */,
+				CBB5BDCE24BBF20D00F4FE1F /* Main.storyboard in Resources */,
+				CBB5BE0924BBF28C00F4FE1F /* GradientLayerScene.storyboard in Resources */,
+				CBB5BDDF24BBF26C00F4FE1F /* colorfulStreak.m4v in Resources */,
+				CBB5BE0C24BBF28C00F4FE1F /* LayerScene.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBB5BDBF24BBF20D00F4FE1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBB5BE1B24BBF28C00F4FE1F /* CATextLayerViewController.swift in Sources */,
+				CBB5BE1524BBF28C00F4FE1F /* CALayerViewController.swift in Sources */,
+				CBB5BE0324BBF28C00F4FE1F /* TrackBall.swift in Sources */,
+				CBB5BE1124BBF28C00F4FE1F /* CAScrollLayerViewController.swift in Sources */,
+				CBB5BE1824BBF28C00F4FE1F /* CAEmitterLayerControlsViewController.swift in Sources */,
+				CBB5BE0F24BBF28C00F4FE1F /* ScrollingView.swift in Sources */,
+				CBB5BE1024BBF28C00F4FE1F /* CAEmitterLayerViewController.swift in Sources */,
+				CBB5BDDE24BBF26C00F4FE1F /* UITableViewCell+ZeroLayoutMargins.swift in Sources */,
+				CBB5BDC924BBF20D00F4FE1F /* SceneDelegate.swift in Sources */,
+				CBB5BE1624BBF28C00F4FE1F /* CAShapeLayerViewController.swift in Sources */,
+				CBB5BE1724BBF28C00F4FE1F /* CAReplicatorLayerViewController.swift in Sources */,
+				CBB5BE1C24BBF28C00F4FE1F /* AVPlayerLayerViewController.swift in Sources */,
+				CBB5BE0224BBF28C00F4FE1F /* ClassDescription.swift in Sources */,
+				CBB5BE1324BBF28C00F4FE1F /* CATransformLayerViewController.swift in Sources */,
+				CBB5BE1224BBF28C00F4FE1F /* CAGradientLayerViewController.swift in Sources */,
+				CBB5BE1424BBF28C00F4FE1F /* CALayerControlsViewController.swift in Sources */,
+				CBB5BE1A24BBF28C00F4FE1F /* ClassListViewController.swift in Sources */,
+				CBB5BE1924BBF28C00F4FE1F /* AppDelegate.swift in Sources */,
+				CBB5BDE024BBF26C00F4FE1F /* Array+SortUIViewsInPlaceByTag.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CBB5BDCC24BBF20D00F4FE1F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBB5BDCD24BBF20D00F4FE1F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CBB5BDD124BBF20F00F4FE1F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBB5BDD224BBF20F00F4FE1F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBB5BDD524BBF20F00F4FE1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CBB5BDD624BBF20F00F4FE1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBB5BDD824BBF20F00F4FE1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Day6_CALayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "HQ.Day6-CALayer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBB5BDD924BBF20F00F4FE1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Day6_CALayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "HQ.Day6-CALayer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBB5BDBE24BBF20D00F4FE1F /* Build configuration list for PBXProject "Day6_CALayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBB5BDD524BBF20F00F4FE1F /* Debug */,
+				CBB5BDD624BBF20F00F4FE1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBB5BDD724BBF20F00F4FE1F /* Build configuration list for PBXNativeTarget "Day6_CALayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBB5BDD824BBF20F00F4FE1F /* Debug */,
+				CBB5BDD924BBF20F00F4FE1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBB5BDBB24BBF20D00F4FE1F /* Project object */;
+}
