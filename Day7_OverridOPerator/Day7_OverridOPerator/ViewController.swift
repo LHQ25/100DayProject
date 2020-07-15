@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         
         let v5 = v1 +* v2
         print("自定义操作符+*：", v5)
+        
+        debugPrint(v5)
     }
     
     

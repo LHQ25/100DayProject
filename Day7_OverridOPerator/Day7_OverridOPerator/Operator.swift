@@ -38,6 +38,20 @@ struct Vector2D {
         return lhs.x * rhs.x + lhs.y * rhs.y
     }
 }
+
+//自定义描述对象的方式  必须实现协议
+extension Vector2D: CustomStringConvertible {
+    
+    var description: String{
+        return "：x:\(x), y\(y)"
+    }
+}
+//Debug打印方式  自定义描述对象的方式  必须实现协议
+extension Vector2D: CustomDebugStringConvertible {
+    var debugDescription: String{
+        return "Debug输出：x:\(x), y\(y)"
+    }
+}
 /**
  Associativity：left、right、none  有三个值。 操作符的结合律   即如果多个同类的操作符顺序出现的计算顺序(运算规则)。比如常见的加法和减法都是 left（运算规则 为从左至右一个个计算 ）
  就是说多个加法同时出现时按照从左往右的顺序计算 (因为加法满足交换律，所以这个顺序无所谓，但是减法的话计算顺序就很重要了)。
