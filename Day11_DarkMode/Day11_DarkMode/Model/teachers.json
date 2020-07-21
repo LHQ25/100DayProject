@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Quirinus Quirrell",
+        "house": "ravenclaw",
+        "startingYear": 1991,
+        "endingYear": 1992,
+				"imageName": "quirrel"
+    },
+    {
+        "name": "Gilderoy Lockhart",
+        "house": "ravenclaw",
+        "startingYear": 1992,
+        "endingYear": 1993,
+				"imageName": "lockhart"
+    },
+    {
+        "name": "Remus Lupin",
+        "house": "gryffindor",
+        "startingYear": 1993,
+        "endingYear": 1994,
+				"imageName": "lupin"
+    },
+    {
+        "name": "Alastor Moody",
+        "house": "hufflepuff",
+        "startingYear": 1994,
+        "endingYear": 1995,
+				"imageName": "moody"
+    },
+    {
+        "name": "Dolores Umbridge",
+        "house": "slytherin",
+        "startingYear": 1995,
+        "endingYear": 1996,
+				"imageName": "umbridge"
+    },
+    {
+        "name": "Severus Snape",
+        "house": "slytherin",
+        "startingYear": 1996,
+        "endingYear": 1997,
+				"imageName": "snape"
+    },
+    {
+        "name": "Amycus Carrow",
+        "house": "slytherin",
+        "startingYear": 1997,
+        "endingYear": 1998,
+				"imageName": "carrow"
+    }
+]
