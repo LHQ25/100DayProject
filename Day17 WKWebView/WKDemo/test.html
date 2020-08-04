@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>test</title>
+    <script type="text/javascript" charset="utf-8">
+
+        function invokeOCMethod_noParameter() {
+
+            window.webkit.messageHandlers.noParameter.postMessage(null);
+        }
+        function invokeOCMethod_singleParameter() {
+
+            window.webkit.messageHandlers.singleParameter.postMessage("singleParamter");
+        }
+        function invokeOCMethod_arrayParameter() {
+
+            window.webkit.messageHandlers.arrayParameter.postMessage(["value_1","value_2","value_3"]);
+        }
+        function invokeOCMethod_dictionaryParameter() {
+
+            window.webkit.messageHandlers.dictionaryParameter.postMessage({"k1":"v1","k2":"v2"});
+        }
+
+        function cus() {
+            alert("测试");
+        }
+        function changeColor(){
+            var div = document.getElementById("editDiv");
+            div.style.backgroundColor = "cyan"
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="editDiv" style="background-color: blue; height: 30px;"></div>
+    <div id="showDiv" style="margin-top: 10px;">
+        <button id="ds" style="width: 100px;height: 30px;" type="button" onclick="alert('dad');">alertView</button>
+        <button style="width: 100px;height: 30px;" type="button" onclick="confirm('confirm');">confirm</button>
+        <button style="width: 100px;height: 30px;" type="button" onclick="prompt('propty','defCancel');">prompt</button>
+        <!-- <button style="width: 100px;height: 30px;" type="button" onclick="addButton()">prompt2</button> -->
+
+        <button style="margin-top: 20px;height: 30px;" type="button" onclick="invokeOCMethod_noParameter()">invokeOCMethod_noParameter</button>
+        <button style="margin-top: 20px;height: 30px;" type="button" onclick="invokeOCMethod_singleParameter()">invokeOCMethod_singleParameter</button>
+        <button style="margin-top: 20px;height: 30px;" type="button" onclick="invokeOCMethod_arrayParameter()">invokeOCMethod_arrayParameter</button>
+        <button style="margin-top: 20px;height: 30px;" type="button" onclick="invokeOCMethod_dictionaryParameter()">invokeOCMethod_dictionaryParameter</button>
+    </div>
+</body>
+</html>
