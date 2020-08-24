@@ -38,13 +38,26 @@ typedef struct DulNode{
     int data;
     struct DulNode *prior; //直接前驱指针
     struct DulNode *next;  //直接后继指针
+    
+    DulNode(DulNode& node):data(node.data), prior(node.prior), next(node.next){
+        printf("拷贝构造\n");
+    }
+    DulNode(){
+
+    }
+//    DulNode& operator=(const DulNode& that) {
+//        data = that.data;
+//        prior = that.prior;
+//        next = that.next;
+//        return *this;
+//    }
 }DulNode, *duLinklist;
 //单链表可以有循环链表，双向链表当然也可以是循环表
 //双向链表是单链表扩展出来的结构，很多操作和单链表相同的，比如求长队listlength，查找元素getelem，获得元素的位置location等，这些操作都要只涉及到一个方向的指针即可，另一个指针并不能提供什么帮助
 //相应的代价是：在插入和删除是，需要更改两个指针变量
 
 /* 简单总结：
-    双向链表对于单链表来说，要复杂一点，比较多了一个前驱指针。对于插入和删除时，需要小心一点，另外它由于每个结点都需要记录两分钟指针，所以在空间上十占用略多一些，不过由于它良好的对称性，使得对某个结点的前后操作带来了方便，可以有效提高算法的时间性能，就是常说的用空间换时间。
+    双向链表对于单链表来说，要复杂一点，毕竟多了一个前驱指针。对于插入和删除时，需要小心一点，另外它由于每个结点都需要记录两分钟指针，所以在空间上十占用略多一些，不过由于它良好的对称性，使得对某个结点的前后操作带来了方便，可以有效提高算法的时间性能，就是常说的用空间换时间。
  */
 
 ///初始化双向链表
@@ -53,6 +66,12 @@ Status initDulLink(DulNode& d, int e);
 Status dulLink_append(DulNode& d, int e);
 ///指定位置插入数据
 Status dulLink_insert(DulNode& d, int i, int e);
+///指定位置删除数据
+Status dulLink_del(DulNode& d, int i);
+///查找指定位置的数据
+Status dulLink_quert(DulNode& d, int i, int *v);
+///修改数据
+Status dulLin_update(DulNode& d, int i, int v);
 ///链表的长度
 int dulink_length(DulNode &d);
 ///输出
@@ -68,11 +87,25 @@ int main(int argc, const char * argv[]) {
     display(d);
     
     //指定位置插入数据
-    dulLink_insert(d, 1, 9);
+    dulLink_insert(d, 2, 10);
     display(d);
-//    dulLink_insert(d, 2, 10);
-//    display(d);
+//    printf("%p\n",&d);
+    dulLink_insert(d, 1, 9);
+//    printf("%p\n",&d);
+    display(d);
+
+    int v = 0;
+    dulLink_quert(d, 3, &v);
+    printf("查找：%d\n",v);
     
+    dulLin_update(d, 3, 23);
+    display(d);
+    
+    dulLink_del(d, 2);
+    display(d);
+    
+    dulLink_del(d, 1);
+    display(d);
     return 0;
 }
 
@@ -116,22 +149,23 @@ Status dulLink_insert(DulNode& d, int i, int e){
     //插入位置是否合法
     if (i < 1 || i > l) return ERROR;
     //生成新结点
-    duLinklist node = (duLinklist)malloc(sizeof(DulNode));
+    DulNode *node = (duLinklist)malloc(sizeof(DulNode));
     if (!node) return ERROR;
     //结点进行赋值
     node->data = e;
     node->prior = NULL;
     node->next = NULL;
     
-    if (i == 1) { //插入到表头
-        node->next = &d;
-        d.prior = node;
-        display(*node);
+    if (i == 1) {
         
-        //重新赋值给头结点
+        //创建一个堆区的变量  防止函数结束后 后面的链表被释放掉，但是有一个问题，新创建的堆区变量是否能被是否掉
+        DulNode *temp = new DulNode(d);
         d = *node;
-//        initDulLink(d, 900);
         
+        d.next = temp;
+        temp->prior = &d;
+        
+//        delete temp;
     }else{
         int j = 0;
         duLinklist prioi_node = &d;
@@ -147,6 +181,55 @@ Status dulLink_insert(DulNode& d, int i, int e){
     }
     return OK;
 }
+Status dulLink_del(DulNode& d, int i){
+    int l = dulink_length(d);
+    if (i < 1 || i > l) return ERROR; //查找范围不对
+    
+    if (i == 1) {
+        
+        d.next->prior = NULL;
+        d = *(d.next);
+    }else{
+        int j = 0;
+        duLinklist prioi_node = &d;
+        while (j < i - 2) {
+            prioi_node = prioi_node->next;
+            j++;
+        }
+        if (prioi_node->next->next != NULL) {//说明不是最后一个
+            prioi_node->next = prioi_node->next->next;
+            prioi_node->next->next->prior = prioi_node;
+        }else{
+            prioi_node->next = NULL;
+        }
+    }
+    return OK;
+}
+Status dulLink_quert(DulNode& d, int i, int *v){
+    int l = dulink_length(d);
+    if (i < 1 || i > l) return ERROR; //查找范围不对
+    
+    duLinklist temp = &d;
+    while (i > 1) {
+        temp = temp->next;
+        i--;
+    }
+    *v = temp->data;
+    return OK;
+}
+
+Status dulLin_update(DulNode& d, int i, int v){
+    int l = dulink_length(d);
+    if (i < 1 || i > l) return ERROR; //查找范围不对
+    duLinklist temp = &d;
+    while (i >= 1) {
+        temp = temp->next;
+        i--;
+    }
+    temp->data = v;
+    return OK;
+}
+
 int dulink_length(DulNode &d){
     
     int lenght = 0;
@@ -163,10 +246,11 @@ void display(DulNode& d){
     duLinklist tempNode = &d;
     while (tempNode != NULL) {
         if (tempNode->next == NULL) {
-            printf("%d\n",tempNode->data);
+            printf("%d\n-----------------------------\n",tempNode->data);
         }else{
             printf("%d <-> ",tempNode->data);
         }
         tempNode = tempNode->next;
     }
+    
 }
