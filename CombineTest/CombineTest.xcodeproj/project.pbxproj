@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AA1972027099C390019157F /* MathematicalOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1971F27099C390019157F /* MathematicalOperations.swift */; };
+		8AA1972227099E700019157F /* MatchingCriteriaOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1972127099E700019157F /* MatchingCriteriaOperators.swift */; };
+		8AA197242709A0180019157F /* SequenceOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA197232709A0180019157F /* SequenceOperations.swift */; };
+		8AA197262709A4680019157F /* SelectingSpecificOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA197252709A4680019157F /* SelectingSpecificOperators.swift */; };
+		8AA197282709A69D0019157F /* CombineLastOPerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA197272709A69D0019157F /* CombineLastOPerator.swift */; };
+		8AA1972A2709A95D0019157F /* MergeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA197292709A95D0019157F /* MergeOperator.swift */; };
+		8AA1972C2709AA630019157F /* ZipOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA1972B2709AA630019157F /* ZipOperator.swift */; };
 		8E5298BB270558410075E396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298BA270558410075E396 /* AppDelegate.swift */; };
 		8E5298BD270558410075E396 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298BC270558410075E396 /* SceneDelegate.swift */; };
 		8E5298BF270558410075E396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298BE270558410075E396 /* ViewController.swift */; };
@@ -22,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8AA1971F27099C390019157F /* MathematicalOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathematicalOperations.swift; sourceTree = "<group>"; };
+		8AA1972127099E700019157F /* MatchingCriteriaOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingCriteriaOperators.swift; sourceTree = "<group>"; };
+		8AA197232709A0180019157F /* SequenceOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceOperations.swift; sourceTree = "<group>"; };
+		8AA197252709A4680019157F /* SelectingSpecificOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingSpecificOperators.swift; sourceTree = "<group>"; };
+		8AA197272709A69D0019157F /* CombineLastOPerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLastOPerator.swift; sourceTree = "<group>"; };
+		8AA197292709A95D0019157F /* MergeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeOperator.swift; sourceTree = "<group>"; };
+		8AA1972B2709AA630019157F /* ZipOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipOperator.swift; sourceTree = "<group>"; };
 		8E5298B7270558410075E396 /* CombineTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5298BA270558410075E396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E5298BC270558410075E396 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +119,13 @@
 				8E5298D8270589220075E396 /* MapOperator.swift */,
 				8E5298DA27058CF80075E396 /* FilterOperator.swift */,
 				8E5298DC27059A940075E396 /* ReduceOperator.swift */,
+				8AA1971F27099C390019157F /* MathematicalOperations.swift */,
+				8AA1972127099E700019157F /* MatchingCriteriaOperators.swift */,
+				8AA197232709A0180019157F /* SequenceOperations.swift */,
+				8AA197252709A4680019157F /* SelectingSpecificOperators.swift */,
+				8AA197272709A69D0019157F /* CombineLastOPerator.swift */,
+				8AA197292709A95D0019157F /* MergeOperator.swift */,
+				8AA1972B2709AA630019157F /* ZipOperator.swift */,
 			);
 			path = Operator;
 			sourceTree = "<group>";
@@ -179,15 +200,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA197242709A0180019157F /* SequenceOperations.swift in Sources */,
+				8AA1972227099E700019157F /* MatchingCriteriaOperators.swift in Sources */,
 				8E5298D027055A150075E396 /* PublisherTest.swift in Sources */,
+				8AA197262709A4680019157F /* SelectingSpecificOperators.swift in Sources */,
 				8E5298BF270558410075E396 /* ViewController.swift in Sources */,
+				8AA197282709A69D0019157F /* CombineLastOPerator.swift in Sources */,
 				8E5298BB270558410075E396 /* AppDelegate.swift in Sources */,
+				8AA1972027099C390019157F /* MathematicalOperations.swift in Sources */,
 				8E5298D9270589220075E396 /* MapOperator.swift in Sources */,
 				8E5298D327055BBF0075E396 /* BasePublishers.swift in Sources */,
 				8E5298D527055DF60075E396 /* Common.swift in Sources */,
+				8AA1972C2709AA630019157F /* ZipOperator.swift in Sources */,
 				8E5298DD27059A940075E396 /* ReduceOperator.swift in Sources */,
 				8E5298DB27058CF80075E396 /* FilterOperator.swift in Sources */,
 				8E5298BD270558410075E396 /* SceneDelegate.swift in Sources */,
+				8AA1972A2709A95D0019157F /* MergeOperator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

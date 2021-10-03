@@ -18,11 +18,25 @@ class ViewController: UIViewController {
         // BasePublishersTest.loadTest()
         
         // MARK: - Operator
-        MapOperator.loadMapOperator()
+//        MapOperator.loadMapOperator()
+//        
+//        FilterOperator.loadOperator()
+//        
+//        ReduceOperator.loadOperator()
+//        
+//        MathematicalOperations.loadOperators()
+//        
+//        MatchingCriteriaOperators.loadOperators()
         
-        FilterOperator.loadOperator()
+//        SequenceOperations.loadOperators()
         
-        ReduceOperator.loadOperator()
+//        SelectingSpecificOperators.loadOperators()
+        
+//        CombineLastOperator.loadOperators()
+        
+//        MergeOperator.loadOperator()
+        
+        ZipOperator.loadOperator()
     }
 
 }
