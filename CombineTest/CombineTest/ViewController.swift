@@ -36,7 +36,22 @@ class ViewController: UIViewController {
         
 //        MergeOperator.loadOperator()
         
-        ZipOperator.loadOperator()
+//        ZipOperator.loadOperator()
+        
+//        HandlingErrorsOperator.loadOperatorsTest()
+        
+//        ControllingTimingOperator.loadOperatorTest()
+        
+//        EncodingandDecodingOperator.loadTestOperators()
+        
+//        WorkingwithMultipleSubscribersOperators.loadOperatorsTest()
+        
+//        BufferingElementsOperators.loadOperatorsTest()
+        
+        
+        //MARK: - Subscriber
+//        SubscriberTest.loadTest()
+        DebugTest.loadTest()
     }
 
 }

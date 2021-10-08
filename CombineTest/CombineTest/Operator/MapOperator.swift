@@ -25,18 +25,35 @@ struct MapOperator {
         tryScanTest()
         
         setFailureTypeTest()
+        
+        flatMapTesdt()
+        
+        switchToLeastTest()
     }
     
     static func mapTest() {
-    
-    // 数据转换
-    check("Map") {
-        Just(3)
-            .map { v in
-                return "string - \(v)"
-            }
+        
+        // 数据转换
+        check("Map") {
+            Just(3)
+                .map { v in
+                    return "string - \(v)"
+                }
+        }
+        
+        
+        //使用键路径识别属性
+        check("Map - keyPath") {
+            Just(CustomData(name: "name1", age: 111))
+                .map(\.name)
+        }
+        
+        // 过个路径
+        check("Map - keyPath2") {
+            Just(CustomData(name: "name1", age: 111))
+                .map(\.name, \.age)
+        }
     }
-}
     
     static func tryMapTest() {
     
@@ -175,6 +192,56 @@ struct MapOperator {
             } receiveValue: { result in
                 print(result.result)
             }.cancel()
+    }
+    
+    static func flatMapTesdt() {
+        
+        
+        /// 将上游Publisher中的所有元素转换为Publisher，最多为您指定的最大Publisher数
+        /// 转换为其它publisher
+        check("flatMap - maxPublishers") {
+                Just([[20, 2, 11], [1, 4, 5]])
+                    .flatMap(maxPublishers: .unlimited) { data in
+                        Just(data.randomElement())
+                    }
+        }
+        
+        check("flatMap") {
+                Just([1, 4, 5])
+                    .flatMap({ data in
+                        Just("\(data.randomElement())")
+                    })
+        }
+    }
+    
+    static var cancel: AnyCancellable?
+    static func switchToLeastTest() {
+
+        // 此运算符与上游Publisher合作，将元素流展平，使其看起来好像来自单个元素流。
+        // 它在新Publisher到达时切换内部Publisher，但为下游订阅者保持外部Publisher不变。
+        
+        print("----- \("switchToLatest") -----")
+        defer { print("") }
+        let subject = PassthroughSubject<Int, Never>()
+        let cancel = subject
+            .print()
+            .setFailureType(to: URLError.self)
+            .map() { index -> URLSession.DataTaskPublisher in
+                let url = URL(string: "https://example.org/get?index=\(index)")!
+                return URLSession.shared.dataTaskPublisher(for: url)
+            }
+            .switchToLatest()
+            .sink(receiveCompletion: { print("Complete: \($0)") },
+                  receiveValue: { (data, response) in
+                    guard let url = response.url else { print("Bad response."); return }
+                    print("URL: \(url)")
+            })
+
+        for index in 1...5 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(index/10)) {
+                subject.send(index)
+            }
+        }
     }
 }
 

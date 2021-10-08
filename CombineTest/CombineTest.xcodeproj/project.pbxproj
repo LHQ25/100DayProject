@@ -26,6 +26,14 @@
 		8E5298D9270589220075E396 /* MapOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298D8270589220075E396 /* MapOperator.swift */; };
 		8E5298DB27058CF80075E396 /* FilterOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298DA27058CF80075E396 /* FilterOperator.swift */; };
 		8E5298DD27059A940075E396 /* ReduceOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298DC27059A940075E396 /* ReduceOperator.swift */; };
+		8E65C28C270FE6F4000F5E13 /* HandlingErrorsOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C28B270FE6F4000F5E13 /* HandlingErrorsOperator.swift */; };
+		8E65C28E270FEC3C000F5E13 /* ControllingTimingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C28D270FEC3C000F5E13 /* ControllingTimingOperator.swift */; };
+		8E65C290270FF478000F5E13 /* EncodingandDecodingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C28F270FF478000F5E13 /* EncodingandDecodingOperator.swift */; };
+		8E65C29227101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29127101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift */; };
+		8E65C294271016E8000F5E13 /* BufferingElementsOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C293271016E8000F5E13 /* BufferingElementsOperators.swift */; };
+		8E65C29727101D60000F5E13 /* SubscriberTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29627101D60000F5E13 /* SubscriberTest.swift */; };
+		8E65C29927101E7D000F5E13 /* DebugTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29827101E7D000F5E13 /* DebugTest.swift */; };
+		8E65C29C27102029000F5E13 /* SubjectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29B27102029000F5E13 /* SubjectTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +58,14 @@
 		8E5298D8270589220075E396 /* MapOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOperator.swift; sourceTree = "<group>"; };
 		8E5298DA27058CF80075E396 /* FilterOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOperator.swift; sourceTree = "<group>"; };
 		8E5298DC27059A940075E396 /* ReduceOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceOperator.swift; sourceTree = "<group>"; };
+		8E65C28B270FE6F4000F5E13 /* HandlingErrorsOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingErrorsOperator.swift; sourceTree = "<group>"; };
+		8E65C28D270FEC3C000F5E13 /* ControllingTimingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllingTimingOperator.swift; sourceTree = "<group>"; };
+		8E65C28F270FF478000F5E13 /* EncodingandDecodingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingandDecodingOperator.swift; sourceTree = "<group>"; };
+		8E65C29127101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingwithMultipleSubscribersOperators.swift; sourceTree = "<group>"; };
+		8E65C293271016E8000F5E13 /* BufferingElementsOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferingElementsOperators.swift; sourceTree = "<group>"; };
+		8E65C29627101D60000F5E13 /* SubscriberTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberTest.swift; sourceTree = "<group>"; };
+		8E65C29827101E7D000F5E13 /* DebugTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTest.swift; sourceTree = "<group>"; };
+		8E65C29B27102029000F5E13 /* SubjectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,8 @@
 		8E5298B9270558410075E396 /* CombineTest */ = {
 			isa = PBXGroup;
 			children = (
+				8E65C29A2710201B000F5E13 /* Subject */,
+				8E65C29527101D54000F5E13 /* Subscriber */,
 				8E5298D6270588920075E396 /* Operator */,
 				8E5298CE270558DD0075E396 /* Publishers */,
 				8E5298BA270558410075E396 /* AppDelegate.swift */,
@@ -126,8 +144,30 @@
 				8AA197272709A69D0019157F /* CombineLastOPerator.swift */,
 				8AA197292709A95D0019157F /* MergeOperator.swift */,
 				8AA1972B2709AA630019157F /* ZipOperator.swift */,
+				8E65C28B270FE6F4000F5E13 /* HandlingErrorsOperator.swift */,
+				8E65C28D270FEC3C000F5E13 /* ControllingTimingOperator.swift */,
+				8E65C28F270FF478000F5E13 /* EncodingandDecodingOperator.swift */,
+				8E65C29127101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift */,
+				8E65C293271016E8000F5E13 /* BufferingElementsOperators.swift */,
 			);
 			path = Operator;
+			sourceTree = "<group>";
+		};
+		8E65C29527101D54000F5E13 /* Subscriber */ = {
+			isa = PBXGroup;
+			children = (
+				8E65C29627101D60000F5E13 /* SubscriberTest.swift */,
+				8E65C29827101E7D000F5E13 /* DebugTest.swift */,
+			);
+			path = Subscriber;
+			sourceTree = "<group>";
+		};
+		8E65C29A2710201B000F5E13 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				8E65C29B27102029000F5E13 /* SubjectTest.swift */,
+			);
+			path = Subject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,15 +247,23 @@
 				8E5298BF270558410075E396 /* ViewController.swift in Sources */,
 				8AA197282709A69D0019157F /* CombineLastOPerator.swift in Sources */,
 				8E5298BB270558410075E396 /* AppDelegate.swift in Sources */,
+				8E65C29727101D60000F5E13 /* SubscriberTest.swift in Sources */,
+				8E65C29927101E7D000F5E13 /* DebugTest.swift in Sources */,
 				8AA1972027099C390019157F /* MathematicalOperations.swift in Sources */,
 				8E5298D9270589220075E396 /* MapOperator.swift in Sources */,
 				8E5298D327055BBF0075E396 /* BasePublishers.swift in Sources */,
 				8E5298D527055DF60075E396 /* Common.swift in Sources */,
 				8AA1972C2709AA630019157F /* ZipOperator.swift in Sources */,
+				8E65C290270FF478000F5E13 /* EncodingandDecodingOperator.swift in Sources */,
+				8E65C294271016E8000F5E13 /* BufferingElementsOperators.swift in Sources */,
 				8E5298DD27059A940075E396 /* ReduceOperator.swift in Sources */,
 				8E5298DB27058CF80075E396 /* FilterOperator.swift in Sources */,
+				8E65C29227101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift in Sources */,
+				8E65C28C270FE6F4000F5E13 /* HandlingErrorsOperator.swift in Sources */,
+				8E65C29C27102029000F5E13 /* SubjectTest.swift in Sources */,
 				8E5298BD270558410075E396 /* SceneDelegate.swift in Sources */,
 				8AA1972A2709A95D0019157F /* MergeOperator.swift in Sources */,
+				8E65C28E270FEC3C000F5E13 /* ControllingTimingOperator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
