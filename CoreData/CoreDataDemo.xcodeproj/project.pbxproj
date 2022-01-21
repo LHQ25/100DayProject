@@ -11,10 +11,11 @@
 		8E6543AB26FC74ED001417C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6543AA26FC74ED001417C3 /* SceneDelegate.swift */; };
 		8E6543AD26FC74ED001417C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6543AC26FC74ED001417C3 /* ViewController.swift */; };
 		8E6543B026FC74ED001417C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6543AE26FC74ED001417C3 /* Main.storyboard */; };
-		8E6543B326FC74ED001417C3 /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E6543B126FC74ED001417C3 /* CoreDataDemo.xcdatamodeld */; };
 		8E6543B526FC74EF001417C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6543B426FC74EF001417C3 /* Assets.xcassets */; };
 		8E6543B826FC74EF001417C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6543B626FC74EF001417C3 /* LaunchScreen.storyboard */; };
-		8E6543CF26FC7D67001417C3 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6543CE26FC7D67001417C3 /* Mood.swift */; };
+		9C7DC69E27868D34000967F3 /* Area.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DC69C27868D34000967F3 /* Area.xcdatamodeld */; };
+		9C7DC6A027869203000967F3 /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C7DC69F27869203000967F3 /* area.json */; };
+		9C7DC6A227869A96000967F3 /* AreaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DC6A127869A96000967F3 /* AreaInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +24,12 @@
 		8E6543AA26FC74ED001417C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8E6543AC26FC74ED001417C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8E6543AF26FC74ED001417C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8E6543B226FC74ED001417C3 /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
 		8E6543B426FC74EF001417C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E6543B726FC74EF001417C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E6543B926FC74EF001417C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E6543CE26FC7D67001417C3 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		9C7DC69D27868D34000967F3 /* Area.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Area.xcdatamodel; sourceTree = "<group>"; };
+		9C7DC69F27869203000967F3 /* area.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = area.json; path = "../../../../com.cb.global 2022-01-06 10:55.42.xcappdata/AppData/Library/Caches/area.json"; sourceTree = "<group>"; };
+		9C7DC6A127869A96000967F3 /* AreaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 		8E6543A726FC74ED001417C3 /* CoreDataDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8E6543C326FC7683001417C3 /* Entity */,
+				9C7DC69F27869203000967F3 /* area.json */,
 				8E6543A826FC74ED001417C3 /* AppDelegate.swift */,
 				8E6543AA26FC74ED001417C3 /* SceneDelegate.swift */,
 				8E6543AC26FC74ED001417C3 /* ViewController.swift */,
@@ -68,17 +70,10 @@
 				8E6543B426FC74EF001417C3 /* Assets.xcassets */,
 				8E6543B626FC74EF001417C3 /* LaunchScreen.storyboard */,
 				8E6543B926FC74EF001417C3 /* Info.plist */,
-				8E6543B126FC74ED001417C3 /* CoreDataDemo.xcdatamodeld */,
+				9C7DC69C27868D34000967F3 /* Area.xcdatamodeld */,
+				9C7DC6A127869A96000967F3 /* AreaInfo.swift */,
 			);
 			path = CoreDataDemo;
-			sourceTree = "<group>";
-		};
-		8E6543C326FC7683001417C3 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				8E6543CE26FC7D67001417C3 /* Mood.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +135,7 @@
 			files = (
 				8E6543B826FC74EF001417C3 /* LaunchScreen.storyboard in Resources */,
 				8E6543B526FC74EF001417C3 /* Assets.xcassets in Resources */,
+				9C7DC6A027869203000967F3 /* area.json in Resources */,
 				8E6543B026FC74ED001417C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,10 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E6543CF26FC7D67001417C3 /* Mood.swift in Sources */,
+				9C7DC6A227869A96000967F3 /* AreaInfo.swift in Sources */,
 				8E6543AD26FC74ED001417C3 /* ViewController.swift in Sources */,
-				8E6543B326FC74ED001417C3 /* CoreDataDemo.xcdatamodeld in Sources */,
 				8E6543A926FC74ED001417C3 /* AppDelegate.swift in Sources */,
+				9C7DC69E27868D34000967F3 /* Area.xcdatamodeld in Sources */,
 				8E6543AB26FC74ED001417C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,13 +355,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8E6543B126FC74ED001417C3 /* CoreDataDemo.xcdatamodeld */ = {
+		9C7DC69C27868D34000967F3 /* Area.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8E6543B226FC74ED001417C3 /* CoreDataDemo.xcdatamodel */,
+				9C7DC69D27868D34000967F3 /* Area.xcdatamodel */,
 			);
-			currentVersion = 8E6543B226FC74ED001417C3 /* CoreDataDemo.xcdatamodel */;
-			path = CoreDataDemo.xcdatamodeld;
+			currentVersion = 9C7DC69D27868D34000967F3 /* Area.xcdatamodel */;
+			path = Area.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
