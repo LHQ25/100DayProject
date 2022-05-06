@@ -1,0 +1,26 @@
+
+
+// 响应式查询，
+@mixin ipad($height) {
+    
+    @media screen and (min_width: 768px) {
+        
+        height: $height;
+        // 代指下面include后里边编写的代码
+        @content;
+    }
+}
+
+.header {
+    width: 1000px;
+    @include ipad(100px) {
+        width: 500px;
+    }
+}
+
+.footer {
+    color: red;
+    @include ipad(200px) {
+        color: blue;
+    }
+}

@@ -1,0 +1,52 @@
+
+
+// 变量, 需要定义在最前面
+$text_color: #444;
+$small_font_size: 14px ;
+$font-size: $small_font_size + 3px;
+$font_default: 'mic';
+
+.title {
+    color: $text_color;
+}
+.subTitle {
+    color: $text_color;
+    // 全局函数 ，颜色变浅
+    color: lighten($color: #000000, $amount: 20%);
+}
+
+.header2 {
+    span {
+        font-size: $ssmall_font_size;
+        color: red;
+        &:active {
+            color: green;
+        }
+
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+//2.  嵌套语法
+
+div span {
+    color: red;
+}
+// 
+div {
+    span{
+        color: blue;
+    }
+}
+
+// 3. 引入
+@import './virables';
+
+// 也可以模块划分，其它文件写样式然后引入就可以了
+
+.content_title {
+
+    color: $color_title;
+}

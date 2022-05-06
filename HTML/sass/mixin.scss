@@ -1,0 +1,50 @@
+// 混入
+
+.text {
+    overflow: hidden;
+    width: 600px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content_text {
+    overflow: hidden;
+    width: 1000px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// 部分代码混用, 提取公共部分
+// 也可以拆分到其它文件去，然后引入
+@mixin singleline_ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.text2 {
+    width: 600px;
+    @include singleline_ellipsis;
+}
+
+.content_text2 {
+    width: 1000px;
+    @include singleline_ellipsis;
+}
+
+
+// 带接收参数
+@mixin singleline_ellipsis3($width) {
+    width: $width;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.text3 {
+    @include singleline_ellipsis3(500px);
+}
+
+.content_text3 {
+    @include singleline_ellipsis3(1000px);
+}
