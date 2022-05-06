@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据 方法 计算属性 监听器</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root">
+        {{inputValue}}
+    </div>
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return { 
+                count: 3,
+                price: 5 
+            }
+        },    
+        
+        // 计算属性: 依赖的内容发生改变是才会重新计算
+        computed:{
+
+            // 具体的属性 total
+            total(){
+                return this.price * this.count;
+            }
+        },
+
+        // 监听器
+        watch: {
+            // 监听price发生改变,改变后就会执行
+            price(cur, prev){
+
+                setInterval(() => {
+                   console.log('当前值', cur); 
+                   console.log('前值', prev); 
+                }, 3000);
+            }
+        },
+
+        // 方法
+        methods:{
+
+            // 具体的要执行的方法
+            handlerClick(){
+                alert('方法');
+            },
+
+            // 只有页面重新渲染就会计算
+            gettotal(){
+                return this.price * this.count;
+            }
+        },
+
+        // 模板
+        template: `<div > {{ total }}</div>`
+    });
+
+    // 挂载到root的div上
+    app.mount('#root');
+    
+</script>
+
+</html>

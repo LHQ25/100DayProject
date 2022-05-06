@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环展示(v-for)</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root">
+
+    </div>
+</body>
+
+<script>
+    Vue.createApp({
+        // 数据
+        data() {
+            return {
+                inputValue: '',
+                list: []
+
+            }
+        },
+
+        // v-for:循环  (item： 值, index： 下标) of list： 数据源
+        // v-model: 双向绑定， 例子是绑定到 inputValue 上
+        // 模板
+        template: ` <div>
+                    <ul>
+                        <li v-for="(item, index) of list">{{ item }} - 下标 {{index}}</li>
+                    </ul>
+                    <input v-model="inputValue">
+                    <button @click="click">新增</button>
+                    </div>`,
+        methods: {
+            click(){
+                this.list.push(this.inputValue);
+                this.inputValue = '';
+            }
+        }
+    })
+    // 挂载到root的div上
+    .mount('#root');
+</script>
+
+</html>

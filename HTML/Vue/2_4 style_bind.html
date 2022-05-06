@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据 方法 计算属性 监听器</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .szie {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="root">
+        {{inputValue}}
+    </div>
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return { 
+                inputValue: 'inputValue',
+                classString: 'red',
+                // 红色颜色展示，绿色不展示
+                classObject: {red: true, green: false}, 
+                // 多个class  brown不展示
+                classArray: ['red', 'size', {brown: false}],
+                styleString: 'color: yellow;',
+                styleObject: {color: 'orange'}
+            }
+        },    
+
+        // 方法
+        methods:{
+
+            // 具体的要执行的方法
+            handlerClick(){
+                alert('方法');
+            },
+
+            // 只有页面重新渲染就会计算
+            gettotal(){
+                return this.price * this.count;
+            }
+        },
+
+        // 模板
+        template: `<div :class="classString"> {{ inputValue }}</div>
+                    <div :class="classObject"> {{ inputValue }}</div>
+                    <div :class="classArray"> {{ inputValue }}</div>
+                    <demo />
+                    <div :style="styleString"> {{ inputValue }}</div>
+                    <div :style="styleObject"> {{ inputValue }}</div>`
+    });
+
+    app.comonent('demo', {
+        // 模板
+        //  $attrs.class: 使用父的样式
+        template: `<div :class="$attrs.class"> demo 组件 </div>`
+    })
+    // 挂载到root的div上
+    app.mount('#root');
+    
+</script>
+
+</html>

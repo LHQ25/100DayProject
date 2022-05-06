@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root">
+        {{inputValue}}
+    </div>
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return { 
+                show:  false,
+                conditionOne: false,
+                conditionTwo: true
+            }
+        },    
+
+        // 模板
+        template: `<div v-if="show"> v_if：控制页面上dom存在与否是否展示来显示隐藏  </div>
+                    <div v-show="show"> v_show：标签 style 的 display: none 来展示显示隐藏  </div>
+                    
+                    <div v-if="conditionOne"> v-if： 控制流  </div>
+                    <div v-else-if="conditionTwo"> v-else-if： 控制流  </div>
+                    <div v-else> else  </div>`
+    });
+
+    app.comonent('demo', {
+        // 模板
+        //  $attrs.class: 使用父的样式
+        template: `<div :class="$attrs.class"> demo 组件 </div>`
+    })
+    // 挂载到root的div上
+    app.mount('#root');
+    
+</script>
+
+</html>

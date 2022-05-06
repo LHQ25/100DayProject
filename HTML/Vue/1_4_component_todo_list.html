@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件编写todolist</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root"></div>
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return {
+                inputValue: '',
+                list: []
+
+            }
+        },
+
+        // v-for:循环  (item： 值, index： 下标) of list： 数据源
+        // v-model: 双向绑定， 例子是绑定到 inputValue 上
+        // v-bind: 标签属性的绑定
+        // 模板
+        template: ` <div>
+                    <ul>
+                        <todo-item 
+                            v-for="item of list" 
+                            v-bind:item="item" />
+                    </ul>
+                    <input v-model="inputValue">
+                    <button @click="click">新增</button>
+                    <button v-bind:title="inputValue">标签属性绑定</button>
+                    </div>`,
+        methods: {
+            click(){
+                this.list.push(this.inputValue);
+                this.inputValue = '';
+            }
+        }
+    });
+    
+    // 简单组件展示
+    app.component('todo-item', {
+        // 组件的属性
+        props: ['item'],
+        // 模板
+        template: `<li>{{ item }}</li>`,
+    });
+
+    // 挂载到root的div上
+    app.mount('#root');
+    
+</script>
+
+</html>

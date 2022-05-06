@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板的解释， 插值的处理， (v-bind, v-html, v-once)</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root">
+        {{inputValue}}
+    </div>
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return { 
+                inputValue: '<strong>hello world!</strong>',
+                title: '绑定标签属性',
+                disable: false,
+                once: '只渲染一次，在改变当前值也不会发生变化',
+                show: false,
+                atteName: 'title', 
+             }
+        },          
+
+        // v-html: 展示HTML标签，也就是解析成HTML而不是显示字符串
+        // v-bind:<标签属性>： 绑定到标签属性上 简写： :标签属性=
+        // 另一种情况就是不知道会绑定到那个标签上 :[attrName]的形式来写。attrName定义在data中动态改变
+
+        // v-once 只会渲染一次，值发生改变也不会变化
+        // v-if 条件展示
+
+        // v-on:click: 绑定click点击事件   简写@click，  同理绑定事件时也可以做类似绑定到标签上
+        // @[event]: 的样式来写也叫动态属性
+        // @click.prevent: prevent是修饰符，阻止默认执行方式，同理还有其它的操作
+        template: `<div v-html="inputValue" v-bind:title="title"></div>
+                    <div :[attrName]="title">绑定到未知标签属性</div>
+                    <div v-bind:disabled="disable">不展示</div>
+                    <div v-once">只渲染一次{{once}}</div>
+                    <div v-if="show">v-if</div>`
+    });
+
+    // 挂载到root的div上
+    app.mount('#root');
+    
+</script>
+
+</html>

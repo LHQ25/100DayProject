@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root">
+
+    </div>
+</body>
+
+<script>
+    Vue.createApp({
+        // 数据
+        data() {
+            return {
+                count: 1
+            }
+        },
+        // 模板
+        template: '<div>hello world</div> <div>{{ count }}</div>',
+
+        // 生命周期函数
+        mounted(){
+            console.log("页面加载完成"),
+            // 启动定时器
+            setInterval(() => {
+                this.count += 1;
+            }, 1000);
+        }
+    })
+    // 挂载到root的div上
+    .mount('#root');
+</script>
+
+</html>

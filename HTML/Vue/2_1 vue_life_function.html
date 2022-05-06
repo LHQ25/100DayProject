@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 生命周期函数</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root">
+        {{inputValue}}
+    </div>
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return {
+                inputValue: 'inputValue',
+            }
+        },
+
+        // 创建之前
+        beforeCreate(){
+            alert("beforeCreate");
+        },
+
+        // 创建完成
+        created(){
+            alert("create");
+        },
+
+        // 挂载之前,渲染之前
+        beforeMount(){
+            alert("beforeMount");
+        },
+
+        // 挂载完成，渲染完成
+        mounted(){
+            alert("mounted");
+        },
+        // 数据改变，页面刷新前
+        beforeUpdate(){
+            alert('beforeUpdate');
+        },
+        
+        // 数据改变，页面刷新后
+        updated(){
+            alert('updated')
+        },
+
+        // 移除挂载前
+        beforeUnmound(){
+            alert('beforeUnmound')
+        },
+
+        // 移除挂载后
+        unmounted(){
+            alert("unMounted")
+        }
+
+    });
+
+    // 挂载到root的div上
+    app.mount('#root');
+    
+</script>
+
+</html>

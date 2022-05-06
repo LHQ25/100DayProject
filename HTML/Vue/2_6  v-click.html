@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表循环渲染</title>
+
+    <!-- 引入 vue  cdn-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    
+    <div id="root">
+        {{inputValue}}
+    </div>
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // 数据
+        data() {
+            return { 
+                list: ['dell', 'lee', 'teacher'],
+                listObject: {first: 'dell', last: 'lee', job: 'teacher'}
+            }
+        }, 
+        
+        methods: {
+            click(){
+                // 添加
+                this.list.push("job");
+            }
+        },
+
+        // 模板
+        // v-for: :key 用来做优化，没有发生改变的不会重新渲染会复用之前的，需要一个唯一标识符，这里用item来
+        // template: 占位符， 循环时不会渲染template标签(其实也不是标签)
+        template: `<div>
+                    <div v-for="(item, index) of list" :key={{item}}> {{ item}} </div>
+                    </div>
+
+                    <div>
+                        <template v-for="(item, index) of list" :key={{item}}> {{ item}} </template>
+                    </div>
+
+                    <div>
+                        <div v-for="(value, key, index) of listObject"> {{ value }} </div>
+                    </div>
+                    <button @click="click">新增</button>`
+    });
+
+    app.comonent('demo', {
+        // 模板
+        //  $attrs.class: 使用父的样式
+        template: `<div :class="$attrs.class"> demo 组件 </div>`
+    })
+    // 挂载到root的div上
+    app.mount('#root');
+    
+</script>
+
+</html>
