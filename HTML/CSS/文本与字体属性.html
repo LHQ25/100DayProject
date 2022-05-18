@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本与字体属性</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            margin-top: 12px;
+        }
+
+        .section {
+            border: 1px solid black;
+            width: 100%;
+            border-radius: 4px;
+            padding: 0 20px 10px 20px;
+        }
+
+        .style1{
+            color: aqua;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="section">
+        <h3> 文本与字体属性 </h3>
+        <p class="style">2016 年，Twitter 推出了名为「Algorithmic Timelines」的算法，将原来的信息流展示方式，从按时间排序改成算法推荐，将系统认为用户感兴趣的内容放在重要位置。
+            与 Facebook 不同，Twitter 更侧重新闻属性，推荐算法的引入，能更精准的投放符合用户喜好的内容。同样也能通过展示同一政见的新闻，潜移默化地影响和改变用户的政治偏见。
+            2016 年，Twitter 就被指控容许俄罗斯账户和机器人账户介入美国总统大选。为此，Twitter 对其算法进行了改进，不允许机器人账号（僵尸粉）发布相同内容或进行点赞转发等操作。
+            2021 年 ，Twitter 公布了一项研究成果，称其推荐算法会无意中放大右翼团体内容的传播。研究人员表示，会在不泄露用户隐私的前提下，将数据分享给第三方，寻找算法政治偏见背后的原因。
+            可见，Twitter 一直在努力对其算法进行优化，联合创始人多尔西也表达过对去中心化的构想，给用户更大自由，建立一个类似于应用商店的排名算法试图，让用户选择自己喜欢的推荐算法。
+            近两年，大家对算法推荐有了更多的审视，甚至下意识将大数据和「杀熟」联系在一起，一些完全抛弃算法推荐的社交产品也开始流行起来。
+            抛弃推荐算法，或者将算法开源，也许能改善「信息茧房」对用户的影响，让用户在信息获取上有更大的自主性。但早在推荐算法出现之前，人们依然会有偏见，以及各种加深偏见的滤镜。
+            算法不是最终的「凶手」，追求更好的算法，甚至抛弃算法，依然有人用其它工具作恶，依然有人会被伤害。马斯克收购 Twitter，将算法开源，不一定会让言论更自由，但他也许会拥有更大的自由。  
+        </p>
+        <div>
+            <div>
+                <h3>color 颜色</h3>
+                <p>十六进制表示法</p>
+                <div>
+                    <input id="color1" type="text" value="#333">
+                    <button onclick="color_change()">确定</button>
+                </div>
+                <p>RGB</p>
+                <div>
+                    <input id="color2" type="color" value="#333">
+                    <button onclick="color_change2()">确定</button>
+                </div>
+            </div>
+            <div>
+                <h3>font-size: 字体大小</h3>
+                <div>
+                    <input id="color3" type="text" value="16">
+                    <button onclick="font_size_change()">确定</button>
+                </div>
+            </div>
+            <div>
+                <h3>font-weight: 字体粗细</h3>
+                <label>
+                    normal<input name="font-weight" type="radio" value="normal" checked onclick="change_font_weight(this)">
+                </label>
+                <label>
+                    bold<input name="font-weight" type="radio" value="bold" onclick="change_font_weight(this)">
+                </label>
+                <label>
+                    lighter<input name="font-weight" value="lighter" type="radio" onclick="change_font_weight(this)">
+                </label>
+                <label>
+                    bolder<input name="font-weight" value="bolder" type="radio" onclick="change_font_weight(this)">
+                </label>
+            </div>
+            <div>
+                <h3>font-style： 字体样式</h3>
+                <label>
+                    normal<input name="font-style" type="radio" value="normal" checked onclick="change_font_style(this)">
+                </label>
+                <label>
+                    italic<input name="font-style" type="radio" value="italic" onclick="change_font_style(this)">
+                </label>
+                <label>
+                    oblique<input name="font-style" type="radio" value="oblique"  onclick="change_font_style(this)">
+                </label>
+            </div>
+
+            <div>
+                <h3>text-decoration：字体修饰</h3>
+                <label>
+                    none<input name="font-style" type="radio" value="none" checked onclick="change_text_decoration(this)">
+                </label>
+                <label>
+                    underline<input name="font-style" type="radio" value="underline" onclick="change_text_decoration(this)">
+                </label>
+                <label>
+                    line-through<input name="font-style" type="radio" value="line-through"  onclick="change_text_decoration(this)">
+                </label>
+            </div>
+
+            <div>
+                <h3>font-family</h3>
+                <label>
+                    serif<input name="font-family" type="checkbox" value="serif" checked onclick="change_font_family(this)">
+                </label>
+                <label>
+                    Times New Roman<input name="font-family" type="checkbox" value="Times New Roman" onclick="change_font_family(this)">
+                </label>
+                <label>
+                    微软雅黑<input name="font-family" type="checkbox" value="微软雅黑"  onclick="change_font_family(this)">
+                </label>
+            </div>
+            <div>
+                <h3>text-indent: 首行文本内容之前的缩进;  em: 字符宽度 </h3>
+                <input id="text_indent" type="text" value="2">
+                <button onclick="change_text_index()">确定</button>
+            </div>
+            <div>
+                <h3>line-height: 行高； px </h3>
+                <input id="line_height" type="text" value="20">
+                <button onclick="change_line_height()">确定</button>
+                <h3>line-height: 行高； 不带单位，表示字体倍数，推荐 </h3>
+                <input id="line_height2" type="text" value="1">
+                <button onclick="change_line_height2()">确定</button>
+                <h3>line-height: 行高； 也可以是%，表示字体倍数 </h3>
+                <input id="line_height3" type="text" value="100">
+                <button onclick="change_line_height3()">确定</button>
+            </div>
+            <div>
+                <p id="single" style="background-color: yellow; height: 40px">将算法开源，不一定会让言论更自由，但他也许会拥有更大的自由。  </p>
+            </div>
+            <div>
+                <h3>设置行高=盒子高度： 单行文本垂直居中 </h3>
+                <label>
+                    垂直居中<input name="single_line" type="radio" value="1" onclick="change_single_line_v_center(this)">
+                </label>
+                <label>
+                    取消居中<input name="single_line" type="radio" value="2" onclick="change_single_line_v_center(this)">
+                </label>
+            </div>
+            <div>
+                <h3>text-algn: 对齐方式 </h3>
+                <label>
+                    left<input name="single_align" type="radio" value="left" onclick="change_text_align(this)">
+                </label>
+                <label>
+                    center<input name="single_align" type="radio" value="center" onclick="change_text_align(this)">
+                </label>
+                <label>
+                    right<input name="single_align" type="radio" value="right" onclick="change_text_align(this)">
+                </label>
+            </div>
+
+            <div onclick="allfont()">
+                <h3>font: 合写属性 ； font: font-style font-weight font-size/line-height font-family </h3>
+            </div>
+        </div>
+        <div>
+            文本相关的属性普遍具有 继承性。只需要给祖先标签设置，后代标签也会生效
+            color
+            font-开头的
+            list-开头的
+            text-开头的
+            line-开头的
+
+            在继承的情况下：就近原则。距离越近的祖先标签的属性会生效
+        </div>
+    </div>
+</body>
+<script>
+
+    // color
+    function color_change() {
+        const color = document.getElementById('color1').value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.color = color;
+    }
+    function color_change2() {
+        const color = document.getElementById('color2').value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.color = color;
+    }
+
+    // font-zie
+    function font_size_change() {
+        const font_size = document.getElementById('color3').value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.fontSize = font_size+'px';
+    }
+
+    // font-weight
+    function change_font_weight(f) {
+        const weight = f.value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.fontWeight = weight;
+    }
+
+    // font-style
+    function change_font_style(f) {
+        const style = f.value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.fontStyle = style;
+    }
+
+    // text-decoration
+    function change_text_decoration(f){
+        const style = f.value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.textDecoration = style;
+    }
+
+    // font-family
+    function change_font_family(f) {
+        const p = document.getElementsByClassName('style')[0];
+        if (f.checked) {
+            const style = f.value;
+
+            p.style.fontFamily = style;
+        }else {
+            p.style.fontFamily = "'serif' 'Times New Roman' '微软雅黑'";
+        }
+    }
+
+    // text-indent
+    function change_text_index() {
+        const indent = document.getElementById('text_indent').value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.textIndent = indent+'em';
+    }
+    // line-height
+    function change_line_height() {
+        const indent = document.getElementById('line_height').value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.lineHeight = indent+'px';
+    }
+    function change_line_height2() {
+        const indent = document.getElementById('line_height2').value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.lineHeight = indent;
+    }
+    function change_line_height3() {
+        const indent = document.getElementById('line_height3').value;
+        const p = document.getElementsByClassName('style')[0];
+        p.style.lineHeight = indent+'%';
+    }
+
+    function change_single_line_v_center(f) {
+        const indent = f.value;
+        const p = document.getElementById('single');
+        if (indent === '1'){
+            p.style.fontSize = '20px';
+            p.style.lineHeight = p.style.height;
+        } else {
+            p.style.lineHeight = 'auto';
+            p.style.fontSize = '13px';
+        }
+
+    }
+
+    function change_text_align(f) {
+        const indent = f.value;
+        const p = document.getElementById('single');
+        p.style.textAlign = indent;
+    }
+
+    function allfont() {
+        const p = document.getElementById('single');
+        p.style.font = 'italic bold 20px/1.5 "微软雅黑"';
+    }
+</script>
+</html>

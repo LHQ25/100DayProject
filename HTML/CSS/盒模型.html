@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+
+    <script>
+
+        function withChange() {
+            console.log('123');
+            const width = document.getElementById('with_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('width_span');
+            box.style.width = width+'px';
+            span.innerText = width;
+        }
+
+        function heightChange() {
+            const height = document.getElementById('height_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('height_span');
+            box.style.height = height+'px';
+            span.innerText = height;
+        }
+
+        function padding_top_change() {
+            const v = document.getElementById('padding_top_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('padding_top_span');
+            box.style.paddingTop = v+'px';
+            span.innerText = v;
+        }
+
+        function padding_right_change() {
+            const v = document.getElementById('padding_right_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('padding_right_span');
+            box.style.paddingRight = v+'px';
+            span.innerText = v;
+        }
+
+        function padding_bottom_change() {
+            const v = document.getElementById('padding_bottom_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('padding_bottom_span');
+            box.style.paddingBottom = v+'px';
+            span.innerText = v;
+        }
+
+        function padding_left_change() {
+            const v = document.getElementById('padding_left_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('padding_left_span');
+            box.style.paddingLeft = v+'px';
+            span.innerText = v;
+        }
+
+        function margin_top_change() {
+            const v = document.getElementById('margin_top_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('margin_top_span');
+            box.style.marginTop = v+'px';
+            span.innerText = v;
+        }
+
+        function margin_right_change() {
+            const v = document.getElementById('margin_right_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('margin_right_span');
+            box.style.marginRight = v+'px';
+            span.innerText = v;
+        }
+
+        function margin_bottom_change() {
+            const v = document.getElementById('padding_bottom_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('margin_bottom_span');
+            box.style.marginBottom = v+'px';
+            span.innerText = v;
+        }
+
+        function margin_left_change() {
+            const v = document.getElementById('margin_left_input').value;
+            const box = document.getElementById('box1');
+            const span = document.getElementById('margin_left_span');
+            box.style.marginLeft = v+'px';
+            span.innerText = v;
+        }
+
+    </script>
+</head>
+<body>
+
+    <div>
+        所有的HTML标签都可以看成矩形盒子
+        由 width hieght padding border 构成
+        称为 盒模型
+    </div>
+    <div style="width: 100%; padding-bottom: 20px; background-color: antiquewhite">
+        <div style="height: 2px;background-color: #065D99"></div>
+        <div id="box1" style="width: 200px; height: 200px; background-color: red; margin: 0 auto">
+            我是内容我是内容
+        </div>
+    </div>
+    <div>
+        <div>
+            <div>
+                <p>width</p>
+                <span id="width_span">100</span>
+                <input id="with_input" type="range" min="100" max="300" onchange="withChange()">
+            </div>
+            <div>
+                <p>height: 如果父标签没设置将会被子节点自动撑开</p>
+                <span id="height_span">100</span>
+                <input id="height_input" type="range" min="100" max="300" onchange="heightChange()">
+            </div>
+        </div>
+        <div style="float: left; width: 50%">
+            <h3>padding</h3>
+            <p>
+                综合写法：
+                padding： top right bottom left;
+                或者，padding： top/bottom right/left;
+            </p>
+            <div>
+                <p>padding-top</p>
+                <span id="padding_top_span">0</span>
+                <input id="padding_top_input" value="0" type="range" min="0" max="30" onchange="padding_top_change()">
+            </div>
+            <div>
+                <p>padding-right</p>
+                <span id="padding_right_span">0</span>
+                <input id="padding_right_input" value="0" type="range" min="0" max="30" onchange="padding_right_change()">
+            </div>
+            <div>
+                <p>padding-bottom</p>
+                <span id="padding_bottom_span">0</span>
+                <input id="padding_bottom_input" value="0" type="range" min="0" max="30" onchange="padding_bottom_change()">
+            </div>
+            <div >
+                <p>padding-left</p>
+                <span id="padding_left_span">0</span>
+                <input id="padding_left_input" value="0" type="range" min="0" max="30" onchange="padding_left_change()">
+            </div>
+        </div>
+        <div style="float: left; width: 50%">
+            <h3>margin</h3>
+            <p>
+                综合写法：
+                margin： top right bottom left;
+                或者，margin： top/bottom right/left;
+            </p>
+            <div>
+                <p>margin-top</p>
+                <span id="margin_top_span">0</span>
+                <input id="margin_top_input" value="0" type="range" min="0" max="30" onchange="margin_top_change()">
+            </div>
+            <div>
+                <p>margin-right</p>
+                <span id="margin_right_span">0</span>
+                <input id="margin_right_input" value="0" type="range" min="0" max="30" onchange="margin_right_change()">
+            </div>
+            <div>
+                <p>margin-bottom</p>
+                <span id="margin_bottom_span">0</span>
+                <input id="margin_bottom_input" value="0" type="range" min="0" max="30" onchange="margin_bottom_change()">
+            </div>
+            <div >
+                <p>margin-left</p>
+                <span id="margin_left_span">0</span>
+                <input id="margin_left_input" value="0" type="range" min="0" max="30" onchange="margin_left_change()">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
