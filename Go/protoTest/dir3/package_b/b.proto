@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package package_b;
+
+//  go_package：必须要设置
+option go_package = "dir3/package_b;package_b";
+
+message StructB {
+  bool test = 1;
+}

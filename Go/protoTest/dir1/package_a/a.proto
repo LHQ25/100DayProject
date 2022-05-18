@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package package_a;
+// 需要导入包(.proto)的位置，为proto文件的全路径；protoTest：go.mod中的名称
+import "protoTest/dir3/package_b/b.proto";
+
+//  go_package：必须要设置
+option go_package = "dir1/package_a;package_a";
+
+message StructA {
+  package_b.StructB test = 1;
+}
+
+
+// 生成的命令 因为要处理两个不同文件夹下。需要同时 -I 两下
+// protoc -I . ./protoTest/dir1/package_a/a.proto -I . ./protoTest/dir3/package_b/b.proto  --go_out=./protoTest
