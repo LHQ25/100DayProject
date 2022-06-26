@@ -14,6 +14,8 @@
 		9D06B39C2837577000EEDD19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D06B39B2837577000EEDD19 /* Assets.xcassets */; };
 		9D06B39F2837577000EEDD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D06B39D2837577000EEDD19 /* LaunchScreen.storyboard */; };
 		9D06B3A7283758B600EEDD19 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D06B3A6283758B600EEDD19 /* Base.swift */; };
+		9D756D1928680BFF00DE6859 /* CreateAsyncFunction_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D756D1828680BFF00DE6859 /* CreateAsyncFunction_1.swift */; };
+		9D756D1B2868340200DE6859 /* Async_Sequences_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D756D1A2868340200DE6859 /* Async_Sequences_2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9D06B39E2837577000EEDD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D06B3A02837577000EEDD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D06B3A6283758B600EEDD19 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		9D756D1828680BFF00DE6859 /* CreateAsyncFunction_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAsyncFunction_1.swift; sourceTree = "<group>"; };
+		9D756D1A2868340200DE6859 /* Async_Sequences_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async_Sequences_2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				9D06B39B2837577000EEDD19 /* Assets.xcassets */,
 				9D06B39D2837577000EEDD19 /* LaunchScreen.storyboard */,
 				9D06B3A02837577000EEDD19 /* Info.plist */,
+				9D756D1828680BFF00DE6859 /* CreateAsyncFunction_1.swift */,
+				9D756D1A2868340200DE6859 /* Async_Sequences_2.swift */,
 			);
 			path = Swift_Async;
 			sourceTree = "<group>";
@@ -141,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D756D1928680BFF00DE6859 /* CreateAsyncFunction_1.swift in Sources */,
 				9D06B3A7283758B600EEDD19 /* Base.swift in Sources */,
+				9D756D1B2868340200DE6859 /* Async_Sequences_2.swift in Sources */,
 				9D06B3972837576E00EEDD19 /* ViewController.swift in Sources */,
 				9D06B3932837576E00EEDD19 /* AppDelegate.swift in Sources */,
 				9D06B3952837576E00EEDD19 /* SceneDelegate.swift in Sources */,
