@@ -7,22 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9CA82A53278D89940028CB61 /* SolicationDetailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA82A52278D89940028CB61 /* SolicationDetailApp.swift */; };
-		9CA82A55278D89940028CB61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA82A54278D89940028CB61 /* ContentView.swift */; };
-		9CA82A57278D89A60028CB61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA82A56278D89A60028CB61 /* Assets.xcassets */; };
-		9CA82A5A278D89A60028CB61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA82A59278D89A60028CB61 /* Preview Assets.xcassets */; };
+		9D76EDCA28756CE3001007B8 /* ColourAtlaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D76EDC928756CE3001007B8 /* ColourAtlaApp.swift */; };
+		9D76EDCC28756CE3001007B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D76EDCB28756CE3001007B8 /* ContentView.swift */; };
+		9D76EDCE28756CE6001007B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D76EDCD28756CE6001007B8 /* Assets.xcassets */; };
+		9D76EDD128756CE6001007B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D76EDD028756CE6001007B8 /* Preview Assets.xcassets */; };
+		9D76EDD828756DEF001007B8 /* ColorHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D76EDD728756DEF001007B8 /* ColorHexString.swift */; };
+		9D76EDDA2875717E001007B8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D76EDD92875717E001007B8 /* Model.swift */; };
+		9D9A6893287970D500AC5AA0 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D9A6892287970D500AC5AA0 /* data.json */; };
+		9D9A68952879816F00AC5AA0 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A68942879816F00AC5AA0 /* CardListView.swift */; };
+		9D9A6897287983E000AC5AA0 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A6896287983E000AC5AA0 /* SearchBarView.swift */; };
+		9D9A6899287993FC00AC5AA0 /* TabberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A6898287993FC00AC5AA0 /* TabberView.swift */; };
+		9D9A689B2879957E00AC5AA0 /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A689A2879957E00AC5AA0 /* MineView.swift */; };
+		9D9A689D287995C100AC5AA0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A689C287995C100AC5AA0 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9CA82A4F278D89940028CB61 /* SolicationDetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolicationDetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CA82A52278D89940028CB61 /* SolicationDetailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolicationDetailApp.swift; sourceTree = "<group>"; };
-		9CA82A54278D89940028CB61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9CA82A56278D89A60028CB61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9CA82A59278D89A60028CB61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9D76EDC628756CE3001007B8 /* ColourAtla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColourAtla.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D76EDC928756CE3001007B8 /* ColourAtlaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourAtlaApp.swift; sourceTree = "<group>"; };
+		9D76EDCB28756CE3001007B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9D76EDCD28756CE6001007B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D76EDD028756CE6001007B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9D76EDD728756DEF001007B8 /* ColorHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexString.swift; sourceTree = "<group>"; };
+		9D76EDD92875717E001007B8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9D9A6892287970D500AC5AA0 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		9D9A68942879816F00AC5AA0 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		9D9A6896287983E000AC5AA0 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		9D9A6898287993FC00AC5AA0 /* TabberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabberView.swift; sourceTree = "<group>"; };
+		9D9A689A2879957E00AC5AA0 /* MineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineView.swift; sourceTree = "<group>"; };
+		9D9A689C287995C100AC5AA0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9CA82A4C278D89940028CB61 /* Frameworks */ = {
+		9D76EDC328756CE3001007B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,37 +48,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9CA82A46278D89940028CB61 = {
+		9D76EDBD28756CE3001007B8 = {
 			isa = PBXGroup;
 			children = (
-				9CA82A51278D89940028CB61 /* SolicationDetail */,
-				9CA82A50278D89940028CB61 /* Products */,
+				9D76EDC828756CE3001007B8 /* ColourAtla */,
+				9D76EDC728756CE3001007B8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9CA82A50278D89940028CB61 /* Products */ = {
+		9D76EDC728756CE3001007B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CA82A4F278D89940028CB61 /* SolicationDetail.app */,
+				9D76EDC628756CE3001007B8 /* ColourAtla.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9CA82A51278D89940028CB61 /* SolicationDetail */ = {
+		9D76EDC828756CE3001007B8 /* ColourAtla */ = {
 			isa = PBXGroup;
 			children = (
-				9CA82A52278D89940028CB61 /* SolicationDetailApp.swift */,
-				9CA82A54278D89940028CB61 /* ContentView.swift */,
-				9CA82A56278D89A60028CB61 /* Assets.xcassets */,
-				9CA82A58278D89A60028CB61 /* Preview Content */,
+				9D76EDC928756CE3001007B8 /* ColourAtlaApp.swift */,
+				9D76EDCB28756CE3001007B8 /* ContentView.swift */,
+				9D76EDCD28756CE6001007B8 /* Assets.xcassets */,
+				9D76EDCF28756CE6001007B8 /* Preview Content */,
+				9D76EDD728756DEF001007B8 /* ColorHexString.swift */,
+				9D76EDD92875717E001007B8 /* Model.swift */,
+				9D9A6892287970D500AC5AA0 /* data.json */,
+				9D9A68942879816F00AC5AA0 /* CardListView.swift */,
+				9D9A6896287983E000AC5AA0 /* SearchBarView.swift */,
+				9D9A6898287993FC00AC5AA0 /* TabberView.swift */,
+				9D9A689A2879957E00AC5AA0 /* MineView.swift */,
+				9D9A689C287995C100AC5AA0 /* LoadingView.swift */,
 			);
-			path = SolicationDetail;
+			path = ColourAtla;
 			sourceTree = "<group>";
 		};
-		9CA82A58278D89A60028CB61 /* Preview Content */ = {
+		9D76EDCF28756CE6001007B8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				9CA82A59278D89A60028CB61 /* Preview Assets.xcassets */,
+				9D76EDD028756CE6001007B8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -70,39 +94,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9CA82A4E278D89940028CB61 /* SolicationDetail */ = {
+		9D76EDC528756CE3001007B8 /* ColourAtla */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CA82A5D278D89A60028CB61 /* Build configuration list for PBXNativeTarget "SolicationDetail" */;
+			buildConfigurationList = 9D76EDD428756CE6001007B8 /* Build configuration list for PBXNativeTarget "ColourAtla" */;
 			buildPhases = (
-				9CA82A4B278D89940028CB61 /* Sources */,
-				9CA82A4C278D89940028CB61 /* Frameworks */,
-				9CA82A4D278D89940028CB61 /* Resources */,
+				9D76EDC228756CE3001007B8 /* Sources */,
+				9D76EDC328756CE3001007B8 /* Frameworks */,
+				9D76EDC428756CE3001007B8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SolicationDetail;
-			productName = SolicationDetail;
-			productReference = 9CA82A4F278D89940028CB61 /* SolicationDetail.app */;
+			name = ColourAtla;
+			productName = ColourAtla;
+			productReference = 9D76EDC628756CE3001007B8 /* ColourAtla.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9CA82A47278D89940028CB61 /* Project object */ = {
+		9D76EDBE28756CE3001007B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					9CA82A4E278D89940028CB61 = {
-						CreatedOnToolsVersion = 13.2.1;
+					9D76EDC528756CE3001007B8 = {
+						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 9CA82A4A278D89940028CB61 /* Build configuration list for PBXProject "SolicationDetail" */;
+			buildConfigurationList = 9D76EDC128756CE3001007B8 /* Build configuration list for PBXProject "ColourAtla" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,49 +134,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 9CA82A46278D89940028CB61;
-			productRefGroup = 9CA82A50278D89940028CB61 /* Products */;
+			mainGroup = 9D76EDBD28756CE3001007B8;
+			productRefGroup = 9D76EDC728756CE3001007B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9CA82A4E278D89940028CB61 /* SolicationDetail */,
+				9D76EDC528756CE3001007B8 /* ColourAtla */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9CA82A4D278D89940028CB61 /* Resources */ = {
+		9D76EDC428756CE3001007B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA82A5A278D89A60028CB61 /* Preview Assets.xcassets in Resources */,
-				9CA82A57278D89A60028CB61 /* Assets.xcassets in Resources */,
+				9D76EDD128756CE6001007B8 /* Preview Assets.xcassets in Resources */,
+				9D9A6893287970D500AC5AA0 /* data.json in Resources */,
+				9D76EDCE28756CE6001007B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9CA82A4B278D89940028CB61 /* Sources */ = {
+		9D76EDC228756CE3001007B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA82A55278D89940028CB61 /* ContentView.swift in Sources */,
-				9CA82A53278D89940028CB61 /* SolicationDetailApp.swift in Sources */,
+				9D76EDCC28756CE3001007B8 /* ContentView.swift in Sources */,
+				9D76EDD828756DEF001007B8 /* ColorHexString.swift in Sources */,
+				9D9A68952879816F00AC5AA0 /* CardListView.swift in Sources */,
+				9D76EDCA28756CE3001007B8 /* ColourAtlaApp.swift in Sources */,
+				9D9A6897287983E000AC5AA0 /* SearchBarView.swift in Sources */,
+				9D9A689B2879957E00AC5AA0 /* MineView.swift in Sources */,
+				9D9A6899287993FC00AC5AA0 /* TabberView.swift in Sources */,
+				9D76EDDA2875717E001007B8 /* Model.swift in Sources */,
+				9D9A689D287995C100AC5AA0 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9CA82A5B278D89A60028CB61 /* Debug */ = {
+		9D76EDD228756CE6001007B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -196,7 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -206,14 +237,13 @@
 			};
 			name = Debug;
 		};
-		9CA82A5C278D89A60028CB61 /* Release */ = {
+		9D76EDD328756CE6001007B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -251,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -261,15 +291,14 @@
 			};
 			name = Release;
 		};
-		9CA82A5E278D89A60028CB61 /* Debug */ = {
+		9D76EDD528756CE6001007B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SolicationDetail/Preview Content\"";
-				DEVELOPMENT_TEAM = X8574LW29E;
+				DEVELOPMENT_ASSET_PATHS = "\"ColourAtla/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -282,7 +311,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hq.SolicationDetail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hq.ColourAtla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -290,15 +319,14 @@
 			};
 			name = Debug;
 		};
-		9CA82A5F278D89A60028CB61 /* Release */ = {
+		9D76EDD628756CE6001007B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SolicationDetail/Preview Content\"";
-				DEVELOPMENT_TEAM = X8574LW29E;
+				DEVELOPMENT_ASSET_PATHS = "\"ColourAtla/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -311,7 +339,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hq.SolicationDetail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hq.ColourAtla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -322,25 +350,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9CA82A4A278D89940028CB61 /* Build configuration list for PBXProject "SolicationDetail" */ = {
+		9D76EDC128756CE3001007B8 /* Build configuration list for PBXProject "ColourAtla" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9CA82A5B278D89A60028CB61 /* Debug */,
-				9CA82A5C278D89A60028CB61 /* Release */,
+				9D76EDD228756CE6001007B8 /* Debug */,
+				9D76EDD328756CE6001007B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CA82A5D278D89A60028CB61 /* Build configuration list for PBXNativeTarget "SolicationDetail" */ = {
+		9D76EDD428756CE6001007B8 /* Build configuration list for PBXNativeTarget "ColourAtla" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9CA82A5E278D89A60028CB61 /* Debug */,
-				9CA82A5F278D89A60028CB61 /* Release */,
+				9D76EDD528756CE6001007B8 /* Debug */,
+				9D76EDD628756CE6001007B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9CA82A47278D89940028CB61 /* Project object */;
+	rootObject = 9D76EDBE28756CE3001007B8 /* Project object */;
 }
