@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A56BE2A2879E3BA006CDFD5 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56BE292879E3BA006CDFD5 /* LogoView.swift */; };
+		8A56BE2C287B3927006CDFD5 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56BE2B287B3927006CDFD5 /* ImagePickerView.swift */; };
 		9D76EDCA28756CE3001007B8 /* ColourAtlaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D76EDC928756CE3001007B8 /* ColourAtlaApp.swift */; };
 		9D76EDCC28756CE3001007B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D76EDCB28756CE3001007B8 /* ContentView.swift */; };
 		9D76EDCE28756CE6001007B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D76EDCD28756CE6001007B8 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A56BE292879E3BA006CDFD5 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		8A56BE2B287B3927006CDFD5 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		9D76EDC628756CE3001007B8 /* ColourAtla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColourAtla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D76EDC928756CE3001007B8 /* ColourAtlaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourAtlaApp.swift; sourceTree = "<group>"; };
 		9D76EDCB28756CE3001007B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				9D9A6898287993FC00AC5AA0 /* TabberView.swift */,
 				9D9A689A2879957E00AC5AA0 /* MineView.swift */,
 				9D9A689C287995C100AC5AA0 /* LoadingView.swift */,
+				8A56BE292879E3BA006CDFD5 /* LogoView.swift */,
+				8A56BE2B287B3927006CDFD5 /* ImagePickerView.swift */,
 			);
 			path = ColourAtla;
 			sourceTree = "<group>";
@@ -165,8 +171,10 @@
 				9D76EDCC28756CE3001007B8 /* ContentView.swift in Sources */,
 				9D76EDD828756DEF001007B8 /* ColorHexString.swift in Sources */,
 				9D9A68952879816F00AC5AA0 /* CardListView.swift in Sources */,
+				8A56BE2C287B3927006CDFD5 /* ImagePickerView.swift in Sources */,
 				9D76EDCA28756CE3001007B8 /* ColourAtlaApp.swift in Sources */,
 				9D9A6897287983E000AC5AA0 /* SearchBarView.swift in Sources */,
+				8A56BE2A2879E3BA006CDFD5 /* LogoView.swift in Sources */,
 				9D9A689B2879957E00AC5AA0 /* MineView.swift in Sources */,
 				9D9A6899287993FC00AC5AA0 /* TabberView.swift in Sources */,
 				9D76EDDA2875717E001007B8 /* Model.swift in Sources */,

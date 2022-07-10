@@ -23,15 +23,25 @@ struct TabberView: View {
                     Text("首页")
                 }.tag(0)
             
-            MineView()
+            LogoView()
                 .tabItem {
                     if self.selectTab == 1 {
                         Image(systemName: "person")
                     } else {
                         Image(systemName: "person.fill")
                     }
-                    Text("我的")
+                    Text("Segment")
                 }.tag(1)
+            
+            MineView()
+                .tabItem {
+                    if self.selectTab == 2 {
+                        Image(systemName: "person")
+                    } else {
+                        Image(systemName: "person.fill")
+                    }
+                    Text("我的")
+                }.tag(2)
         }
         .accentColor(Color.Hex(0x409EFF))
     }
