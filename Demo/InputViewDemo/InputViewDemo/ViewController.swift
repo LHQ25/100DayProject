@@ -13,12 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     
+    let maxLength = 150
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
         
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.cyan.cgColor
+        textView.layer.cornerRadius = 6
+        textView.layer.masksToBounds = true
 
         configuringTextAttributes()
         
@@ -29,9 +34,29 @@ class ViewController: UIViewController {
         ReplacingtheSystemInputViews()
         
         AccessingTextKitObjects()
+        
+        
+//        textContainerManager()
     }
+    
+    var count = 0
 
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if count == 0 {
+            
+            let str = NSString(string: "@红红火火😔😜😉😜😜😜idu.com ")
+            let selectedRange = textView.selectedRange
+            debugPrint(selectedRange, str.length)
+            
+            textView.insertText(str as String)
+        } else if count == 1 {
+            
+            textView.selectedRange = NSRange(location: 22, length: 11)
+        }
+        
+        count += 1
+    }
 }
 
 
@@ -40,43 +65,19 @@ extension ViewController {
     //MARK: - Configuring the Text Attributes
     
     func configuringTextAttributes() {
-        
-
-        
+    
         // textView.attributedText
-        textView.text = """
-find 命令是 Linux 命令中最有用的命令之一，它的功能非常强大，且语法复杂。其实我们不一定需要了解它的所有细节，掌握上述实战案例中的常见用法，足够满足日常工作中的大部分需求。
-下边我们一起来总结下 find 命令常见用法，加深对 find 使用方法的理解。
-命令格式
-find path -option [-exec ...]
-按文件名查找
-https://www.baidu.com   18637683265
-
--name：按照文件名称查找，准确匹配；
--iname：不区分文件名的大小写；
--inode：按照文件 inode 号查找；
-
-按照文件类型查找
-按照文件类型查找，可以使用 -type 选项，具体支持的文件类型如下：
-
-f：普通文件
-d：目录文件
-l：链接文件
-s：套接字文件
-p：管道文件
-b：块设备文件，比如：磁盘
-c：字符设备文件，比如：键盘、鼠标、网卡
-"""
+        textView.text = "find 命令是 Linux 命令中最有用的命令之一，它的功能非常强大，且语法复杂"
         textView.font = UIFont.systemFont(ofSize: 12)
         textView.textColor = .black
         
-        // 在文本视图中转换为可点击 URL 的数据类型
-        textView.dataDetectorTypes = .all
+        // 在文本视图中转换为可点击 URL 的数据类型; 需要 isEditable 为 false
+        textView.dataDetectorTypes = .link
         // 应用于链接的属性。
         textView.linkTextAttributes = [.foregroundColor: UIColor.cyan, .font: UIFont.systemFont(ofSize: 16)]
         
         // 应用于用户输入的新文本的属性。
-        textView.typingAttributes = [.foregroundColor: UIColor.red, .font: UIFont.systemFont(ofSize: 16)]
+        // textView.typingAttributes = [.foregroundColor: UIColor.red, .font: UIFont.systemFont(ofSize: 16)]
         
         textView.textAlignment = .left
         
@@ -111,7 +112,7 @@ c：字符设备文件，比如：键盘、鼠标、网卡
         let _ = textView.selectedRange
         
         // 滚动文本视图，直到指定范围内的文本可见
-        textView.scrollRangeToVisible(NSRange(location: 20, length: 7))
+        // textView.scrollRangeToVisible(NSRange(location: 20, length: 7))
         
         textView.clearsOnInsertion = false
         
@@ -141,10 +142,13 @@ c：字符设备文件，比如：键盘、鼠标、网卡
         // UITextView容器中显示的文本的文本存储对象
         let a = textView.textStorage
     }
+    
 }
 
 
 extension ViewController: UITextViewDelegate {
+    
+    //MARK: - Responding to Editing Notifications
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         
@@ -168,22 +172,35 @@ extension ViewController: UITextViewDelegate {
         print("textViewDidEndEditing")
     }
     
+    //MARK: - Responding to Text Changes
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
-        print("shouldChangeTextIn")
+        print("range: \(range), replacementText: \(text), textCount: \(textView.text.count)")
+        
+//        let result = textView.text.count - textView.markedTextRange?.start
+//        if result > maxLength {
+//            return false
+//        }
+        
         return true
     }
     
     func textViewDidChange(_ textView: UITextView) {
         
-        print("textViewDidChange")
+        print("textViewDidChange, selectedRange->: \(textView.selectedRange)")
     }
     
+    //MARK: - Responding to Selection Changes
     func textViewDidChangeSelection(_ textView: UITextView) {
         
-        print("textViewDidChangeSelection")
+        if let markedTextRange = textView.markedTextRange {
+            debugPrint("textViewDidChangeSelection -> markedTextRange:", markedTextRange)
+        }
+        
+        debugPrint("textViewDidChangeSelection -> selectedRange", textView.selectedRange)
     }
     
+    //MARK: - Interacting with Text Data
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         
         print("shouldInteractWith: URL: characterRange: interaction")
