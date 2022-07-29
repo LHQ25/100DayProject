@@ -23,13 +23,13 @@ struct CardView: View {
             
             GeometryReader { geometry in
                 
-                Image(self.image)
+                Image(image)
                     .resizable()
                     .scaledToFill()
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .cornerRadius(16)
                     .overlay(
-                        Text(self.name)
+                        Text(name)
                             .font(.system(.headline, design: .rounded))
                             .fontWeight(.bold)
                             .padding(10)
