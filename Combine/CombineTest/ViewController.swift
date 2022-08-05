@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         
         
         // MARK: - Publisher
-        // BasePublishersTest.loadTest()
+         BasePublishersTest.loadTest()
         
         // MARK: - Operator
 //        MapOperator.loadMapOperator()
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         
         //MARK: - Subscriber
 //        SubscriberTest.loadTest()
-        DebugTest.loadTest()
+//        DebugTest.loadTest()
     }
 
 }

@@ -25,6 +25,8 @@ struct SubscriberTest {
         cancellable = pub2
             .print()
             .assign(to: \.age, on: temp)
+        
+        pub2.send(90)
     }
     
     class AssignData: NSObject {

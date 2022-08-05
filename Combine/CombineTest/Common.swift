@@ -21,10 +21,10 @@ public enum SampleError: Error {
 public func check<P: Publisher>(_ title: String, publisher: () -> P) -> AnyCancellable
 {
     print("----- \(title) -----")
-    defer { print("") }
+    defer { print("-----------------") }
     return publisher()
         .print()
-        .sink(receiveCompletion: { _ in}, receiveValue: { _ in } )
+        .sink(receiveCompletion: { _ in debugPrint("\(title) receiveCompletion")}, receiveValue: { v in debugPrint("\(title): receiveValue -> \(v)") } )
 }
 
 /*

@@ -6,26 +6,47 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     
     @State var timeText: String = "0.00"
+    @State var isStart: Bool = false
     @State var isPause: Bool = false
+    
+    @State var startTime = Date()
+    @State private var timer = Timer.publish(every: 1, on: .main, in: .common)//.autoconnect()
+    
+    @State var cancel: AnyCancellable?
     
     var body: some View {
         
         VStack {
             
             titleView()
+                .padding()
             dinnerImageView()
             timerView()
             Spacer()
-            if isPause {
-                startBtn()
+            if !isPause {
+                startBtnView()
             }else {
                 pauseAndResetBtn()
             }
         }
+    }
+    
+    func startTimer() {
+        
+        timer = Timer.publish(every: 1, on: .main, in: .common)
+        cancel = timer.autoconnect()
+            .map({ "\(Int($0.timeIntervalSince1970))" })
+            .assign(to: \.timeText, on: self)
+    }
+    
+    func stopTimer() {
+        
+        cancel?.cancel()
     }
     
     // 计时器标题
@@ -54,7 +75,7 @@ struct ContentView: View {
     }
     
     // 开始按钮
-    func startBtn() -> some View {
+    func startBtnView() -> some View {
         ZStack {
             Circle()
                 .frame(width: 60, height: 60)
@@ -65,6 +86,8 @@ struct ContentView: View {
         }
         .onTapGesture {
             isPause.toggle()
+            isStart = true
+            startTimer()
         }
     }
     
@@ -79,6 +102,10 @@ struct ContentView: View {
                 Image(systemName: isPause ? "play.fill" : "pause.fill")
                     .foregroundColor(.white)
                     .font(.system(size: 32))
+            }.onTapGesture {
+                isPause.toggle()
+                isStart.toggle()
+                stopTimer()
             }
             
             // 复位按钮
@@ -89,6 +116,11 @@ struct ContentView: View {
                 Image(systemName: "arrow.uturn.backward.circle.fill")
                     .foregroundColor(.white)
                     .font(.system(size: 32))
+            }.onTapGesture {
+                isPause.toggle()
+                isStart.toggle()
+                timeText = "0"
+                stopTimer()
             }
         }
     }

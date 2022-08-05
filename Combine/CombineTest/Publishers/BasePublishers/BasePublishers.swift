@@ -13,22 +13,22 @@ struct BasePublishersTest {
     static func loadTest() {
         
         // Empty
-        emptyTest()
+        // emptyTest()
         
         // Just
-        justTest()
+        // justTest()
         
         // Deferred
-        deferredTest()
+        // deferredTest()
         
         // Fail
-        failTest()
+        // failTest()
         
         // Record
-        recordTest()
+        // recordTest()
         
         // Future
-        futureTest()
+        // futureTest()
     }
     
     static func emptyTest() {

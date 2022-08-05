@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Inventory.plist
+   Codable_project
+
+   Created by 9527 on 2022/8/3.
+   Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>items</key>
+        <array>
+            <dict>
+                <key>name</key>
+                <string>Peanuts</string>
+                <key>unitPrice</key>
+                <integer>200</integer>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Chips</string>
+                <key>unitPrice</key>
+                <integer>300</integer>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Popcorn</string>
+                <key>unitPrice</key>
+                <integer>400</integer>
+            </dict>
+        </array>
+        </dict>
+</plist>
