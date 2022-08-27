@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- 圆角，也可以单独设置某一个圆角 -->
+    <corners android:radius="4dp"/>
+<!--    <corners android:bottomLeftRadius="4dp"/>-->
+
+<!--   边框颜色 和 线的宽度 -->
+    <stroke android:color="#FF0000" android:width="1sp"/>
+
+    <gradient android:startColor="#188FFF" android:centerColor="#FF773D" android:endColor="#FF0000" android:type="linear"/>
+</shape>

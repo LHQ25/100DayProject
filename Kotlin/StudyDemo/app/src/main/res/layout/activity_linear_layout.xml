@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutTest"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".layout.LinearLayoutActivity">
+
+    <!--  orientation：orientation属性值设置成为horizontal，控件将从水平方向从左往右排列，将orientation属性值设置成为vertical控件将从垂直方向从上往下排列  -->
+    <!--  gravity: 默认是从左往右排列或从上往下排列，如果想让线性布局中的控件排列对齐右边缘或者底部 right | bottom,
+                   该属性值并不是只有在LinearLayout中才能使用，其他的布局用该属性同样能生效 -->
+    <!--  gravity:  bottom, left, right, start, end
+                    center, center_vertical, center_horizontal
+                    fill_vertical, fill_horizontal, fill,
+                    clip_vertical,clip_horizontal -->
+    <!--  layout_weight: 该属性需要加在LinearLayout的子控件中。其作用是分配线性布局中的剩余空间到该控件上, 有该属性的会按照比例分配      -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:text="hello"
+                    />
+<!--            上面 加上android:layout_weight="1"，则两个控件均匀分配剩余空间， layout_width属性就不起作用了    -->
+<!--            加上android:layout_weight="1"后，会把线性布局剩余空间全部占满    -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ff00ff"
+                    android:text="world"/>
+        </LinearLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="竖直布局" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="水平布局" />
+</LinearLayout>

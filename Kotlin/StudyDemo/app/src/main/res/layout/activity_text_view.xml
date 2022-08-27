@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".baseui.TextViewActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <!-- text: 文本   -->
+            <!-- textColor: 文本颜色   -->
+            <!-- textSize: 文本字体大小   -->
+            <!-- maxLength: 文本最大字符数   -->
+            <!-- ellipsize: 截断模式  -->
+            <!-- singleLine: 是否单行显示，已经 maxLines 替换, maxLines = 1 默认单行显示  -->
+            <!-- lineSpacingMultiplier: 行距，倍数 -->
+            <!-- letterSpacing: 字符间距，倍数 -->
+            <!-- lineHeight: 字符间距，倍数 -->
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/longText"
+                android:textColor="#00FF00"
+                android:textSize="18sp"
+                android:textAlignment="gravity"
+                android:maxLength="100"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:lineSpacingMultiplier="1"
+                android:paddingLeft="8sp"
+                android:letterSpacing="1"
+                android:lineHeight="12sp"/>
+
+            <!-- padding: 内边距，可以细分为 paddingBottom、paddingTop 等一些列，简单  -->
+            <!-- layout_margin: 外边距，可以细分为 layout_marginBottom、layout_marginTop 等一些列，简单  -->
+            <!-- background: 设置 边框  圆角 渐变  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_frame_gradient"
+                android:text="padding margin 渐变色背景"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:padding="8sp"
+                android:layout_margin="3sp"/>
+
+            <!-- drawableLeft(drawableStart: 替代 drawableStartCompat): 添加图片，类似的还有drawableTop、drawableBottom、drawableRight(drawableEnd)   -->
+            <!-- gravity: 文本内容对齐方式   -->
+            <!-- shadowColor: 阴影颜色   -->
+            <!-- shadowDx， shadowDy: 阴影偏移，越大越往右下两个方向   -->
+            <!-- shadowRadius: 越大越模糊   -->
+            <!-- background: 背景颜色，也可以设置图片   -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="图片、文字阴影、背景颜色， padding"
+                android:textColor="#FFFF00"
+                android:textSize="12sp"
+                app:drawableStartCompat="@mipmap/ic_launcher"
+                android:shadowColor="#FF0000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="4"
+                android:background="#000000"/>
+
+            <!-- autoLink: 链接属性， | 可以多选   -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="email|phone"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:text="可点链接www.baidu.com,可点电话：18637683265"
+                android:textColor="#00FF00"
+                android:textColorLink="#FF0000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="下划线"
+                android:background="@drawable/under_line"
+                android:textColor="#00FF00"
+                android:textSize="18sp"
+                android:autoLink="all" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
