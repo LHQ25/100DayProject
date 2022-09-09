@@ -14,8 +14,24 @@
 		9D06B39C2837577000EEDD19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D06B39B2837577000EEDD19 /* Assets.xcassets */; };
 		9D06B39F2837577000EEDD19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D06B39D2837577000EEDD19 /* LaunchScreen.storyboard */; };
 		9D06B3A7283758B600EEDD19 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D06B3A6283758B600EEDD19 /* Base.swift */; };
-		9D756D1928680BFF00DE6859 /* CreateAsyncFunction_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D756D1828680BFF00DE6859 /* CreateAsyncFunction_1.swift */; };
-		9D756D1B2868340200DE6859 /* Async_Sequences_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D756D1A2868340200DE6859 /* Async_Sequences_2.swift */; };
+		9D1B073C28C6F0C8002ED38F /* 04AsyncStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B073B28C6F0C8002ED38F /* 04AsyncStream.swift */; };
+		9D33298628C89E2D003447D0 /* 05异步序列和响应式编程.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33298528C89E2D003447D0 /* 05异步序列和响应式编程.swift */; };
+		9D33298928C8A2E8003447D0 /* 01网络请求中的异步函数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33298828C8A2E8003447D0 /* 01网络请求中的异步函数.swift */; };
+		9D33298B28C8B069003447D0 /* 02Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33298A28C8B069003447D0 /* 02Notification.swift */; };
+		9D33298D28C8C120003447D0 /* 03异步函数的运行环境.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33298C28C8C120003447D0 /* 03异步函数的运行环境.swift */; };
+		9D33299028C8C438003447D0 /* 01基于Task的结构化并发模型.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33298F28C8C438003447D0 /* 01基于Task的结构化并发模型.swift */; };
+		9D53422428C9CBB3001649BD /* 02非结构化任务.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53422328C9CBB3001649BD /* 02非结构化任务.swift */; };
+		9D5CB0EE28C5CD32007D36D5 /* 01同步和异步.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0ED28C5CD32007D36D5 /* 01同步和异步.swift */; };
+		9D5CB0F028C5CF4D007D36D5 /* 02异步函数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0EF28C5CF4D007D36D5 /* 02异步函数.swift */; };
+		9D5CB0F228C5D12F007D36D5 /* 03结构化并发.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0F128C5D12F007D36D5 /* 03结构化并发.swift */; };
+		9D5CB0F428C5DB44007D36D5 /* 04Actor模型和数据隔离.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0F328C5DB44007D36D5 /* 04Actor模型和数据隔离.swift */; };
+		9D5CB0F728C5DE5C007D36D5 /* 01异步函数动机.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0F628C5DE5C007D36D5 /* 01异步函数动机.swift */; };
+		9D5CB0F928C5DFAF007D36D5 /* 02转换函数签名.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0F828C5DFAF007D36D5 /* 02转换函数签名.swift */; };
+		9D5CB0FB28C5E303007D36D5 /* 03使用续体改写函数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0FA28C5E303007D36D5 /* 03使用续体改写函数.swift */; };
+		9D5CB0FD28C5E5DA007D36D5 /* 05Async_Getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0FC28C5E5DA007D36D5 /* 05Async_Getter.swift */; };
+		9D5CB10028C5ED00007D36D5 /* 01同步序列和异步序列.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0FF28C5ED00007D36D5 /* 01同步序列和异步序列.swift */; };
+		9D5CB10228C5EF2D007D36D5 /* 02异步迭代器.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB10128C5EF2D007D36D5 /* 02异步迭代器.swift */; };
+		9D5CB10428C5F2CE007D36D5 /* 03操作异步序列.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB10328C5F2CE007D36D5 /* 03操作异步序列.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +44,24 @@
 		9D06B39E2837577000EEDD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D06B3A02837577000EEDD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D06B3A6283758B600EEDD19 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
-		9D756D1828680BFF00DE6859 /* CreateAsyncFunction_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAsyncFunction_1.swift; sourceTree = "<group>"; };
-		9D756D1A2868340200DE6859 /* Async_Sequences_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async_Sequences_2.swift; sourceTree = "<group>"; };
+		9D1B073B28C6F0C8002ED38F /* 04AsyncStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 04AsyncStream.swift; sourceTree = "<group>"; };
+		9D33298528C89E2D003447D0 /* 05异步序列和响应式编程.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "05异步序列和响应式编程.swift"; sourceTree = "<group>"; };
+		9D33298828C8A2E8003447D0 /* 01网络请求中的异步函数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01网络请求中的异步函数.swift"; sourceTree = "<group>"; };
+		9D33298A28C8B069003447D0 /* 02Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 02Notification.swift; sourceTree = "<group>"; };
+		9D33298C28C8C120003447D0 /* 03异步函数的运行环境.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "03异步函数的运行环境.swift"; sourceTree = "<group>"; };
+		9D33298F28C8C438003447D0 /* 01基于Task的结构化并发模型.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01基于Task的结构化并发模型.swift"; sourceTree = "<group>"; };
+		9D53422328C9CBB3001649BD /* 02非结构化任务.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02非结构化任务.swift"; sourceTree = "<group>"; };
+		9D5CB0ED28C5CD32007D36D5 /* 01同步和异步.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01同步和异步.swift"; sourceTree = "<group>"; };
+		9D5CB0EF28C5CF4D007D36D5 /* 02异步函数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02异步函数.swift"; sourceTree = "<group>"; };
+		9D5CB0F128C5D12F007D36D5 /* 03结构化并发.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "03结构化并发.swift"; sourceTree = "<group>"; };
+		9D5CB0F328C5DB44007D36D5 /* 04Actor模型和数据隔离.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "04Actor模型和数据隔离.swift"; sourceTree = "<group>"; };
+		9D5CB0F628C5DE5C007D36D5 /* 01异步函数动机.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01异步函数动机.swift"; sourceTree = "<group>"; };
+		9D5CB0F828C5DFAF007D36D5 /* 02转换函数签名.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02转换函数签名.swift"; sourceTree = "<group>"; };
+		9D5CB0FA28C5E303007D36D5 /* 03使用续体改写函数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "03使用续体改写函数.swift"; sourceTree = "<group>"; };
+		9D5CB0FC28C5E5DA007D36D5 /* 05Async_Getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05Async_Getter.swift; sourceTree = "<group>"; };
+		9D5CB0FF28C5ED00007D36D5 /* 01同步序列和异步序列.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01同步序列和异步序列.swift"; sourceTree = "<group>"; };
+		9D5CB10128C5EF2D007D36D5 /* 02异步迭代器.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02异步迭代器.swift"; sourceTree = "<group>"; };
+		9D5CB10328C5F2CE007D36D5 /* 03操作异步序列.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "03操作异步序列.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +94,11 @@
 		9D06B3912837576E00EEDD19 /* Swift_Async */ = {
 			isa = PBXGroup;
 			children = (
+				9D33298E28C8C341003447D0 /* 结构化并发 */,
+				9D33298728C8A2C8003447D0 /* 使用异步函数 */,
+				9D5CB0FE28C5E7A0007D36D5 /* 异步序列 */,
+				9D5CB0F528C5DE41007D36D5 /* 创建异步函数 */,
+				9D5CB0EC28C5CD05007D36D5 /* Swift并发初步 */,
 				9D06B3922837576E00EEDD19 /* AppDelegate.swift */,
 				9D06B3942837576E00EEDD19 /* SceneDelegate.swift */,
 				9D06B3962837576E00EEDD19 /* ViewController.swift */,
@@ -70,10 +107,61 @@
 				9D06B39B2837577000EEDD19 /* Assets.xcassets */,
 				9D06B39D2837577000EEDD19 /* LaunchScreen.storyboard */,
 				9D06B3A02837577000EEDD19 /* Info.plist */,
-				9D756D1828680BFF00DE6859 /* CreateAsyncFunction_1.swift */,
-				9D756D1A2868340200DE6859 /* Async_Sequences_2.swift */,
 			);
 			path = Swift_Async;
+			sourceTree = "<group>";
+		};
+		9D33298728C8A2C8003447D0 /* 使用异步函数 */ = {
+			isa = PBXGroup;
+			children = (
+				9D33298828C8A2E8003447D0 /* 01网络请求中的异步函数.swift */,
+				9D33298A28C8B069003447D0 /* 02Notification.swift */,
+				9D33298C28C8C120003447D0 /* 03异步函数的运行环境.swift */,
+			);
+			path = "使用异步函数";
+			sourceTree = "<group>";
+		};
+		9D33298E28C8C341003447D0 /* 结构化并发 */ = {
+			isa = PBXGroup;
+			children = (
+				9D33298F28C8C438003447D0 /* 01基于Task的结构化并发模型.swift */,
+				9D53422328C9CBB3001649BD /* 02非结构化任务.swift */,
+			);
+			path = "结构化并发";
+			sourceTree = "<group>";
+		};
+		9D5CB0EC28C5CD05007D36D5 /* Swift并发初步 */ = {
+			isa = PBXGroup;
+			children = (
+				9D5CB0ED28C5CD32007D36D5 /* 01同步和异步.swift */,
+				9D5CB0EF28C5CF4D007D36D5 /* 02异步函数.swift */,
+				9D5CB0F128C5D12F007D36D5 /* 03结构化并发.swift */,
+				9D5CB0F328C5DB44007D36D5 /* 04Actor模型和数据隔离.swift */,
+			);
+			path = "Swift并发初步";
+			sourceTree = "<group>";
+		};
+		9D5CB0F528C5DE41007D36D5 /* 创建异步函数 */ = {
+			isa = PBXGroup;
+			children = (
+				9D5CB0F628C5DE5C007D36D5 /* 01异步函数动机.swift */,
+				9D5CB0F828C5DFAF007D36D5 /* 02转换函数签名.swift */,
+				9D5CB0FA28C5E303007D36D5 /* 03使用续体改写函数.swift */,
+				9D5CB0FC28C5E5DA007D36D5 /* 05Async_Getter.swift */,
+			);
+			path = "创建异步函数";
+			sourceTree = "<group>";
+		};
+		9D5CB0FE28C5E7A0007D36D5 /* 异步序列 */ = {
+			isa = PBXGroup;
+			children = (
+				9D5CB0FF28C5ED00007D36D5 /* 01同步序列和异步序列.swift */,
+				9D5CB10128C5EF2D007D36D5 /* 02异步迭代器.swift */,
+				9D5CB10328C5F2CE007D36D5 /* 03操作异步序列.swift */,
+				9D1B073B28C6F0C8002ED38F /* 04AsyncStream.swift */,
+				9D33298528C89E2D003447D0 /* 05异步序列和响应式编程.swift */,
+			);
+			path = "异步序列";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,12 +235,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D756D1928680BFF00DE6859 /* CreateAsyncFunction_1.swift in Sources */,
 				9D06B3A7283758B600EEDD19 /* Base.swift in Sources */,
-				9D756D1B2868340200DE6859 /* Async_Sequences_2.swift in Sources */,
+				9D5CB10428C5F2CE007D36D5 /* 03操作异步序列.swift in Sources */,
+				9D5CB0F428C5DB44007D36D5 /* 04Actor模型和数据隔离.swift in Sources */,
 				9D06B3972837576E00EEDD19 /* ViewController.swift in Sources */,
 				9D06B3932837576E00EEDD19 /* AppDelegate.swift in Sources */,
+				9D5CB0F028C5CF4D007D36D5 /* 02异步函数.swift in Sources */,
+				9D33299028C8C438003447D0 /* 01基于Task的结构化并发模型.swift in Sources */,
+				9D33298B28C8B069003447D0 /* 02Notification.swift in Sources */,
+				9D5CB0EE28C5CD32007D36D5 /* 01同步和异步.swift in Sources */,
 				9D06B3952837576E00EEDD19 /* SceneDelegate.swift in Sources */,
+				9D5CB10228C5EF2D007D36D5 /* 02异步迭代器.swift in Sources */,
+				9D5CB0F928C5DFAF007D36D5 /* 02转换函数签名.swift in Sources */,
+				9D53422428C9CBB3001649BD /* 02非结构化任务.swift in Sources */,
+				9D33298628C89E2D003447D0 /* 05异步序列和响应式编程.swift in Sources */,
+				9D33298928C8A2E8003447D0 /* 01网络请求中的异步函数.swift in Sources */,
+				9D33298D28C8C120003447D0 /* 03异步函数的运行环境.swift in Sources */,
+				9D5CB0FD28C5E5DA007D36D5 /* 05Async_Getter.swift in Sources */,
+				9D5CB0FB28C5E303007D36D5 /* 03使用续体改写函数.swift in Sources */,
+				9D1B073C28C6F0C8002ED38F /* 04AsyncStream.swift in Sources */,
+				9D5CB0F228C5D12F007D36D5 /* 03结构化并发.swift in Sources */,
+				9D5CB0F728C5DE5C007D36D5 /* 01异步函数动机.swift in Sources */,
+				9D5CB10028C5ED00007D36D5 /* 01同步序列和异步序列.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +410,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,6 +438,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

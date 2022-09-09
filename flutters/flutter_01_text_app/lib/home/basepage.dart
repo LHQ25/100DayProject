@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_01_text_app/06_10_custom_scrollview_test.dart';
 
 class BaseComponentPageView extends StatefulWidget {
   const BaseComponentPageView({Key? key}) : super(key: key);
@@ -33,6 +32,37 @@ class _BaseComponentPageViewState extends State<BaseComponentPageView> {
         'items': [
           StudyBaseItem('SingleChildScrollView', 'SingleChildScrollViewTest'),
           StudyBaseItem('ListView', 'ListViewTest')
+        ]
+      });
+      _sections.add({
+        'section': '第七章 功能型组件',
+        'items': [
+          StudyBaseItem('导航返回拦截（WillPopScope）', 'WillPopScopeTest'),
+          StudyBaseItem('数据共享（InheritedWidget）', 'InheritedWidgetTest'),
+          StudyBaseItem('按需rebuild（ValueListenableBuilder）',
+              'ValueListenanleBuilderTest'),
+          StudyBaseItem('异步UI更新 FutureBuilder', 'FutureBuilderTest'),
+          StudyBaseItem('异步UI更新 StreamBuilder', 'StreamBuilderTest'),
+          StudyBaseItem('对话框详解', 'AlertAialogWidgetTest')
+        ]
+      });
+      _sections.add({
+        'section': '第八章 事件处理与通知',
+        'items': [
+          StudyBaseItem('原始指针事件处理', 'HitTest'),
+          StudyBaseItem('处理手势的 GestureDetector', 'GestureDetectorTest'),
+          StudyBaseItem('处理手势的 GestureRecognizer', 'GestureRecognizerTest'),
+          StudyBaseItem('通知 Notification', 'NotificationTest'),
+          StudyBaseItem('自定义通知', 'NotificationCustomTest'),
+          StudyBaseItem('事件总线 EventBus', 'EventBusTest'),
+
+        ]
+      });
+
+      _sections.add({
+        'section': '第十一章 文件操作与网络请求',
+        'items': [
+          StudyBaseItem('Http 请求库 Dio', 'DioTest'),
         ]
       });
     });

@@ -7,21 +7,30 @@
 
 import UIKit
 import CoreData
+import Combine
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
+    var cancellable: AnyCancellable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            MoodyManager.shared.insertData()
-            
-            MoodyManager.shared.requestData(tableView: self.tableview)
-        }
         
+        cancellable = MoodyManager.shared.$complete
+            .sink { [weak self] res in
+                guard let `self` = self else { return }
+                if res {
+                    print("初始化完成")
+                    MoodyManager.shared.requestData(tableView: self.tableview)
+                }
+            }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
     }
@@ -42,5 +51,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        MoodyManager.shared.insertData()
+    }
     
 }

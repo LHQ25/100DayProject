@@ -13,9 +13,9 @@
 		8E6543B026FC74ED001417C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6543AE26FC74ED001417C3 /* Main.storyboard */; };
 		8E6543B526FC74EF001417C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6543B426FC74EF001417C3 /* Assets.xcassets */; };
 		8E6543B826FC74EF001417C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6543B626FC74EF001417C3 /* LaunchScreen.storyboard */; };
-		9C7DC69E27868D34000967F3 /* Area.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DC69C27868D34000967F3 /* Area.xcdatamodeld */; };
 		9D3146B928BA31C700C1900C /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3146B828BA31C700C1900C /* UIColor+.swift */; };
 		9D53BDE928BA04830047C2F4 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53BDE828BA04830047C2F4 /* Mood.swift */; };
+		9D59F53628BB18460076B0E2 /* Moody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D59F53428BB18450076B0E2 /* Moody.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		8E6543B426FC74EF001417C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E6543B726FC74EF001417C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E6543B926FC74EF001417C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C7DC69D27868D34000967F3 /* Area.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Area.xcdatamodel; sourceTree = "<group>"; };
 		9D3146B828BA31C700C1900C /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		9D53BDE828BA04830047C2F4 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		9D59F53528BB18460076B0E2 /* Mood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mood.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +69,9 @@
 				8E6543B426FC74EF001417C3 /* Assets.xcassets */,
 				8E6543B626FC74EF001417C3 /* LaunchScreen.storyboard */,
 				8E6543B926FC74EF001417C3 /* Info.plist */,
-				9C7DC69C27868D34000967F3 /* Area.xcdatamodeld */,
 				9D53BDE828BA04830047C2F4 /* Mood.swift */,
 				9D3146B828BA31C700C1900C /* UIColor+.swift */,
+				9D59F53428BB18450076B0E2 /* Moody.xcdatamodeld */,
 			);
 			path = CoreDataDemo;
 			sourceTree = "<group>";
@@ -148,8 +148,8 @@
 			files = (
 				9D53BDE928BA04830047C2F4 /* Mood.swift in Sources */,
 				8E6543AD26FC74ED001417C3 /* ViewController.swift in Sources */,
+				9D59F53628BB18460076B0E2 /* Moody.xcdatamodeld in Sources */,
 				8E6543A926FC74ED001417C3 /* AppDelegate.swift in Sources */,
-				9C7DC69E27868D34000967F3 /* Area.xcdatamodeld in Sources */,
 				8E6543AB26FC74ED001417C3 /* SceneDelegate.swift in Sources */,
 				9D3146B928BA31C700C1900C /* UIColor+.swift in Sources */,
 			);
@@ -355,13 +355,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9C7DC69C27868D34000967F3 /* Area.xcdatamodeld */ = {
+		9D59F53428BB18450076B0E2 /* Moody.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9C7DC69D27868D34000967F3 /* Area.xcdatamodel */,
+				9D59F53528BB18460076B0E2 /* Mood.xcdatamodel */,
 			);
-			currentVersion = 9C7DC69D27868D34000967F3 /* Area.xcdatamodel */;
-			path = Area.xcdatamodeld;
+			currentVersion = 9D59F53528BB18460076B0E2 /* Mood.xcdatamodel */;
+			path = Moody.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

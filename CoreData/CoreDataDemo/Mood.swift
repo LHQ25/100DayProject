@@ -18,10 +18,11 @@ import UIKit
  */
 final class Mood: NSManagedObject {
     
+    
     /*
      修饰 Mood 类属性的 @NSManaged 标签告诉编译器这些属性将由 Core Data 来实现。Core Data 用一种很不同的方式来实现它们，我们会在第二部分里详细谈论这部分内容。fileprivate(set) 这个访问控制修饰符表示这两个属性都是公开只读的。Core Data 其实并不强制执行这样的只读策略，但我们在类中定义了这些标记，于是编译器将保证它们是公开只读的。
      */
-    @NSManaged fileprivate(set) var data: Date
+    @NSManaged fileprivate(set) var date: Date
     @NSManaged fileprivate(set) var colors: [UIColor]
     
     // 了能让 Core Data 识别我们的 Mood 类，并把它和 Mood 实体相关联，我们在模型编辑器里选中这个实体，然后在 data model inspector 里输入它的类名
@@ -36,7 +37,7 @@ extension Mood {
         
         // 通过 A 来定义了一个泛型方法，A 是遵从 Managed 协议的 NSManagedObject 子类型。编译器会从方法的类型注解 (type annotation) 自动推断出我们尝试插入的对象类型
         let mood: Mood = context.insertObject()
-        mood.data = Date()
+        mood.date = Date()
         mood.colors = colors
         return mood
     }
@@ -65,7 +66,10 @@ extension Managed {
 
 // 通过约束为 NSManagedObject 子类型的协议扩展来给静态的 entityName 属性添加一个默认实现
 extension Managed where Self: NSManagedObject {
-    static var entityName: String { return entity().name! }
+    
+    static var entityName: String {
+        return entity().name!
+    }
 }
 
 //MARK: - 2 设置Core Data 栈
@@ -78,7 +82,7 @@ func createMoodyContainer(completetion: @escaping (NSPersistentContainer) -> Voi
      接下来，我们调用容器的 loadPersistentStores 方法来尝试打开底层的数据库文件。
      如果数据库文件还不存在， Core Data 会根据你在数据模型里定义的大纲 (schema) 来生成它
      */
-    let container = NSPersistentContainer(name: "Area")
+    let container = NSPersistentContainer(name: "Moody")
     container.loadPersistentStores { (_, error) in
         guard error == nil else {
             fatalError("Falied Create Container: \(error!)")
@@ -117,6 +121,8 @@ class MoodyManager: NSObject {
     
     private(set) var managerObjectContent: NSManagedObjectContext?
     
+    @Published var complete: Bool = false
+    
     static let shared = MoodyManager()
     override init() {
         super.init()
@@ -126,6 +132,8 @@ class MoodyManager: NSObject {
             
             self.persistentContainer = $0
             self.managerObjectContent = $0.viewContext
+            
+            self.complete = true
         })
     }
     
@@ -170,6 +178,8 @@ class MoodyManager: NSObject {
         frc.delegate = self
         do {
             try frc.performFetch()
+            let result = frc.fetchedObjects
+            print(request)
         } catch  {
             print(error)
         }
@@ -212,16 +222,24 @@ extension MoodyManager: NSFetchedResultsControllerDelegate {
 extension MoodyManager {
     
     func insertData() {
-        
+    
         guard let managerObjectContent = managerObjectContent else {
             return
         }
-        
-        managerObjectContent.performChanges { [weak self] in
-            guard let `self` = self else { return }
-            _ = Mood.inser(into: managerObjectContent, colors: [UIColor.random, UIColor.random])
+
+        managerObjectContent.performChanges {
+            let mood = Mood.inser(into: managerObjectContent, colors: [UIColor.random, UIColor.random])
+            print(mood)
         }
-        
+
+//        guard let mood = NSEntityDescription.insertNewObject(forEntityName: "Mood", into: managerObjectContent) as? Mood else { fatalError("Wrong object type") }
+//        mood.colors = [UIColor.random, UIColor.random]
+//        mood.date = Date()
+//        do {
+//            try managerObjectContent.save()
+//        } catch {
+//            print(error)
+//        }
     }
 }
 
@@ -258,7 +276,9 @@ extension NSManagedObjectContext {
     func performChanges(block: @escaping ()->Void) {
         perform {
             block()
-            _ = self.saveOrRollback()
+            if self.saveOrRollback() {
+                print("insert")
+            }
         }
     }
 }

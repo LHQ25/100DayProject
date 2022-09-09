@@ -23,13 +23,13 @@ struct ContentView: View {
             //创建
             VStack{
                 
-                
                 TextField("标题字符串生成带有文本标签的文本字段", text: $bindString, onEditingChanged: { (res) in
                     print(res,"onEditingChanged")
                 }) {
                     print("TextField commit")
                 }
-                .frame(width: 200, height: 30)
+                .frame(height: 30)
+                .padding()
                 
                 TextField(LocalizedStringKey("带有从本地化标题字符串生成的文本标签的文本字段"), text: $bindString2, onEditingChanged: { (res) in
                     print(res,"onEditingChanged2")
@@ -52,7 +52,7 @@ struct ContentView: View {
             }
             
             Divider()
-            //样式
+            //MARK: - 样式
             VStack{
                 
                 
@@ -94,11 +94,5 @@ struct ContentView: View {
             }
             
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
