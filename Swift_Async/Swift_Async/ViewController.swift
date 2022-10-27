@@ -18,6 +18,14 @@ class ViewController: UIViewController {
             await start()
         }
         
+        Task(priority: .high) {
+            
+        }
+
+        withUnsafeCurrentTask { task in
+            
+        }
+        
     }
     
     func testt() async -> Int {

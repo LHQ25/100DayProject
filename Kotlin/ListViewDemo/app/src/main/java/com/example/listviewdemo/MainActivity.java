@@ -1,30 +1,25 @@
 package com.example.listviewdemo;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.media.Image;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
+import com.example.listviewdemo.adapter.LAdapter;
+import com.example.listviewdemo.model.Item;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
+    private SimpleDateFormat simpleDateFormat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,80 +29,22 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listview);
 
         List<Item> items = new ArrayList();
-        items.add(new Item(1, "12312"));
+        simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        items.add(new Item(1, "Android ViewPager2 使用 + 自定义指示器视图", simpleDateFormat.format(new Date())));
 
-        MyAdapter adapter = new MyAdapter(MainActivity.this, R.id.listview, items);
+        LAdapter adapter = new LAdapter(MainActivity.this, R.id.listview, items);
 
         listView.setAdapter(adapter);
-    }
-}
 
-class MyAdapter extends ArrayAdapter<Item> {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int postion, long id) {
+                if (postion == 0) {
 
-    private final List<Item> items;
-
-    public MyAdapter(Context context, int resource, List<Item> objects) {
-        super(context, resource, objects);
-
-        items = objects;
-    }
-
-    @Override
-    public int getCount() {
-        return items.size();
-    }
-
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view;
-        ViewHolder viewHolder;
-        if (convertView == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.item, parent, false);
-            ImageView image = view.findViewById(R.id.imageview);
-            TextView t = view.findViewById(R.id.txt);
-            viewHolder = new ViewHolder();
-            viewHolder.imageView = image;
-            viewHolder.name = t;
-            view.setTag(viewHolder);
-        }else {
-            view = convertView;
-            viewHolder = (ViewHolder) convertView.getTag();
-        }
-        viewHolder.imageView.setImageResource(R.drawable.ic_launcher_background);
-        viewHolder.name.setText(items.get(position).getName());
-        return view;
-    }
-
-    class ViewHolder {
-        ImageView imageView;
-        TextView name;
-    }
-}
-
-class Item {
-
-    int id;
-    String name;
-
-    public Item(int id, String name){
-        this.id = id;
-        this.name = name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+                    Intent intent = new Intent(MainActivity.this, ViewPagerTwo.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 // MARK: - “辅助类的代码，用来帮助打印和确认事件流”
-
 public enum SampleError: Error {
     case sampleError
     case stringError(msg: String)

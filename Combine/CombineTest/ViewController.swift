@@ -10,12 +10,28 @@ import Combine
 
 class ViewController: UIViewController {
 
+    var p: HQPublisher!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         // MARK: - Publisher
-         BasePublishersTest.loadTest()
+//        HQEmpty().emptyTest()
+//        HQJust().test()
+//        HQDeferred().test()
+//        HQFail().test()
+//        HQRecord().test()
+//        HQFuture().test()
+
+//        HQPublisher().sequenceTest()
+//        HQPublisher().catchTest()
+//        HQPublisher().receiveOnTest()
+//        HQPublisher().subscribeOnTest()
+        
+//        HQAnyPublisher().test()
+        HQAnyCancellable().test()
+        
         
         // MARK: - Operator
 //        MapOperator.loadMapOperator()
@@ -48,9 +64,14 @@ class ViewController: UIViewController {
         
 //        BufferingElementsOperators.loadOperatorsTest()
         
+        // MARK: -
+//        HQSubscriberTest().test()
+//        HQSubscribersTest().test()
+//        HQAnySubscriber().test()
         
         //MARK: - Subscriber
-//        SubscriberTest.loadTest()
+//        HQPassthroughSubject().test()
+//        HQCurrentValueSubject().test()
 //        DebugTest.loadTest()
     }
 

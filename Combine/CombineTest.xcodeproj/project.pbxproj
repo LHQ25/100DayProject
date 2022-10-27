@@ -21,7 +21,6 @@
 		8E5298C4270558440075E396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5298C3270558440075E396 /* Assets.xcassets */; };
 		8E5298C7270558440075E396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E5298C5270558440075E396 /* LaunchScreen.storyboard */; };
 		8E5298D027055A150075E396 /* PublisherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298CF27055A150075E396 /* PublisherTest.swift */; };
-		8E5298D327055BBF0075E396 /* BasePublishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298D227055BBF0075E396 /* BasePublishers.swift */; };
 		8E5298D527055DF60075E396 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298D427055DF60075E396 /* Common.swift */; };
 		8E5298D9270589220075E396 /* MapOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298D8270589220075E396 /* MapOperator.swift */; };
 		8E5298DB27058CF80075E396 /* FilterOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5298DA27058CF80075E396 /* FilterOperator.swift */; };
@@ -31,9 +30,22 @@
 		8E65C290270FF478000F5E13 /* EncodingandDecodingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C28F270FF478000F5E13 /* EncodingandDecodingOperator.swift */; };
 		8E65C29227101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29127101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift */; };
 		8E65C294271016E8000F5E13 /* BufferingElementsOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C293271016E8000F5E13 /* BufferingElementsOperators.swift */; };
-		8E65C29727101D60000F5E13 /* SubscriberTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29627101D60000F5E13 /* SubscriberTest.swift */; };
+		8E65C29727101D60000F5E13 /* HQSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29627101D60000F5E13 /* HQSubscriber.swift */; };
 		8E65C29927101E7D000F5E13 /* DebugTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29827101E7D000F5E13 /* DebugTest.swift */; };
-		8E65C29C27102029000F5E13 /* SubjectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E65C29B27102029000F5E13 /* SubjectTest.swift */; };
+		9D4F63B128DAE5F200EABF2F /* HQEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63B028DAE5F200EABF2F /* HQEmpty.swift */; };
+		9D4F63B328DAE7AA00EABF2F /* HQJust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63B228DAE7AA00EABF2F /* HQJust.swift */; };
+		9D4F63B528DAE93D00EABF2F /* HQDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63B428DAE93D00EABF2F /* HQDeferred.swift */; };
+		9D4F63B728DAEBBE00EABF2F /* HQFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63B628DAEBBE00EABF2F /* HQFail.swift */; };
+		9D4F63B928DAED3A00EABF2F /* HQRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63B828DAED3A00EABF2F /* HQRecord.swift */; };
+		9D4F63BB28DAF1C900EABF2F /* HQFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63BA28DAF1C900EABF2F /* HQFuture.swift */; };
+		9D4F63BD28DAF91900EABF2F /* HQCurrentValueSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63BC28DAF91900EABF2F /* HQCurrentValueSubject.swift */; };
+		9D4F63BF28DAFAE500EABF2F /* HQPassthroughSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63BE28DAFAE500EABF2F /* HQPassthroughSubject.swift */; };
+		9D4F63C128DB104500EABF2F /* HQSubscribers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63C028DB104500EABF2F /* HQSubscribers.swift */; };
+		9D4F63C328DB13E700EABF2F /* HQAnySubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F63C228DB13E700EABF2F /* HQAnySubscriber.swift */; };
+		9D5942B828DC01E900CDF80F /* HQPublishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5942B728DC01E900CDF80F /* HQPublishers.swift */; };
+		9D5942BA28DC55ED00CDF80F /* HQAnyPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5942B928DC55ED00CDF80F /* HQAnyPublisher.swift */; };
+		9D5942BC28DC563300CDF80F /* HQAnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5942BB28DC563300CDF80F /* HQAnyCancellable.swift */; };
+		9D5942BF28DC581C00CDF80F /* HQImmediateScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5942BE28DC581C00CDF80F /* HQImmediateScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +65,6 @@
 		8E5298C6270558440075E396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E5298C8270558440075E396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E5298CF27055A150075E396 /* PublisherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherTest.swift; sourceTree = "<group>"; };
-		8E5298D227055BBF0075E396 /* BasePublishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePublishers.swift; sourceTree = "<group>"; };
 		8E5298D427055DF60075E396 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		8E5298D8270589220075E396 /* MapOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOperator.swift; sourceTree = "<group>"; };
 		8E5298DA27058CF80075E396 /* FilterOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOperator.swift; sourceTree = "<group>"; };
@@ -63,9 +74,22 @@
 		8E65C28F270FF478000F5E13 /* EncodingandDecodingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingandDecodingOperator.swift; sourceTree = "<group>"; };
 		8E65C29127101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingwithMultipleSubscribersOperators.swift; sourceTree = "<group>"; };
 		8E65C293271016E8000F5E13 /* BufferingElementsOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferingElementsOperators.swift; sourceTree = "<group>"; };
-		8E65C29627101D60000F5E13 /* SubscriberTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberTest.swift; sourceTree = "<group>"; };
+		8E65C29627101D60000F5E13 /* HQSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQSubscriber.swift; sourceTree = "<group>"; };
 		8E65C29827101E7D000F5E13 /* DebugTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTest.swift; sourceTree = "<group>"; };
-		8E65C29B27102029000F5E13 /* SubjectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTest.swift; sourceTree = "<group>"; };
+		9D4F63B028DAE5F200EABF2F /* HQEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQEmpty.swift; sourceTree = "<group>"; };
+		9D4F63B228DAE7AA00EABF2F /* HQJust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQJust.swift; sourceTree = "<group>"; };
+		9D4F63B428DAE93D00EABF2F /* HQDeferred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQDeferred.swift; sourceTree = "<group>"; };
+		9D4F63B628DAEBBE00EABF2F /* HQFail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQFail.swift; sourceTree = "<group>"; };
+		9D4F63B828DAED3A00EABF2F /* HQRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQRecord.swift; sourceTree = "<group>"; };
+		9D4F63BA28DAF1C900EABF2F /* HQFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQFuture.swift; sourceTree = "<group>"; };
+		9D4F63BC28DAF91900EABF2F /* HQCurrentValueSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQCurrentValueSubject.swift; sourceTree = "<group>"; };
+		9D4F63BE28DAFAE500EABF2F /* HQPassthroughSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQPassthroughSubject.swift; sourceTree = "<group>"; };
+		9D4F63C028DB104500EABF2F /* HQSubscribers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQSubscribers.swift; sourceTree = "<group>"; };
+		9D4F63C228DB13E700EABF2F /* HQAnySubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQAnySubscriber.swift; sourceTree = "<group>"; };
+		9D5942B728DC01E900CDF80F /* HQPublishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQPublishers.swift; sourceTree = "<group>"; };
+		9D5942B928DC55ED00CDF80F /* HQAnyPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQAnyPublisher.swift; sourceTree = "<group>"; };
+		9D5942BB28DC563300CDF80F /* HQAnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQAnyCancellable.swift; sourceTree = "<group>"; };
+		9D5942BE28DC581C00CDF80F /* HQImmediateScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQImmediateScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +122,7 @@
 		8E5298B9270558410075E396 /* CombineTest */ = {
 			isa = PBXGroup;
 			children = (
+				9D5942BD28DC580900CDF80F /* Scheduler */,
 				8E65C29A2710201B000F5E13 /* Subject */,
 				8E65C29527101D54000F5E13 /* Subscriber */,
 				8E5298D6270588920075E396 /* Operator */,
@@ -117,18 +142,26 @@
 		8E5298CE270558DD0075E396 /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
-				8E5298D127055BB00075E396 /* BasePublishers */,
+				8E5298D127055BB00075E396 /* ConveniencePublishers */,
 				8E5298CF27055A150075E396 /* PublisherTest.swift */,
+				9D5942B728DC01E900CDF80F /* HQPublishers.swift */,
+				9D5942B928DC55ED00CDF80F /* HQAnyPublisher.swift */,
+				9D5942BB28DC563300CDF80F /* HQAnyCancellable.swift */,
 			);
 			path = Publishers;
 			sourceTree = "<group>";
 		};
-		8E5298D127055BB00075E396 /* BasePublishers */ = {
+		8E5298D127055BB00075E396 /* ConveniencePublishers */ = {
 			isa = PBXGroup;
 			children = (
-				8E5298D227055BBF0075E396 /* BasePublishers.swift */,
+				9D4F63B028DAE5F200EABF2F /* HQEmpty.swift */,
+				9D4F63B228DAE7AA00EABF2F /* HQJust.swift */,
+				9D4F63B428DAE93D00EABF2F /* HQDeferred.swift */,
+				9D4F63B628DAEBBE00EABF2F /* HQFail.swift */,
+				9D4F63B828DAED3A00EABF2F /* HQRecord.swift */,
+				9D4F63BA28DAF1C900EABF2F /* HQFuture.swift */,
 			);
-			path = BasePublishers;
+			path = ConveniencePublishers;
 			sourceTree = "<group>";
 		};
 		8E5298D6270588920075E396 /* Operator */ = {
@@ -156,8 +189,10 @@
 		8E65C29527101D54000F5E13 /* Subscriber */ = {
 			isa = PBXGroup;
 			children = (
-				8E65C29627101D60000F5E13 /* SubscriberTest.swift */,
+				8E65C29627101D60000F5E13 /* HQSubscriber.swift */,
 				8E65C29827101E7D000F5E13 /* DebugTest.swift */,
+				9D4F63C028DB104500EABF2F /* HQSubscribers.swift */,
+				9D4F63C228DB13E700EABF2F /* HQAnySubscriber.swift */,
 			);
 			path = Subscriber;
 			sourceTree = "<group>";
@@ -165,9 +200,18 @@
 		8E65C29A2710201B000F5E13 /* Subject */ = {
 			isa = PBXGroup;
 			children = (
-				8E65C29B27102029000F5E13 /* SubjectTest.swift */,
+				9D4F63BC28DAF91900EABF2F /* HQCurrentValueSubject.swift */,
+				9D4F63BE28DAFAE500EABF2F /* HQPassthroughSubject.swift */,
 			);
 			path = Subject;
+			sourceTree = "<group>";
+		};
+		9D5942BD28DC580900CDF80F /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				9D5942BE28DC581C00CDF80F /* HQImmediateScheduler.swift */,
+			);
+			path = Scheduler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,28 +284,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5942BA28DC55ED00CDF80F /* HQAnyPublisher.swift in Sources */,
 				8AA197242709A0180019157F /* SequenceOperations.swift in Sources */,
 				8AA1972227099E700019157F /* MatchingCriteriaOperators.swift in Sources */,
 				8E5298D027055A150075E396 /* PublisherTest.swift in Sources */,
 				8AA197262709A4680019157F /* SelectingSpecificOperators.swift in Sources */,
 				8E5298BF270558410075E396 /* ViewController.swift in Sources */,
+				9D4F63C328DB13E700EABF2F /* HQAnySubscriber.swift in Sources */,
 				8AA197282709A69D0019157F /* CombineLastOPerator.swift in Sources */,
 				8E5298BB270558410075E396 /* AppDelegate.swift in Sources */,
-				8E65C29727101D60000F5E13 /* SubscriberTest.swift in Sources */,
+				8E65C29727101D60000F5E13 /* HQSubscriber.swift in Sources */,
 				8E65C29927101E7D000F5E13 /* DebugTest.swift in Sources */,
 				8AA1972027099C390019157F /* MathematicalOperations.swift in Sources */,
+				9D4F63BF28DAFAE500EABF2F /* HQPassthroughSubject.swift in Sources */,
 				8E5298D9270589220075E396 /* MapOperator.swift in Sources */,
-				8E5298D327055BBF0075E396 /* BasePublishers.swift in Sources */,
 				8E5298D527055DF60075E396 /* Common.swift in Sources */,
+				9D4F63B528DAE93D00EABF2F /* HQDeferred.swift in Sources */,
 				8AA1972C2709AA630019157F /* ZipOperator.swift in Sources */,
+				9D4F63BB28DAF1C900EABF2F /* HQFuture.swift in Sources */,
 				8E65C290270FF478000F5E13 /* EncodingandDecodingOperator.swift in Sources */,
+				9D4F63B128DAE5F200EABF2F /* HQEmpty.swift in Sources */,
+				9D5942BF28DC581C00CDF80F /* HQImmediateScheduler.swift in Sources */,
 				8E65C294271016E8000F5E13 /* BufferingElementsOperators.swift in Sources */,
+				9D5942BC28DC563300CDF80F /* HQAnyCancellable.swift in Sources */,
 				8E5298DD27059A940075E396 /* ReduceOperator.swift in Sources */,
+				9D4F63C128DB104500EABF2F /* HQSubscribers.swift in Sources */,
 				8E5298DB27058CF80075E396 /* FilterOperator.swift in Sources */,
+				9D4F63B928DAED3A00EABF2F /* HQRecord.swift in Sources */,
+				9D4F63B728DAEBBE00EABF2F /* HQFail.swift in Sources */,
 				8E65C29227101477000F5E13 /* WorkingwithMultipleSubscribersOperators.swift in Sources */,
+				9D4F63B328DAE7AA00EABF2F /* HQJust.swift in Sources */,
 				8E65C28C270FE6F4000F5E13 /* HandlingErrorsOperator.swift in Sources */,
-				8E65C29C27102029000F5E13 /* SubjectTest.swift in Sources */,
 				8E5298BD270558410075E396 /* SceneDelegate.swift in Sources */,
+				9D4F63BD28DAF91900EABF2F /* HQCurrentValueSubject.swift in Sources */,
+				9D5942B828DC01E900CDF80F /* HQPublishers.swift in Sources */,
 				8AA1972A2709A95D0019157F /* MergeOperator.swift in Sources */,
 				8E65C28E270FEC3C000F5E13 /* ControllingTimingOperator.swift in Sources */,
 			);
