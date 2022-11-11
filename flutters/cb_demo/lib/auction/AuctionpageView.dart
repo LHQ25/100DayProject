@@ -28,18 +28,50 @@ class _AuctionControllerState extends State<AuctionController> {
               elevation: 0,
               backgroundColor: Colors.transparent,
               title: Container(
-                margin: const EdgeInsets.all(0),
-                padding: const EdgeInsets.all(0),
-                height: 46,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(
-                            "assets/images/home/home_appbar_search_bg2.png"))),
-                child: Row(
-                  children: [Text("data")],
-                ),
-              ),
+                  margin: const EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
+                  height: 46,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage(
+                              "assets/images/home/home_appbar_search_bg2.png"))),
+                  child: GestureDetector(
+                    onTap: () => print("去搜索"),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding:
+                              const EdgeInsets.only(left: 21.5, right: 12.5),
+                          child: Image.asset(
+                            "assets/images/home/home_appbar_search_msg.png",
+                            width: 17.5,
+                            height: 17.5,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 1,
+                          height: 10,
+                          child: ColoredBox(color: Color(0xFFE6E6E8)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12.5),
+                          child: Image.asset(
+                            "assets/images/home/home_appbar_search_search.png",
+                            width: 17.5,
+                            height: 17.5,
+                          ),
+                        ),
+                        const Text(
+                          "搜索更多拍品、场次",
+                          style: TextStyle(
+                              color: Color(0xFFA1A3A6),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                        )
+                      ],
+                    ),
+                  )),
             )),
       ],
     );
