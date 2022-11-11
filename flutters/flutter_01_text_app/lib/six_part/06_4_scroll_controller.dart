@@ -28,18 +28,17 @@ jumpTo(double offset)、animateTo(double offset,...)：这两个方法用于跳�
     super.initState();
 
 // 滚动箭头
-    _scrollController.addListener(() {
-      print(_scrollController.offset);
-      if (_scrollController.offset < 1000 && showToTopBtn) {
-        setState(() {
-          showToTopBtn = false;
-        });
-      } else if (_scrollController.offset >= 1000 && !showToTopBtn) {
-        setState(() {
-          showToTopBtn = true;
-        });
-      }
-    });
+//     _scrollController.addListener(() {
+//       if (_scrollController.offset < 1000 && showToTopBtn) {
+//         setState(() {
+//           showToTopBtn = false;
+//         });
+//       } else if (_scrollController.offset >= 1000 && !showToTopBtn) {
+//         setState(() {
+//           showToTopBtn = true;
+//         });
+//       }
+//     });
 
     /*
       滚动位置恢复
@@ -89,57 +88,56 @@ jumpTo(double offset)、animateTo(double offset,...)：这两个方法用于跳�
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text('滚动控制'),
-            ),
-            floatingActionButton: !showToTopBtn
-                ? null
-                : FloatingActionButton(
-                    onPressed: () {
-                      _scrollController.animateTo(0,
-                          duration: const Duration(milliseconds: 200),
-                          curve: Curves.ease);
-                    },
-                    child: const Icon(Icons.arrow_upward),
-                  ),
-            // ListView.builder适合列表项比较多或者列表项不确定的情况
-            // body: ListView.builder(
-            //     key: _scrollKey,
-            //     itemCount: 100,
-            //     itemExtent: 50, // 高度
-            //     controller: _scrollController,
-            //     itemBuilder: (ctx, index) {
-            //       return ListTile(
-            //         title: Text('$index'),
-            //       );
-            //     }),
-            body: NotificationListener<ScrollNotification>(
-              onNotification: (notification) {
-                var offset = notification.metrics.pixels;
-                print('另一种方式实现上边的效果：$offset');
-                if (offset < 1000 && showToTopBtn) {
-                  setState(() {
-                    showToTopBtn = false;
-                  });
-                } else if (offset >= 1000 && !showToTopBtn) {
-                  setState(() {
-                    showToTopBtn = true;
-                  });
-                }
-                return true;
-              },
-              child: ListView.builder(
-                  key: _scrollKey,
-                  itemCount: 100,
-                  itemExtent: 50, // 高度
-                  // controller: _scrollController,
-                  itemBuilder: (ctx, index) {
-                    return ListTile(
-                      title: Text('$index'),
-                    );
-                  }),
-            )));
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('滚动控制'),
+        ),
+        floatingActionButton: !showToTopBtn
+            ? null
+            : FloatingActionButton(
+                onPressed: () {
+                  _scrollController.animateTo(0,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.ease);
+                },
+                child: const Icon(Icons.arrow_upward),
+              ),
+        // ListView.builder适合列表项比较多或者列表项不确定的情况
+        // body: ListView.builder(
+        //     key: _scrollKey,
+        //     itemCount: 100,
+        //     itemExtent: 50, // 高度
+        //     controller: _scrollController,
+        //     itemBuilder: (ctx, index) {
+        //       return ListTile(
+        //         title: Text('$index'),
+        //       );
+        //     }),
+        body: NotificationListener<ScrollNotification>(
+          onNotification: (notification) {
+            var offset = notification.metrics.pixels;
+            debugPrint('另一种方式实现上边的效果：$offset');
+            if (offset < 1000 && showToTopBtn) {
+              setState(() {
+                showToTopBtn = false;
+              });
+            } else if (offset >= 1000 && !showToTopBtn) {
+              setState(() {
+                showToTopBtn = true;
+              });
+            }
+            return true;
+          },
+          child: ListView.builder(
+              key: _scrollKey,
+              itemCount: 100,
+              itemExtent: 50, // 高度
+              controller: _scrollController,
+              itemBuilder: (ctx, index) {
+                return ListTile(
+                  title: Text('$index'),
+                );
+              }),
+        ));
   }
 }

@@ -235,7 +235,10 @@ class _TextFieldTestState extends State<TextFieldTest> {
 
                     // 通过这种组件组合的方式，也可以定义背景圆角等。一般来说，优先通过decoration来自定义样式，如果decoration实现不了，再用widget组合的方式
                     Container(
-                      child: TextField(
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(color: Colors.red, width: 1))),
+                      child: const TextField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                             labelText: 'email',
@@ -245,9 +248,6 @@ class _TextFieldTestState extends State<TextFieldTest> {
                             ),
                             border: InputBorder.none), //隐藏下划线
                       ),
-                      decoration: const BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(color: Colors.red, width: 1))),
                     ),
                   ],
                 )

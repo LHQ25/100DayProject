@@ -11,13 +11,9 @@ class GridViewTest extends StatefulWidget {
 class _GridViewTestState extends State<GridViewTest> {
   List<IconData> _icons = []; //保存Icon数据
 
-  /* 
-  
-  */
-
   //模拟异步获取数据
   void _retrieveIcons() {
-    Future.delayed(Duration(milliseconds: 200)).then((e) {
+    Future.delayed(const Duration(milliseconds: 200)).then((e) {
       setState(() {
         _icons.addAll([
           Icons.ac_unit,

@@ -34,40 +34,41 @@ class _AnimatedListTestState extends State<AnimatedListTest> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text('AnimatedList'),
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('AnimatedList'),
+        ),
+        body: Stack(
+          children: [
+            AnimatedList(
+              key: globalKey,
+              itemBuilder: (ctx, index, animation) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: buildItem(context, index),
+                );
+              },
+              initialItemCount: counter,
             ),
-            body: Stack(
-              children: [
-                AnimatedList(
-                  key: globalKey,
-                  itemBuilder: (ctx, index, animation) {
-                    return FadeTransition(
-                      opacity: animation,
-                      child: buildItem(context, index),
-                    );
-                  },
-                  initialItemCount: counter,
-                ),
-                buildAddButton(),
-              ],
-            )));
+            buildAddButton(),
+          ],
+        ));
   }
 
   Widget buildAddButton() {
     return Positioned(
+        left: 30,
+        top: 30,
         child: FloatingActionButton(
-      child: const Icon(Icons.add),
-      onPressed: () {
-        // 添加一个列表项
-        data.add('${++counter}');
-        // 告诉列表项有新添加的列表项
-        globalKey.currentState?.insertItem(data.length - 1);
-        print("添加 $counter");
-      },
-    ));
+          child: const Icon(Icons.add),
+          onPressed: () {
+            // 添加一个列表项
+            data.add('${++counter}');
+            // 告诉列表项有新添加的列表项
+            globalKey.currentState?.insertItem(data.length - 1);
+            debugPrint("添加 $counter");
+          },
+        ));
   }
 
   Widget buildItem(context, index) {
@@ -90,7 +91,7 @@ class _AnimatedListTestState extends State<AnimatedListTest> {
         (context, animation) {
           // 删除过程执行的是反向动画，animation.value 会从1变为0
           var item = buildItem(context, index);
-          print('删除 ${data[index]}');
+          debugPrint('删除 ${data[index]}');
           data.removeAt(index);
           // 删除动画是一个合成动画：渐隐 + 缩小列表项告诉
           return FadeTransition(

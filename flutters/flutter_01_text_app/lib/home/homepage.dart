@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_01_text_app/home/basepage.dart';
 
+import '../login/LoginPageView.dart';
+
 class HomePageView extends StatefulWidget {
   const HomePageView({Key? key}) : super(key: key);
 
@@ -24,9 +26,6 @@ class _HomePageViewState extends State<HomePageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
       body: PageView.builder(
         controller: _pageController,
         onPageChanged: (value) {
@@ -38,9 +37,7 @@ class _HomePageViewState extends State<HomePageView> {
           if (index == 0) {
             return const BaseComponentPageView();
           }
-          return Center(
-            child: Text('${_titles[index]}}'),
-          );
+          return const LoginPageView();
         },
         itemCount: _titles.length,
       ),
@@ -48,7 +45,7 @@ class _HomePageViewState extends State<HomePageView> {
     );
   }
 
-  Widget _bottomBar() {
+  _bottomBar() {
     var items = <BottomNavigationBarItem>[];
     for (var title in _titles) {
       items.add(BottomNavigationBarItem(
