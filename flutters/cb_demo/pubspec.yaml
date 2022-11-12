@@ -68,6 +68,7 @@ flutter:
     - assets/images/tabbar/
     - assets/images/banner/
     - assets/images/home/
+    - assets/images/test/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
