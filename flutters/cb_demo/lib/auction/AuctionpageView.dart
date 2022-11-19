@@ -1,8 +1,12 @@
 import 'dart:math';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:flutter/src/rendering/sliver_persistent_header.dart';
+import 'package:flutter/src/scheduler/ticker.dart';
+
+import '../custom_view/UnderlineGradientTabIndicator.dart';
+import '../util/TextStyle.dart';
 
 class AuctionController extends StatefulWidget {
   const AuctionController({super.key});
@@ -11,10 +15,13 @@ class AuctionController extends StatefulWidget {
   State<AuctionController> createState() => _AuctionControllerState();
 }
 
-class _AuctionControllerState extends State<AuctionController> {
+class _AuctionControllerState extends State<AuctionController>
+    implements TickerProvider {
   double _navAlpha = 0;
   final _images = ["assets/images/banner/1.png", "assets/images/banner/2.png"];
+  final _tabTitles = ["为你推荐", "陶瓷玉器", "艺术品", "书画篆刻", "玉翠珠宝"];
   late ScrollController _scrollController;
+  late TabController _tabController;
 
   @override
   void initState() {
@@ -23,8 +30,10 @@ class _AuctionControllerState extends State<AuctionController> {
     _scrollController = ScrollController();
     _scrollController.addListener(() => setState(() {
           double offset = _scrollController.offset;
-          _navAlpha = min(255, (offset / 300) * 255);
+          // _navAlpha = min(255, (offset / 300) * 255);
         }));
+
+    _tabController = TabController(length: _tabTitles.length, vsync: this);
   }
 
   @override
@@ -43,6 +52,8 @@ class _AuctionControllerState extends State<AuctionController> {
               return _createHeaderView();
             },
             body: ListView()),
+
+        /// 导航条
         Positioned(
             top: 0,
             left: 0,
@@ -102,6 +113,7 @@ class _AuctionControllerState extends State<AuctionController> {
 
   List<Widget> _createHeaderView() {
     return [
+      /// Banner
       SliverToBoxAdapter(
         child: SizedBox(
           width: double.infinity,
@@ -120,6 +132,8 @@ class _AuctionControllerState extends State<AuctionController> {
           ),
         ),
       ),
+
+      /// 分类
       SliverToBoxAdapter(
         child: Container(
           padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
@@ -219,6 +233,8 @@ class _AuctionControllerState extends State<AuctionController> {
           ),
         ),
       ),
+
+      /// 直播
       SliverToBoxAdapter(
           child: Container(
         // height: 30,
@@ -269,6 +285,8 @@ class _AuctionControllerState extends State<AuctionController> {
           ],
         ),
       )),
+
+      /// 拍1
       SliverToBoxAdapter(
         child: Container(
           margin: const EdgeInsets.fromLTRB(14, 22, 14, 0),
@@ -429,7 +447,7 @@ class _AuctionControllerState extends State<AuctionController> {
                                       const EdgeInsets.fromLTRB(10, 10, 10, 0),
                                   child: Text(
                                     "第102件/345件",
-                                    style: semiboldStyle(
+                                    style: semiBoldStyle(
                                         fontSize: 11,
                                         color: const Color(0xFF333333)),
                                   ),
@@ -455,12 +473,146 @@ class _AuctionControllerState extends State<AuctionController> {
           ),
         ),
       ),
+
+      /// 拍2
       SliverToBoxAdapter(
         child: Container(
           margin: const EdgeInsets.fromLTRB(14, 22, 14, 0),
           child: Column(
             children: [
+              SizedBox(
+                height: 30,
+                child: Row(
+                  children: const [
+                    Text(
+                      "全球拍",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xFF222222),
+                          fontWeight: FontWeight.w600),
+                    ),
+                    Spacer(),
+                    Text(
+                      "查看更多",
+                      style: TextStyle(
+                          fontSize: 11,
+                          color: Color(0xFF999999),
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      " >",
+                      style: TextStyle(
+                          fontSize: 11,
+                          color: Color(0xFF888888),
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+              ),
               Container(
+                constraints: const BoxConstraints(maxHeight: 200),
+                margin: const EdgeInsets.only(top: 15),
+                child: PageView.builder(
+                    itemCount: 3,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        child: Column(
+                          children: [
+                            Stack(
+                              children: [
+                                Image.asset(
+                                  "assets/images/test/test2.png",
+                                  fit: BoxFit.fitWidth,
+                                ),
+                                Positioned(
+                                    top: 0,
+                                    right: 0,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: const BorderRadius.only(
+                                              bottomLeft: Radius.circular(4)),
+                                          color: Colors.black.withAlpha(127)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            4, 2, 4, 2),
+                                        child: Text(
+                                          "距开拍 16 天",
+                                          style: mediumStyle(
+                                              fontSize: 9, color: Colors.white),
+                                        ),
+                                      ),
+                                    )),
+                              ],
+                            ),
+                            SizedBox(
+                                child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(7, 10, 4, 0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "现代纸作、印象派及现代艺术",
+                                        style: semiBoldStyle(
+                                            fontSize: 13,
+                                            color: const Color(0xFF333333)),
+                                      ),
+                                      const Spacer(),
+                                      Image.asset(
+                                        "assets/images/home/home_live_tip.png",
+                                        width: 62,
+                                        height: 13,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(7, 6, 4, 0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "佳士得 巴黎",
+                                        style: regularStyle(
+                                            fontSize: 11,
+                                            color: const Color(0xFF666666)),
+                                      ),
+                                      const Spacer(),
+                                      Image.asset(
+                                        "assets/images/home/home_eys.png",
+                                        width: 13,
+                                        height: 13,
+                                      ),
+                                      Text(
+                                        " 1328.6w 次围观",
+                                        style: semiBoldStyle(
+                                            fontSize: 11,
+                                            color: const Color(0xFF666666)),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ))
+                          ],
+                        ),
+                      );
+                    }),
+              )
+            ],
+          ),
+        ),
+      ),
+
+      /// 拍3
+      SliverToBoxAdapter(
+        child: Container(
+          margin: const EdgeInsets.fromLTRB(14, 22, 14, 0),
+          child: Column(
+            children: [
+              SizedBox(
                 height: 30,
                 child: Row(
                   children: const [
@@ -490,60 +642,82 @@ class _AuctionControllerState extends State<AuctionController> {
                 ),
               ),
               Container(
+                constraints: const BoxConstraints(maxHeight: 200),
                 margin: const EdgeInsets.only(top: 15),
-                decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(4)),
-                    border:
-                        Border.all(color: const Color(0xFFE6E6E8), width: 0.5)),
                 child: PageView.builder(
                     itemCount: 3,
                     itemBuilder: (context, index) {
                       return Container(
-                        color: Colors.red,
                         child: Column(
                           children: [
-                            Container(
-                              constraints: const BoxConstraints(minHeight: 129),
-                              child: Stack(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/test/test2.png",
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                  Positioned(
-                                      top: 0,
-                                      right: 0,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(4)),
-                                            color: Colors.black.withAlpha(127)),
-                                        child: Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              4, 2, 4, 2),
-                                          child: Text(
-                                            "距开拍 16 天",
-                                            style: mediumStyle(
-                                                fontSize: 9,
-                                                color: Colors.white),
-                                          ),
+                            Stack(
+                              children: [
+                                Image.asset(
+                                  "assets/images/test/test2.png",
+                                  fit: BoxFit.fitWidth,
+                                ),
+                                Positioned(
+                                    top: 0,
+                                    right: 0,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: const BorderRadius.only(
+                                              bottomLeft: Radius.circular(4)),
+                                          color: Colors.black.withAlpha(127)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            4, 2, 4, 2),
+                                        child: Text(
+                                          "距开拍 16 天",
+                                          style: mediumStyle(
+                                              fontSize: 9, color: Colors.white),
                                         ),
-                                      )),
-                                ],
-                              ),
+                                      ),
+                                    )),
+                              ],
                             ),
-                            // SizedBox(
-                            //     height: 50,
-                            //     child: Column(
-                            //       crossAxisAlignment: CrossAxisAlignment.start,
-                            //       children: [
-                            //         Row(
-                            //           children: [Text("data")],
-                            //         )
-                            //       ],
-                            //     ))
+                            SizedBox(
+                                child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(7, 10, 4, 0),
+                                  child: Text(
+                                    "现代纸作、印象派及现代艺术",
+                                    style: semiBoldStyle(
+                                        fontSize: 13,
+                                        color: const Color(0xFF333333)),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(7, 6, 4, 0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "主理人：汪达达",
+                                        style: regularStyle(
+                                            fontSize: 11,
+                                            color: const Color(0xFF666666)),
+                                      ),
+                                      const Spacer(),
+                                      Image.asset(
+                                        "assets/images/home/home_eys.png",
+                                        width: 13,
+                                        height: 13,
+                                      ),
+                                      Text(
+                                        " 1328.6w 次围观",
+                                        style: semiBoldStyle(
+                                            fontSize: 11,
+                                            color: const Color(0xFF666666)),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ))
                           ],
                         ),
                       );
@@ -553,15 +727,134 @@ class _AuctionControllerState extends State<AuctionController> {
           ),
         ),
       ),
+      SliverPersistentHeader(
+          pinned: true, // header 滑动到可视区域顶部时是否固定在顶部
+          floating: false,
+          delegate: SliverHeaderDelegate.fixedHeight(
+              child: Stack(
+                children: [
+                  TabBar(
+                      controller: _tabController,
+                      indicatorSize: TabBarIndicatorSize.label,
+                      indicatorWeight: 1,
+                      indicator: const UnderlineGradientTabIndicator(
+                          borderSide:
+                              BorderSide(strokeAlign: StrokeAlign.inside)),
+                      automaticIndicatorColorAdjustment: true,
+                      unselectedLabelStyle: mediumStyle(
+                        fontSize: 13,
+                        color: const Color(0xFF999999),
+                      ),
+                      labelStyle: semiBoldStyle(
+                        fontSize: 14,
+                        color: const Color(0xFF333333),
+                      ),
+                      tabs: _tabTitles
+                          .map((e) => Tab(
+                                text: e,
+                              ))
+                          .toList()),
+                ],
+              ),
+              height: 40)),
+      // SliverToBoxAdapter(
+      //   child: Stack(
+      //     children: [
+      //       TabBar(
+      //           controller: _tabController,
+      //           indicatorSize: TabBarIndicatorSize.label,
+      //           indicatorWeight: 1,
+      //           indicator: const UnderlineGradientTabIndicator(
+      //               borderSide: BorderSide(strokeAlign: StrokeAlign.inside)),
+      //           automaticIndicatorColorAdjustment: true,
+      //           unselectedLabelStyle: mediumStyle(
+      //             fontSize: 13,
+      //             color: const Color(0xFF999999),
+      //           ),
+      //           labelStyle: semiBoldStyle(
+      //             fontSize: 14,
+      //             color: const Color(0xFF333333),
+      //           ),
+      //           tabs: _tabTitles
+      //               .map((e) => Tab(
+      //                     text: e,
+      //                   ))
+      //               .toList()),
+      //     ],
+      //   ),
+      // )
     ];
+  }
+
+  @override
+  Ticker createTicker(TickerCallback onTick) {
+    return Ticker(onTick);
   }
 }
 
-TextStyle regularStyle({required double fontSize, required Color color}) =>
-    TextStyle(fontWeight: FontWeight.w400, fontSize: fontSize, color: color);
+typedef SliverHeaderBuilder = Widget Function(
+    BuildContext context, double shrinkOffset, bool overlapsContent);
 
-TextStyle mediumStyle({required double fontSize, required Color color}) =>
-    TextStyle(fontWeight: FontWeight.w500, fontSize: fontSize, color: color);
+class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
+  // child 为 header
+  SliverHeaderDelegate({
+    required this.maxHeight,
+    this.minHeight = 0,
+    required Widget child,
+  })  : builder = ((a, b, c) => child),
+        assert(minHeight <= maxHeight && minHeight >= 0);
 
-TextStyle semiboldStyle({required double fontSize, required Color color}) =>
-    TextStyle(fontWeight: FontWeight.w600, fontSize: fontSize, color: color);
+  //最大和最小高度相同
+  SliverHeaderDelegate.fixedHeight({
+    required double height,
+    required Widget child,
+  })  : builder = ((a, b, c) => child),
+        maxHeight = height,
+        minHeight = height;
+
+  //需要自定义builder时使用
+  SliverHeaderDelegate.builder({
+    required this.maxHeight,
+    this.minHeight = 0,
+    required this.builder,
+  });
+
+  final double maxHeight;
+  final double minHeight;
+  final SliverHeaderBuilder builder;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    Widget child = builder(context, shrinkOffset, overlapsContent);
+    //测试代码：如果在调试模式，且子组件设置了key，则打印日志
+    assert(() {
+      if (child.key != null) {
+        print('${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
+      }
+      return true;
+    }());
+    // 让 header 尽可能充满限制的空间；宽度为 Viewport 宽度，
+    // 高度随着用户滑动在[minHeight,maxHeight]之间变化。
+    return SizedBox.expand(child: child);
+  }
+
+  @override
+  double get maxExtent => maxHeight;
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  bool shouldRebuild(SliverHeaderDelegate old) {
+    return old.maxExtent != maxExtent || old.minExtent != minExtent;
+  }
+
+  @override
+  PersistentHeaderShowOnScreenConfiguration? get showOnScreenConfiguration =>
+      const PersistentHeaderShowOnScreenConfiguration(
+          minShowOnScreenExtent: 200);
+}
