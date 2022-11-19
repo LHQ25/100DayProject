@@ -32,6 +32,8 @@
 		9D5CB10028C5ED00007D36D5 /* 01同步序列和异步序列.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB0FF28C5ED00007D36D5 /* 01同步序列和异步序列.swift */; };
 		9D5CB10228C5EF2D007D36D5 /* 02异步迭代器.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB10128C5EF2D007D36D5 /* 02异步迭代器.swift */; };
 		9D5CB10428C5F2CE007D36D5 /* 03操作异步序列.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CB10328C5F2CE007D36D5 /* 03操作异步序列.swift */; };
+		9DDEEF292925D2E60087D6C3 /* Swift中的actor和隔离检查.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDEEF282925D2E60087D6C3 /* Swift中的actor和隔离检查.swift */; };
+		9DDEEF2C292604D10087D6C3 /* 全局actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDEEF2B292604D10087D6C3 /* 全局actor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		9D5CB0FF28C5ED00007D36D5 /* 01同步序列和异步序列.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01同步序列和异步序列.swift"; sourceTree = "<group>"; };
 		9D5CB10128C5EF2D007D36D5 /* 02异步迭代器.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02异步迭代器.swift"; sourceTree = "<group>"; };
 		9D5CB10328C5F2CE007D36D5 /* 03操作异步序列.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "03操作异步序列.swift"; sourceTree = "<group>"; };
+		9DDEEF282925D2E60087D6C3 /* Swift中的actor和隔离检查.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift中的actor和隔离检查.swift"; sourceTree = "<group>"; };
+		9DDEEF2B292604D10087D6C3 /* 全局actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "全局actor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		9D06B3912837576E00EEDD19 /* Swift_Async */ = {
 			isa = PBXGroup;
 			children = (
+				9DDEEF2A292604B20087D6C3 /* 全局 actor可重入和Sendable */,
+				9DDEEF272925D2AF0087D6C3 /* actor模型和数据隔离 */,
 				9D33298E28C8C341003447D0 /* 结构化并发 */,
 				9D33298728C8A2C8003447D0 /* 使用异步函数 */,
 				9D5CB0FE28C5E7A0007D36D5 /* 异步序列 */,
@@ -162,6 +168,22 @@
 				9D33298528C89E2D003447D0 /* 05异步序列和响应式编程.swift */,
 			);
 			path = "异步序列";
+			sourceTree = "<group>";
+		};
+		9DDEEF272925D2AF0087D6C3 /* actor模型和数据隔离 */ = {
+			isa = PBXGroup;
+			children = (
+				9DDEEF282925D2E60087D6C3 /* Swift中的actor和隔离检查.swift */,
+			);
+			path = "actor模型和数据隔离";
+			sourceTree = "<group>";
+		};
+		9DDEEF2A292604B20087D6C3 /* 全局 actor可重入和Sendable */ = {
+			isa = PBXGroup;
+			children = (
+				9DDEEF2B292604D10087D6C3 /* 全局actor.swift */,
+			);
+			path = "全局 actor可重入和Sendable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DDEEF292925D2E60087D6C3 /* Swift中的actor和隔离检查.swift in Sources */,
 				9D06B3A7283758B600EEDD19 /* Base.swift in Sources */,
 				9D5CB10428C5F2CE007D36D5 /* 03操作异步序列.swift in Sources */,
 				9D5CB0F428C5DB44007D36D5 /* 04Actor模型和数据隔离.swift in Sources */,
@@ -243,6 +266,7 @@
 				9D5CB0F028C5CF4D007D36D5 /* 02异步函数.swift in Sources */,
 				9D33299028C8C438003447D0 /* 01基于Task的结构化并发模型.swift in Sources */,
 				9D33298B28C8B069003447D0 /* 02Notification.swift in Sources */,
+				9DDEEF2C292604D10087D6C3 /* 全局actor.swift in Sources */,
 				9D5CB0EE28C5CD32007D36D5 /* 01同步和异步.swift in Sources */,
 				9D06B3952837576E00EEDD19 /* SceneDelegate.swift in Sources */,
 				9D5CB10228C5EF2D007D36D5 /* 02异步迭代器.swift in Sources */,
