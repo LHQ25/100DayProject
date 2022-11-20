@@ -39,6 +39,8 @@ dependencies:
   fluro: ^2.0.4
   flutter_native_splash: ^2.2.14
   card_swiper: ^2.0.4
+  waterfall_flow: ^3.0.2
+  nb_utils: ^4.6.24
 
 dev_dependencies:
   flutter_test:

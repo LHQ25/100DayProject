@@ -7,6 +7,7 @@ import 'package:flutter/src/scheduler/ticker.dart';
 
 import '../custom_view/UnderlineGradientTabIndicator.dart';
 import '../util/TextStyle.dart';
+import 'AuctionListPageView.dart';
 
 class AuctionController extends StatefulWidget {
   const AuctionController({super.key});
@@ -22,6 +23,7 @@ class _AuctionControllerState extends State<AuctionController>
   final _tabTitles = ["为你推荐", "陶瓷玉器", "艺术品", "书画篆刻", "玉翠珠宝"];
   late ScrollController _scrollController;
   late TabController _tabController;
+  bool isVer = false;
 
   @override
   void initState() {
@@ -30,7 +32,7 @@ class _AuctionControllerState extends State<AuctionController>
     _scrollController = ScrollController();
     _scrollController.addListener(() => setState(() {
           double offset = _scrollController.offset;
-          // _navAlpha = min(255, (offset / 300) * 255);
+          _navAlpha = min(255, (offset / 300) * 255);
         }));
 
     _tabController = TabController(length: _tabTitles.length, vsync: this);
@@ -51,7 +53,19 @@ class _AuctionControllerState extends State<AuctionController>
             headerSliverBuilder: (context, value) {
               return _createHeaderView();
             },
-            body: ListView()),
+            body: TabBarView(controller: _tabController, children: isVer ? const [
+              AuctionGridPageView(),
+              AuctionGridPageView(),
+              AuctionGridPageView(),
+              AuctionGridPageView(),
+              AuctionGridPageView(),
+            ] : const [
+              AuctionListPageView(),
+              AuctionListPageView(),
+              AuctionListPageView(),
+              AuctionListPageView(),
+              AuctionListPageView(),
+            ])),
 
         /// 导航条
         Positioned(
@@ -732,6 +746,7 @@ class _AuctionControllerState extends State<AuctionController>
           floating: false,
           delegate: SliverHeaderDelegate.fixedHeight(
               child: Stack(
+                alignment: AlignmentDirectional.center,
                 children: [
                   TabBar(
                       controller: _tabController,
@@ -754,6 +769,48 @@ class _AuctionControllerState extends State<AuctionController>
                                 text: e,
                               ))
                           .toList()),
+                  Positioned(
+                      right: 0,
+                      width: 75,
+                      height: 27,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(image: AssetImage("assets/images/home/home_cate_bj.png",))
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: SizedBox(
+                                width: 12,
+                                height: 12,
+                                child: IconButton(
+                                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                                    iconSize: 12, onPressed: ()=>setState(() {
+                                  isVer = !isVer;
+                                }),
+                                    icon: const ImageIcon(
+                                        size: 12,
+                                        AssetImage("assets/images/home/home_cate_open.png")
+                                    )
+                                )
+                            )),
+                            Expanded(child: SizedBox(
+                                width: 12,
+                                height: 12,
+                                child:IconButton(
+                                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                                    iconSize: 12,
+                                    onPressed: (){},
+                                    icon: const ImageIcon(
+                                        size: 12,
+                                        AssetImage("assets/images/home/home_cate_list.png")
+                                    )
+                                )
+                            ))
+                          ],
+                        ),
+                      )
+                  )
                 ],
               ),
               height: 40)),
