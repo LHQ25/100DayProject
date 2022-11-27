@@ -1,3 +1,6 @@
+import 'package:cb_demo/artic/ArticleVideoPageView.dart';
+import 'package:cb_demo/mine/MineJoinPageView.dart';
+import 'package:cb_demo/util/WebView.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
@@ -8,16 +11,21 @@ class Application {
 }
 
 class Routes {
-
   static String root = "/";
+  static String webView = "webView";
+  static String videoView = "videoView";
+  static String joinView = "JoinPageView";
 
   static void configureRoutes(FluroRouter router) {
     router.notFoundHandler = Handler(
         handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-          print("ROUTE WAS NOT FOUND !!!");
-          return;
-        });
+      print("ROUTE WAS NOT FOUND !!!");
+      return;
+    });
     router.define(root, handler: rootHandler);
+    router.define(webView, handler: webViewHandler);
+    router.define(videoView, handler: videoViewHandler);
+    router.define(joinView, handler: joinPageHandler);
     // router.define(demoSimple, handler: demoRouteHandler);
     // router.define(demoSimpleFixedTrans,
     //     handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
@@ -28,21 +36,27 @@ class Routes {
 
 var rootHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-      return HomeComponent();
-    });
+  return const HomeComponent();
+});
 
-// var demoRouteHandler = Handler(
-//     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-//       String? message = params["message"]?.first;
-//       String? colorHex = params["color_hex"]?.first;
-//       String? result = params["result"]?.first;
-//       Color color = Color(0xFFFFFFFF);
-//       if (colorHex != null && colorHex.length > 0) {
-//         color = Color(ColorHelpers.fromHexString(colorHex));
-//       }
-//       return DemoSimpleComponent(
-//           message: message ?? 'Testing', color: color, result: result);
-//     });
+var webViewHandler = Handler(
+    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  String? url = params["url"]?.first;
+
+  return CustomWebView(url);
+});
+
+var videoViewHandler = Handler(
+    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  String? url = params["url"]?.first;
+
+  return const ArticleVideoPageView();
+});
+
+var joinPageHandler = Handler(
+    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  return const MineJoinPageView();
+});
 //
 // var demoFunctionHandler = Handler(
 //     type: HandlerType.function,

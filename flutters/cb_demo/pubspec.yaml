@@ -41,6 +41,9 @@ dependencies:
   card_swiper: ^2.0.4
   waterfall_flow: ^3.0.2
   nb_utils: ^4.6.24
+  fluttertoast: ^8.1.1
+  webview_flutter: ^3.0.4
+  video_player: ^2.4.8
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +73,8 @@ flutter:
     - assets/images/tabbar/
     - assets/images/banner/
     - assets/images/home/
+    - assets/images/article/
+    - assets/images/mine/
     - assets/images/test/
 
   # An image asset can refer to one or more resolution-specific "variants", see

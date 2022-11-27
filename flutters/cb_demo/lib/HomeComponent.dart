@@ -1,6 +1,8 @@
+import 'package:cb_demo/artic/ArticPageView.dart';
 import 'package:flutter/material.dart';
 
 import 'auction/AuctionpageView.dart';
+import 'mine/MinePageView.dart';
 
 class HomeComponent extends StatefulWidget {
   const HomeComponent({Key? key}) : super(key: key);
@@ -31,6 +33,10 @@ class _HomeComponentState extends State<HomeComponent> {
         itemBuilder: (context, index) {
           if (index == 0) {
             return const AuctionController();
+          } else if (index == 2) {
+            return const ArticPageView();
+          } else if (index == 3) {
+            return const MinePageView();
           }
           return Center(
             child: Text("$_currentIndex index"),

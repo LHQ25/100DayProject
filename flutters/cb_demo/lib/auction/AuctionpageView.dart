@@ -1,3 +1,4 @@
+import 'dart:developer' as dev show log;
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _AuctionControllerState extends State<AuctionController>
     _scrollController = ScrollController();
     _scrollController.addListener(() => setState(() {
           double offset = _scrollController.offset;
-          _navAlpha = min(255, (offset / 300) * 255);
+          _navAlpha = min(1, max(0, (offset / 300)));
         }));
 
     _tabController = TabController(length: _tabTitles.length, vsync: this);
@@ -53,28 +54,36 @@ class _AuctionControllerState extends State<AuctionController>
             headerSliverBuilder: (context, value) {
               return _createHeaderView();
             },
-            body: TabBarView(controller: _tabController, children: isVer ? const [
-              AuctionGridPageView(),
-              AuctionGridPageView(),
-              AuctionGridPageView(),
-              AuctionGridPageView(),
-              AuctionGridPageView(),
-            ] : const [
-              AuctionListPageView(),
-              AuctionListPageView(),
-              AuctionListPageView(),
-              AuctionListPageView(),
-              AuctionListPageView(),
-            ])),
+            body: TabBarView(
+                controller: _tabController,
+                children: isVer == false
+                    ? const [
+                        AuctionGridPageView(),
+                        AuctionGridPageView(),
+                        AuctionGridPageView(),
+                        AuctionGridPageView(),
+                        AuctionGridPageView(),
+                      ]
+                    : const [
+                        AuctionListPageView(),
+                        AuctionListPageView(),
+                        AuctionListPageView(),
+                        AuctionListPageView(),
+                        AuctionListPageView(),
+                      ])),
+      ],
+    );
+  }
 
-        /// 导航条
-        Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
+  List<Widget> _createHeaderView() {
+    return [
+      SliverPersistentHeader(
+        pinned: true,
+        delegate: SliverHeaderDelegate.fixedHeight(
+            height: 88,
             child: AppBar(
               elevation: 0,
-              backgroundColor: Colors.white.withAlpha(_navAlpha.toInt()),
+              backgroundColor: Colors.white.withOpacity(_navAlpha),
               title: Container(
                   margin: const EdgeInsets.all(0),
                   padding: const EdgeInsets.all(0),
@@ -85,7 +94,7 @@ class _AuctionControllerState extends State<AuctionController>
                           image: AssetImage(
                               "assets/images/home/home_appbar_search_bg2.png"))),
                   child: GestureDetector(
-                    onTap: () => print("去搜索"),
+                    onTap: () => dev.log("去搜索"),
                     child: Row(
                       children: [
                         Padding(
@@ -121,12 +130,8 @@ class _AuctionControllerState extends State<AuctionController>
                     ),
                   )),
             )),
-      ],
-    );
-  }
+      ),
 
-  List<Widget> _createHeaderView() {
-    return [
       /// Banner
       SliverToBoxAdapter(
         child: SizedBox(
@@ -741,105 +746,88 @@ class _AuctionControllerState extends State<AuctionController>
           ),
         ),
       ),
+
       SliverPersistentHeader(
           pinned: true, // header 滑动到可视区域顶部时是否固定在顶部
           floating: false,
           delegate: SliverHeaderDelegate.fixedHeight(
+              height: 40,
               child: Stack(
                 alignment: AlignmentDirectional.center,
                 children: [
-                  TabBar(
-                      controller: _tabController,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      indicatorWeight: 1,
-                      indicator: const UnderlineGradientTabIndicator(
-                          borderSide:
-                              BorderSide(strokeAlign: StrokeAlign.inside)),
-                      automaticIndicatorColorAdjustment: true,
-                      unselectedLabelStyle: mediumStyle(
-                        fontSize: 13,
-                        color: const Color(0xFF999999),
-                      ),
-                      labelStyle: semiBoldStyle(
-                        fontSize: 14,
-                        color: const Color(0xFF333333),
-                      ),
-                      tabs: _tabTitles
-                          .map((e) => Tab(
-                                text: e,
-                              ))
-                          .toList()),
+                  Positioned(
+                      left: 0,
+                      right: 30,
+                      bottom: 0,
+                      child: ColoredBox(
+                        color: Colors.red,
+                        child: TabBar(
+                            controller: _tabController,
+                            indicatorSize: TabBarIndicatorSize.label,
+                            indicatorWeight: 1,
+                            indicator: const UnderlineGradientTabIndicator(
+                                borderSide: BorderSide(
+                                    strokeAlign: StrokeAlign.inside)),
+                            automaticIndicatorColorAdjustment: true,
+                            unselectedLabelStyle: mediumStyle(
+                              fontSize: 13,
+                              color: const Color(0xFF999999),
+                            ),
+                            labelStyle: semiBoldStyle(
+                              fontSize: 14,
+                              color: const Color(0xFF333333),
+                            ),
+                            tabs: _tabTitles
+                                .map((e) => Tab(
+                                      text: e,
+                                    ))
+                                .toList()),
+                      )),
                   Positioned(
                       right: 0,
                       width: 75,
                       height: 27,
                       child: Container(
                         decoration: const BoxDecoration(
-                          image: DecorationImage(image: AssetImage("assets/images/home/home_cate_bj.png",))
-                        ),
+                            image: DecorationImage(
+                                image: AssetImage(
+                          "assets/images/home/home_cate_bj.png",
+                        ))),
                         child: Row(
                           children: [
                             Expanded(
                                 child: SizedBox(
-                                width: 12,
-                                height: 12,
-                                child: IconButton(
-                                    padding: const EdgeInsets.symmetric(horizontal: 0),
-                                    iconSize: 12, onPressed: ()=>setState(() {
-                                  isVer = !isVer;
-                                }),
-                                    icon: const ImageIcon(
-                                        size: 12,
-                                        AssetImage("assets/images/home/home_cate_open.png")
-                                    )
-                                )
-                            )),
-                            Expanded(child: SizedBox(
-                                width: 12,
-                                height: 12,
-                                child:IconButton(
-                                    padding: const EdgeInsets.symmetric(horizontal: 0),
-                                    iconSize: 12,
-                                    onPressed: (){},
-                                    icon: const ImageIcon(
-                                        size: 12,
-                                        AssetImage("assets/images/home/home_cate_list.png")
-                                    )
-                                )
-                            ))
+                                    width: 12,
+                                    height: 12,
+                                    child: IconButton(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 0),
+                                        iconSize: 12,
+                                        onPressed: () => setState(() {
+                                              isVer = !isVer;
+                                            }),
+                                        icon: const ImageIcon(
+                                            size: 12,
+                                            AssetImage(
+                                                "assets/images/home/home_cate_open.png"))))),
+                            Expanded(
+                                child: SizedBox(
+                                    width: 12,
+                                    height: 12,
+                                    child: IconButton(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 0),
+                                        iconSize: 12,
+                                        onPressed: () {},
+                                        icon: const ImageIcon(
+                                            size: 12,
+                                            AssetImage(
+                                                "assets/images/home/home_cate_list.png")))))
                           ],
                         ),
-                      )
-                  )
+                      ))
                 ],
-              ),
-              height: 40)),
-      // SliverToBoxAdapter(
-      //   child: Stack(
-      //     children: [
-      //       TabBar(
-      //           controller: _tabController,
-      //           indicatorSize: TabBarIndicatorSize.label,
-      //           indicatorWeight: 1,
-      //           indicator: const UnderlineGradientTabIndicator(
-      //               borderSide: BorderSide(strokeAlign: StrokeAlign.inside)),
-      //           automaticIndicatorColorAdjustment: true,
-      //           unselectedLabelStyle: mediumStyle(
-      //             fontSize: 13,
-      //             color: const Color(0xFF999999),
-      //           ),
-      //           labelStyle: semiBoldStyle(
-      //             fontSize: 14,
-      //             color: const Color(0xFF333333),
-      //           ),
-      //           tabs: _tabTitles
-      //               .map((e) => Tab(
-      //                     text: e,
-      //                   ))
-      //               .toList()),
-      //     ],
-      //   ),
-      // )
+              ))),
     ];
   }
 
@@ -890,7 +878,8 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
     //测试代码：如果在调试模式，且子组件设置了key，则打印日志
     assert(() {
       if (child.key != null) {
-        print('${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
+        dev.log(
+            '${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
       }
       return true;
     }());
@@ -906,12 +895,8 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   double get minExtent => minHeight;
 
   @override
-  bool shouldRebuild(SliverHeaderDelegate old) {
-    return old.maxExtent != maxExtent || old.minExtent != minExtent;
+  bool shouldRebuild(SliverHeaderDelegate oldDelegate) {
+    return oldDelegate.maxExtent != maxExtent ||
+        oldDelegate.minExtent != minExtent;
   }
-
-  @override
-  PersistentHeaderShowOnScreenConfiguration? get showOnScreenConfiguration =>
-      const PersistentHeaderShowOnScreenConfiguration(
-          minShowOnScreenExtent: 200);
 }
