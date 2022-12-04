@@ -18,7 +18,7 @@ class AuctionController extends StatefulWidget {
 }
 
 class _AuctionControllerState extends State<AuctionController>
-    implements TickerProvider {
+    with SingleTickerProviderStateMixin {
   double _navAlpha = 0;
   final _images = ["assets/images/banner/1.png", "assets/images/banner/2.png"];
   final _tabTitles = ["为你推荐", "陶瓷玉器", "艺术品", "书画篆刻", "玉翠珠宝"];
@@ -47,9 +47,10 @@ class _AuctionControllerState extends State<AuctionController>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        NestedScrollView(
+    return MediaQuery.removeViewPadding(
+        removeTop: false,
+        context: context,
+        child: NestedScrollView(
             controller: _scrollController,
             headerSliverBuilder: (context, value) {
               return _createHeaderView();
@@ -70,9 +71,7 @@ class _AuctionControllerState extends State<AuctionController>
                         AuctionListPageView(),
                         AuctionListPageView(),
                         AuctionListPageView(),
-                      ])),
-      ],
-    );
+                      ])));
   }
 
   List<Widget> _createHeaderView() {
@@ -829,11 +828,6 @@ class _AuctionControllerState extends State<AuctionController>
                 ],
               ))),
     ];
-  }
-
-  @override
-  Ticker createTicker(TickerCallback onTick) {
-    return Ticker(onTick);
   }
 }
 

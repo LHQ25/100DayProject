@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 
-mixin SimpleColor1 {
-  static Color color333333 = const Color(0xFF333333);
-}
+const Color color111111 = Color(0xFF111111);
+const Color color222222 = Color(0xFF222222);
+const Color color333333 = Color(0xFF333333);
+const Color color666666 = Color(0xFF666666);
+const Color color999999 = Color(0xFF999999);
 
-extension on Colors {
-  static const Color color333333 = Color(0xFF333333);
-
-  // static Color color333333() => const Color(0xFF333333);
-}
-
-void main() async {}
-
-// extension Colors on SimpleColor {}
+const Color colorF72800 = Color(0xFFF72800);

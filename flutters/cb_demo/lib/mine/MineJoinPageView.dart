@@ -1,6 +1,5 @@
 import 'package:cb_demo/util/TextStyle.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/scheduler/ticker.dart';
 import '../util/SimpleColor.dart';
 
 class MineJoinPageView extends StatefulWidget {
@@ -11,14 +10,17 @@ class MineJoinPageView extends StatefulWidget {
 }
 
 class _MineJoinPageViewState extends State<MineJoinPageView>
-    implements TickerProvider {
+    with SingleTickerProviderStateMixin {
   final _tabTitles = ["竞拍中", "已竞得", "私洽", "未竞得"];
 
   late TabController _tabController;
 
   @override
   void initState() {
-    _tabController = TabController(length: _tabTitles.length, vsync: this);
+    _tabController = TabController(
+        length: _tabTitles.length,
+        vsync: this,
+        animationDuration: Duration.zero);
 
     super.initState();
   }
@@ -31,14 +33,13 @@ class _MineJoinPageViewState extends State<MineJoinPageView>
           elevation: 1,
           title: Text(
             "我的参拍",
-            style: mediumStyle(fontSize: 16, color: const Color(0xFF222222)),
+            style: mediumStyle(fontSize: 16, color: color222222),
           ),
           bottom: TabBar(
               controller: _tabController,
-              labelStyle:
-                  semiBoldStyle(fontSize: 14, color: const Color(0xFF333333)),
+              labelStyle: semiBoldStyle(fontSize: 14, color: color333333),
               unselectedLabelStyle:
-                  mediumStyle(fontSize: 13, color: const Color(0xFF999999)),
+                  mediumStyle(fontSize: 13, color: color999999),
               enableFeedback: false,
               splashFactory: NoSplash.splashFactory, // 波纹飞溅效果
               overlayColor: MaterialStateProperty.all(Colors.white), // 波纹飞溅颜色
@@ -48,7 +49,7 @@ class _MineJoinPageViewState extends State<MineJoinPageView>
               indicatorPadding:
                   const EdgeInsets.only(bottom: 8, left: 6, right: 6),
               indicator: const UnderlineTabIndicator(
-                  borderSide: BorderSide(color: Color(0xFFF72800))),
+                  borderSide: BorderSide(color: colorF72800)),
               tabs: _tabTitles
                   .map((e) => Tab(
                         text: e,
@@ -200,9 +201,4 @@ class _MineJoinPageViewState extends State<MineJoinPageView>
           ),
         );
       });
-
-  @override
-  Ticker createTicker(TickerCallback onTick) {
-    return Ticker(onTick);
-  }
 }
