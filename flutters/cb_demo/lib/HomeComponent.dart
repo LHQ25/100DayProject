@@ -2,6 +2,7 @@ import 'package:cb_demo/artic/ArticPageView.dart';
 import 'package:flutter/material.dart';
 
 import 'auction/AuctionpageView.dart';
+import 'category/ShopCategoryPageView.dart';
 import 'mine/MinePageView.dart';
 
 class HomeComponent extends StatefulWidget {
@@ -33,6 +34,8 @@ class _HomeComponentState extends State<HomeComponent> {
         itemBuilder: (context, index) {
           if (index == 0) {
             return const AuctionController();
+          } else if (index == 1) {
+            return const GoodsCategoryPageView();
           } else if (index == 2) {
             return const ArticPageView();
           } else if (index == 3) {

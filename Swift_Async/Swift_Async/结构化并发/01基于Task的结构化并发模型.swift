@@ -32,6 +32,7 @@ func test_current_task() {
     withUnsafeCurrentTask { task in
         //1
         debugPrint(task as Any)
+        // await foo() // -> Cannot pass function of type '(UnsafeCurrentTask?) async -> ()' to parameter expecting synchronous function type
     }
     Task {
         //2

@@ -86,6 +86,7 @@ class Worker: WorkDelegate {
     
     func performWork(delegate: WorkDelegate) {
         
+        continuation?.resume(returning: [])
     }
     
     func doWork() async throws -> [String] {

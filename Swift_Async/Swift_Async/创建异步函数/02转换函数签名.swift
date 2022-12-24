@@ -20,13 +20,15 @@ import UIKit
  对于基于回调的异步操作，一般性的转换原则就是将回调去掉，为函数加上 async 修饰。
  如果回调接受 Error? 表示错误的话，新的异步函数应当可以 throws，最后把回调参数当作异步函数的返回值即可
  */
-func calculate(input: Int, completion: @escaping (Int) -> Void) {}
-func load(completion: @escaping ([String]?, Error?) -> Void){}
+func calculate(input: Int, completion: @escaping (Int) -> Void) { }
+
+func load(completion: @escaping ([String]?, Error?) -> Void) { }
 
  // 转换为
 
 func calculate(input: Int) async -> Int { return 0 }
 func load() async throws -> [String] { return [] }
+
 /*
  当遇到可抛出的异步函数时，编译器要求我们将 async 放在 throws 前；
  在这类函数的调用侧，编译器同样做出了强制规定，要求将 try 放在 await 之前
