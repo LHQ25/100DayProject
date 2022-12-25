@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='start'/>
+        <page name='时间操作符-measureInterval'/>
+        <page name='过滤操作符-compactMap'/>
+        <page name='过滤操作符-drop'/>
+        <page name='过滤操作符-filter'/>
+        <page name='过滤操作符-first'/>
+        <page name='过滤操作符-ignoreOutput'/>
+        <page name='过滤操作符-last'/>
+        <page name='过滤操作符-prefix'/>
+        <page name='过滤操作符-removeDuplicates'/>
+        <page name='时间操作符-Debounce'/>
+        <page name='时间操作符-delay'/>
+        <page name='时间操作符-Throttle'/>
+        <page name='时间操作符-timeout'/>
+        <page name='转换操作符-collect'/>
+        <page name='转换操作符-map'/>
+        <page name='转换操作符-replace'/>
+        <page name='转换操作符-scan'/>
+        <page name='组合操作符-append'/>
+        <page name='组合操作符-combineLatest'/>
+        <page name='组合操作符-merge'/>
+        <page name='组合操作符-prepend'/>
+        <page name='组合操作符-switchToLatest'/>
+        <page name='组合操作符-zip'/>
+        <page name='时间操作符-collect'/>
+    </pages>
+</playground>

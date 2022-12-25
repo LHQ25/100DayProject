@@ -9,6 +9,7 @@ import Foundation
 
 // 同步函数
 var results: [String] = []
+
 func addAppending(_ value: String, to string: String){
     
     results.append(value.appending(string))
@@ -22,6 +23,7 @@ func loadSignature() throws -> String? {
 
 // 修改为异步
 func loadSignature(_ completion: @escaping (String?, Error?) -> Void) {
+    
     DispatchQueue.global().async {
         do {
             let data = try Data(contentsOf: URL(string: "www.baidu.com")!)

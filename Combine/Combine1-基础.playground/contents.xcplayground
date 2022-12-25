@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Cancellable'/>
+        <page name='assign'/>
+        <page name='Sink'/>
+        <page name='Future'/>
+        <page name='PassthroughSubject'/>
+        <page name='动态调整 demand'/>
+        <page name='CurrentValueSubject'/>
+        <page name='Combine-async-await'/>
+    </pages>
+</playground>

@@ -13,19 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad()  {
         super.viewDidLoad()
         
-        
-        let task = Task {
-            await start()
+        Task {
+            await test9()
         }
-        
-        Task(priority: .high) {
-            
-        }
-
-        withUnsafeCurrentTask { task in
-            
-        }
-        
     }
     
     func testt() async -> Int {
