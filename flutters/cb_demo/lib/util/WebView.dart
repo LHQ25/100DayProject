@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:cb_demo/routes/Routes.dart';
 import 'package:cb_demo/util/TextStyle.dart';
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class CustomWebView extends StatefulWidget {
@@ -32,12 +32,12 @@ class _CustomWebViewState extends State<CustomWebView> {
     javascriptChannels.add(JavascriptChannel(
         name: "title",
         onMessageReceived: (info) {
-          log("WebView JS Channel ${info.message}");
+          print("WebView JS Channel ${info.message}");
         }));
 
     url ??= "https://blog.csdn.net/TuGeLe/article/details/104004692";
 
-    _controller.future.whenComplete(() => log("WebView whenComplete"));
+    _controller.future.whenComplete(() => print("WebView whenComplete"));
     _controller.future.then((value) => value.loadUrl(url!));
   }
 
@@ -58,14 +58,14 @@ class _CustomWebViewState extends State<CustomWebView> {
             style: mediumStyle(fontSize: 16, color: const Color(0xFF333333)),
           ),
           leading: IconButton(
-              onPressed: () => Application.router.pop(context),
+              onPressed: () => Get.back(),
               icon: const Icon(
                 Icons.arrow_back,
                 size: 20,
               )),
           actions: [
             IconButton(
-              onPressed: () => log("分享"),
+              onPressed: () => print("分享"),
               icon: const Icon(
                 Icons.share,
                 size: 20,
@@ -86,16 +86,17 @@ class _CustomWebViewState extends State<CustomWebView> {
               return NavigationDecision.navigate;
             },
             gestureRecognizers: null,
-            onPageStarted: (url) => log("WebView page start $url"),
+            onPageStarted: (url) => print("WebView page start $url"),
             onPageFinished: (url) {
-              log("WebView page finish $url");
+              print("WebView page finish $url");
               _controller.future.then(
                   (value) => value.getTitle().then((value) => setState(() {
                         _title = value ??= "title";
                       })));
             },
-            onProgress: (v) => log("WebView page progress $v"),
-            onWebResourceError: (error) => log("WebView Resource error $error"),
+            onProgress: (v) => print("WebView page progress $v"),
+            onWebResourceError: (error) =>
+                print("WebView Resource error $error"),
             debuggingEnabled: false,
             gestureNavigationEnabled: false,
             userAgent: null,

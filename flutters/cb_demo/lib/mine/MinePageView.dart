@@ -1,8 +1,9 @@
+import 'package:cb_demo/mine/MineJoinPageView.dart';
 import 'package:cb_demo/routes/Routes.dart';
 import 'package:cb_demo/util/TextStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:get/get.dart';
 
 class MinePageView extends StatefulWidget {
   const MinePageView({Key? key}) : super(key: key);
@@ -501,8 +502,7 @@ class _MinePageViewState extends State<MinePageView> {
         child: Column(
           children: [
             GestureDetector(
-                onTap: () =>
-                    Application.router.navigateTo(context, Routes.joinView),
+                onTap: () => Get.to(const MineJoinPageView()),
                 child: SizedBox(
                   child: Row(
                     children: [
@@ -614,7 +614,7 @@ class _MinePageViewState extends State<MinePageView> {
   Widget _servicesItem(String title, String image) =>
       Builder(builder: (context) {
         return SizedBox(
-          width: (context.width() - 28) / 4.0,
+          width: (Get.width - 28) / 4.0,
           child: Column(
             children: [
               SizedBox(
