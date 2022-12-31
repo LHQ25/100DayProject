@@ -1,80 +1,110 @@
-import 'package:cb_demo/artic/ArticPageView.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 
-import 'auction/AuctionpageView.dart';
+import 'artic/ArticPageView.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'auction/presentation/controller/AuctionpageView.dart';
 import 'category/ShopCategoryPageView.dart';
 import 'mine/MinePageView.dart';
 
-class HomeComponent extends StatefulWidget {
-  const HomeComponent({Key? key}) : super(key: key);
+// class HomeComponent extends StatefulWidget {
+//   HomeComponent({Key? key}) : super(key: key);
 
+//   final Controller = Get.find();
+
+//   @override
+//   State<HomeComponent> createState() => _HomeComponentState();
+// }
+
+class HomeComponentBinding extends Bindings {
   @override
-  State<HomeComponent> createState() => _HomeComponentState();
+  void dependencies() {
+    Get.lazyPut(() => HomeComponentController());
+  }
 }
 
-class _HomeComponentState extends State<HomeComponent> {
-  int _currentIndex = 0;
-  late PageController _pageController;
-  late PageScrollPhysics _pageScrollPhysics;
+class HomeComponentController extends GetxController {
+  HomeComponentController();
+
+  late PageScrollPhysics pageScrollPhysics;
+  late PageController pageController;
+
+  var currentIndex = 0.obs;
 
   @override
-  void initState() {
-    super.initState();
+  void onInit() {
+    pageController = PageController(initialPage: 0);
+    pageScrollPhysics = const PageScrollPhysics();
+    super.onInit();
+  }
 
-    _pageController = PageController();
-    _pageScrollPhysics = const PageScrollPhysics();
+  void changeBottonBar(int index) {
+    if (currentIndex.value != index) {
+      currentIndex.value = index;
+      pageController.jumpToPage(index);
+    }
   }
 
   @override
+  void onClose() {
+    pageController.dispose();
+    super.onClose();
+  }
+}
+
+class HomeComponent extends GetView<HomeComponentController> {
+  HomeComponent({Key? key}) : super(key: key);
+  // final HomeComponentController c = Get.put(HomeComponentController());
+
+  @override
   Widget build(BuildContext context) {
+    if (controller.pageController.hasClients) {
+      controller.onClose();
+      controller.onInit();
+    }
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: PageView.builder(
-        itemCount: 4,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return const AuctionController();
-          } else if (index == 1) {
-            return const GoodsCategoryPageView();
-          } else if (index == 2) {
-            return const ArticPageView();
-          } else if (index == 3) {
-            return const MinePageView();
-          }
-          return Center(
-            child: Text("$_currentIndex index"),
-          );
-        },
-        onPageChanged: (index) => setState(() {
-          _currentIndex = index;
-        }),
-        physics: _pageScrollPhysics,
-        controller: _pageController,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-          onTap: (value) => setState(() {
-                if (_currentIndex != value) {
-                  _currentIndex = value;
-                  _pageController.jumpToPage(value);
-                }
-              }),
-          currentIndex: _currentIndex,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedFontSize: 0,
-          unselectedFontSize: 0,
-          selectedIconTheme: const IconThemeData(
-              color: Color.fromARGB(255, 88, 10, 5), size: 36),
-          iconSize: 36,
-          items: [
-            _createBottomNavigationBar("tab_pai", "tab_pai_sel", "拍卖"),
-            _createBottomNavigationBar("tab_cate", "tab_cate_sel", "分类"),
-            _createBottomNavigationBar("tab_home", "tab_home_sel", "广场"),
-            _createBottomNavigationBar("tab_mine", "tab_mine_sel", "我的"),
-          ]),
-    );
+        backgroundColor: Colors.white,
+        body: PageView.builder(
+          itemCount: 4,
+          itemBuilder: (context, index) {
+            if (index == 0) {
+              return AuctionController();
+            } else if (index == 1) {
+              return const GoodsCategoryPageView();
+            } else if (index == 2) {
+              return const ArticPageView();
+            } else if (index == 3) {
+              return const MinePageView();
+            }
+            return Center(
+              child: Text("${controller.currentIndex.value} index"),
+            );
+          },
+          onPageChanged: (index) => controller.currentIndex.value = index,
+          physics: controller.pageScrollPhysics,
+          controller: controller.pageController,
+        ),
+        bottomNavigationBar: Obx(
+          () => BottomNavigationBar(
+              onTap: controller.changeBottonBar,
+              currentIndex: controller.currentIndex.value,
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: Colors.white,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              selectedFontSize: 0,
+              unselectedFontSize: 0,
+              // selectedIconTheme: const IconThemeData(
+              // color: Color.fromARGB(255, 88, 10, 5), size: 36),
+              iconSize: 36,
+              items: [
+                _createBottomNavigationBar("tab_pai", "tab_pai_sel", "拍卖"),
+                _createBottomNavigationBar("tab_cate", "tab_cate_sel", "分类"),
+                _createBottomNavigationBar("tab_home", "tab_home_sel", "广场"),
+                _createBottomNavigationBar("tab_mine", "tab_mine_sel", "我的"),
+              ]),
+        ));
   }
 
   BottomNavigationBarItem _createBottomNavigationBar(

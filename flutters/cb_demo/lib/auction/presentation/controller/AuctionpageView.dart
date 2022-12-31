@@ -1,17 +1,16 @@
 import 'dart:developer' as dev show log;
 import 'dart:math';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/src/rendering/sliver_persistent_header.dart';
-import 'package:flutter/src/scheduler/ticker.dart';
 
-import '../custom_view/UnderlineGradientTabIndicator.dart';
-import '../util/TextStyle.dart';
+import '../../../custom_view/UnderlineGradientTabIndicator.dart';
+import '../../../util/TextStyle.dart';
 import 'AuctionListPageView.dart';
 
 class AuctionController extends StatefulWidget {
-  const AuctionController({super.key});
+  AuctionController({super.key});
+
+  // final HomeController = Get.find();
 
   @override
   State<AuctionController> createState() => _AuctionControllerState();

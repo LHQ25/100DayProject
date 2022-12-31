@@ -1,11 +1,14 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:cb_demo/artic/ArticleVideoPageView.dart';
 import 'package:cb_demo/routes/Routes.dart';
 import 'package:cb_demo/util/TextStyle.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:get/get.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-import '../auction/AuctionpageView.dart';
+import '../auction/presentation/controller/AuctionpageView.dart';
 import '../custom_view/UnderlineGradientTabIndicator.dart';
 
 class ArticPageView extends StatefulWidget {
@@ -144,9 +147,7 @@ class _ArticPageViewState extends State<ArticPageView>
                 itemBuilder: (context, index) {
                   if (index % 2 == 0) {
                     return GestureDetector(
-                        onTap: () => Application.router.navigateTo(
-                            context, Routes.webView,
-                            transition: TransitionType.cupertino),
+                        onTap: () => Get.to(const WebView()),
                         child: Container(
                           decoration: const BoxDecoration(
                               border: Border(
@@ -266,8 +267,7 @@ class _ArticPageViewState extends State<ArticPageView>
                         ));
                   } else {
                     return GestureDetector(
-                        onTap: () => Application.router
-                            .navigateTo(context, Routes.videoView),
+                        onTap: () => Get.to(const ArticleVideoPageView()),
                         child: Container(
                             decoration: const BoxDecoration(
                                 border: Border(
@@ -370,9 +370,7 @@ class _ArticPageViewState extends State<ArticPageView>
                 itemBuilder: (context, index) {
                   if (index % 2 == 0) {
                     return GestureDetector(
-                        onTap: () => Application.router.navigateTo(
-                            context, Routes.webView,
-                            transition: TransitionType.cupertino),
+                        onTap: () => Get.to(const WebView()),
                         child: Container(
                           decoration: const BoxDecoration(
                               border: Border(
@@ -492,8 +490,7 @@ class _ArticPageViewState extends State<ArticPageView>
                         ));
                   } else {
                     return GestureDetector(
-                        onTap: () => Application.router
-                            .navigateTo(context, Routes.videoView),
+                        onTap: () => Get.to(const ArticleVideoPageView()),
                         child: Container(
                             decoration: const BoxDecoration(
                                 border: Border(
@@ -596,9 +593,7 @@ class _ArticPageViewState extends State<ArticPageView>
                 itemBuilder: (context, index) {
                   if (index % 2 == 0) {
                     return GestureDetector(
-                        onTap: () => Application.router.navigateTo(
-                            context, Routes.webView,
-                            transition: TransitionType.cupertino),
+                        onTap: () => Get.to(const WebView()),
                         child: Container(
                           decoration: const BoxDecoration(
                               border: Border(
@@ -718,8 +713,7 @@ class _ArticPageViewState extends State<ArticPageView>
                         ));
                   } else {
                     return GestureDetector(
-                        onTap: () => Application.router
-                            .navigateTo(context, Routes.videoView),
+                        onTap: () => Get.to(const ArticleVideoPageView()),
                         child: Container(
                             decoration: const BoxDecoration(
                                 border: Border(

@@ -2,7 +2,7 @@ import 'package:cb_demo/routes/Routes.dart';
 import 'package:cb_demo/util/TextStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
 class ArticleVideoPageView extends StatefulWidget {
@@ -46,7 +46,7 @@ class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.light,
         leading: IconButton(
-            onPressed: () => Application.router.pop(context),
+            onPressed: () => Get.back(),
             icon: const Icon(
               Icons.arrow_back,
               size: 20,
@@ -54,7 +54,7 @@ class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
             )),
         actions: [
           IconButton(
-              onPressed: () => Application.router.pop(context),
+              onPressed: () => Get.back(),
               icon: const Icon(
                 Icons.share,
                 size: 20,
