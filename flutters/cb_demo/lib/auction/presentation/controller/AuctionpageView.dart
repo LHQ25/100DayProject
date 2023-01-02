@@ -1,7 +1,9 @@
 import 'dart:developer' as dev show log;
 import 'dart:math';
+import 'package:cb_demo/auction/views/gloabel_auction_view.dart';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:get/get.dart';
 
 import '../../../custom_view/UnderlineGradientTabIndicator.dart';
 import '../../../util/TextStyle.dart';
@@ -309,33 +311,36 @@ class _AuctionControllerState extends State<AuctionController>
           margin: const EdgeInsets.fromLTRB(14, 22, 14, 0),
           child: Column(
             children: [
-              Container(
-                height: 30,
-                child: Row(
-                  children: const [
-                    Text(
-                      "全球拍",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF222222),
-                          fontWeight: FontWeight.w600),
-                    ),
-                    Spacer(),
-                    Text(
-                      "查看更多",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color(0xFF999999),
-                          fontWeight: FontWeight.w500),
-                    ),
-                    Text(
-                      " >",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color(0xFF888888),
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () => Get.to(() => GlobelAuctionView()),
+                child: SizedBox(
+                  height: 30,
+                  child: Row(
+                    children: const [
+                      Text(
+                        "全球拍1",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xFF222222),
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Spacer(),
+                      Text(
+                        "查看更多",
+                        style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xFF999999),
+                            fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        " >",
+                        style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xFF888888),
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(

@@ -22,6 +22,6 @@ extension SimpleColor on Colors {
 class Test {
 
   void test(){
-    var c = Colors.black2;
+    //var c = Colors.black2;
   }
 }

@@ -1,10 +1,13 @@
 import 'dart:developer';
 
+import 'package:cb_demo/category/views/GoodsCategoryListView.dart';
 import 'package:cb_demo/util/SimpleColor.dart';
 import 'package:cb_demo/util/TextStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+
+import '../routes/app_routes.dart';
 
 class GoodsCategoryPageView extends StatefulWidget {
   const GoodsCategoryPageView({super.key});
@@ -170,15 +173,16 @@ class _GoodsCategoryPageViewState extends State<GoodsCategoryPageView> {
   }
 
   void test(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        isScrollControlled: true,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(8), topRight: Radius.circular(8))),
-        builder: (context) {
-          return TurnTableSheetView();
-        });
+    Get.to(const GoodsCategoryListView());
+    // showModalBottomSheet(
+    //     context: context,
+    //     isScrollControlled: true,
+    //     shape: const RoundedRectangleBorder(
+    //         borderRadius: BorderRadius.only(
+    //             topLeft: Radius.circular(8), topRight: Radius.circular(8))),
+    //     builder: (context) {
+    //       return TurnTableSheetView();
+    //     });
   }
 }
 
@@ -191,8 +195,15 @@ class TurnTableSheetController extends GetxController {
 
   @override
   void onInit() {
-    _segmentController1.update(MaterialState.selected, true);
+
     super.onInit();
+  }
+
+  @override
+  void onReady() {
+
+    _segmentController1.update(MaterialState.selected, true);
+    super.onReady();
   }
 }
 

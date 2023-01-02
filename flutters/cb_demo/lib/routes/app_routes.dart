@@ -1,9 +1,9 @@
 abstract class Routes {
   static const home = '/home';
-  static const COUNTRY = '/country';
+  static const gloabel_auction = '/gloabel_auction';
   static const DETAILS = '/details';
 
-  static const DASHBOARD = '/dashboard';
+  static const cateGoodsList = '/cateGoodsList';
   static const PROFILE = '/profile';
   static const PRODUCTS = '/products';
 
