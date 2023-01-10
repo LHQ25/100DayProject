@@ -9,19 +9,16 @@ const Color color999999 = Color(0xFF999999);
 const Color colorF72800 = Color(0xFFF72800);
 
 extension SimpleColor on Colors {
-
   static const Color colorF72800 = Color(0xFFF72800);
   static const Color black2 = Color(0xFF000000);
 
   Color get black3 {
     return const Color(0xFF000000);
   }
-
 }
 
 class Test {
-
-  void test(){
+  void test() {
     //var c = Colors.black2;
   }
 }

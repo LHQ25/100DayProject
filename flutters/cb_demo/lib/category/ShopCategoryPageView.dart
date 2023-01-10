@@ -195,13 +195,11 @@ class TurnTableSheetController extends GetxController {
 
   @override
   void onInit() {
-
     super.onInit();
   }
 
   @override
   void onReady() {
-
     _segmentController1.update(MaterialState.selected, true);
     super.onReady();
   }

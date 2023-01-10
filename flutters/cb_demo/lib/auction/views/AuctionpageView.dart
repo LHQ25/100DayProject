@@ -1,5 +1,5 @@
 import 'dart:developer' as dev show log;
-import 'dart:math';
+import 'package:cb_demo/auction/controller/AuctionMainController.dart';
 import 'package:cb_demo/auction/views/gloabel_auction_view.dart';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
@@ -9,56 +9,72 @@ import '../../../custom_view/UnderlineGradientTabIndicator.dart';
 import '../../../util/TextStyle.dart';
 import 'AuctionListPageView.dart';
 
-class AuctionController extends StatefulWidget {
-  AuctionController({super.key});
+class AuctionMainView extends StatelessWidget {
+  AuctionMainView({super.key});
 
-  // final HomeController = Get.find();
-
-  @override
-  State<AuctionController> createState() => _AuctionControllerState();
-}
-
-class _AuctionControllerState extends State<AuctionController>
-    with SingleTickerProviderStateMixin {
-  double _navAlpha = 0;
-  final _images = ["assets/images/banner/1.png", "assets/images/banner/2.png"];
-  final _tabTitles = ["为你推荐", "陶瓷玉器", "艺术品", "书画篆刻", "玉翠珠宝"];
-  late ScrollController _scrollController;
-  late TabController _tabController;
-  bool isVer = false;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _scrollController = ScrollController();
-    _scrollController.addListener(() => setState(() {
-          double offset = _scrollController.offset;
-          _navAlpha = min(1, max(0, (offset / 300)));
-        }));
-
-    _tabController = TabController(length: _tabTitles.length, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
+  final _controller = Get.put(AuctionMainController());
 
   @override
   Widget build(BuildContext context) {
-    return MediaQuery.removeViewPadding(
-        removeTop: false,
-        context: context,
-        child: NestedScrollView(
-            controller: _scrollController,
+    return Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white.withOpacity(_controller.navAlpha.value),
+          automaticallyImplyLeading: false,
+          title: Container(
+              margin: const EdgeInsets.all(0),
+              padding: const EdgeInsets.all(0),
+              height: 46,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(
+                          "assets/images/home/home_appbar_search_bg2.png"))),
+              child: GestureDetector(
+                onTap: () => dev.log("去搜索"),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 21.5, right: 12.5),
+                      child: Image.asset(
+                        "assets/images/home/home_appbar_search_msg.png",
+                        width: 17.5,
+                        height: 17.5,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 1,
+                      height: 10,
+                      child: ColoredBox(color: Color(0xFFE6E6E8)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12.5),
+                      child: Image.asset(
+                        "assets/images/home/home_appbar_search_search.png",
+                        width: 17.5,
+                        height: 17.5,
+                      ),
+                    ),
+                    const Text(
+                      "搜索更多拍品、场次",
+                      style: TextStyle(
+                          color: Color(0xFFA1A3A6),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              )),
+        ),
+        extendBodyBehindAppBar: true,
+        body: NestedScrollView(
+            controller: _controller.scrollController,
             headerSliverBuilder: (context, value) {
               return _createHeaderView();
             },
-            body: TabBarView(
-                controller: _tabController,
-                children: isVer == false
+            body: Obx(() => TabBarView(
+                controller: _controller.tabController,
+                children: _controller.isVer.value == false
                     ? const [
                         AuctionGridPageView(),
                         AuctionGridPageView(),
@@ -72,65 +88,17 @@ class _AuctionControllerState extends State<AuctionController>
                         AuctionListPageView(),
                         AuctionListPageView(),
                         AuctionListPageView(),
-                      ])));
+                      ]))));
   }
 
   List<Widget> _createHeaderView() {
     return [
-      SliverPersistentHeader(
-        pinned: true,
-        delegate: SliverHeaderDelegate.fixedHeight(
-            height: 88,
-            child: AppBar(
-              elevation: 0,
-              backgroundColor: Colors.white.withOpacity(_navAlpha),
-              title: Container(
-                  margin: const EdgeInsets.all(0),
-                  padding: const EdgeInsets.all(0),
-                  height: 46,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage(
-                              "assets/images/home/home_appbar_search_bg2.png"))),
-                  child: GestureDetector(
-                    onTap: () => dev.log("去搜索"),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding:
-                              const EdgeInsets.only(left: 21.5, right: 12.5),
-                          child: Image.asset(
-                            "assets/images/home/home_appbar_search_msg.png",
-                            width: 17.5,
-                            height: 17.5,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 1,
-                          height: 10,
-                          child: ColoredBox(color: Color(0xFFE6E6E8)),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12.5),
-                          child: Image.asset(
-                            "assets/images/home/home_appbar_search_search.png",
-                            width: 17.5,
-                            height: 17.5,
-                          ),
-                        ),
-                        const Text(
-                          "搜索更多拍品、场次",
-                          style: TextStyle(
-                              color: Color(0xFFA1A3A6),
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                  )),
-            )),
-      ),
+      // SliverPersistentHeader(
+      //   pinned: true,
+      //   delegate: SliverHeaderDelegate.fixedHeight(
+      //       height: 88,
+      //       child: ),
+      // ),
 
       /// Banner
       SliverToBoxAdapter(
@@ -141,10 +109,10 @@ class _AuctionControllerState extends State<AuctionController>
             containerHeight: 358,
             containerWidth: double.infinity,
             autoplay: true,
-            itemCount: _images.length,
+            itemCount: _controller.images.length,
             itemBuilder: (context, index) {
               return Image.asset(
-                _images[index],
+                _controller.images[index],
                 fit: BoxFit.fitWidth,
               );
             },
@@ -762,16 +730,19 @@ class _AuctionControllerState extends State<AuctionController>
                       left: 0,
                       right: 30,
                       bottom: 0,
+                      top: 0,
                       child: ColoredBox(
-                        color: Colors.red,
+                        color: Colors.white,
                         child: TabBar(
-                            controller: _tabController,
+                            controller: _controller.tabController,
+                            isScrollable: true,
                             indicatorSize: TabBarIndicatorSize.label,
                             indicatorWeight: 1,
                             indicator: const UnderlineGradientTabIndicator(
                                 borderSide: BorderSide(
                                     strokeAlign: StrokeAlign.inside)),
                             automaticIndicatorColorAdjustment: true,
+                            splashFactory: NoSplash.splashFactory,
                             unselectedLabelStyle: mediumStyle(
                               fontSize: 13,
                               color: const Color(0xFF999999),
@@ -780,7 +751,7 @@ class _AuctionControllerState extends State<AuctionController>
                               fontSize: 14,
                               color: const Color(0xFF333333),
                             ),
-                            tabs: _tabTitles
+                            tabs: _controller.tabTitles
                                 .map((e) => Tab(
                                       text: e,
                                     ))
@@ -806,9 +777,8 @@ class _AuctionControllerState extends State<AuctionController>
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 0),
                                         iconSize: 12,
-                                        onPressed: () => setState(() {
-                                              isVer = !isVer;
-                                            }),
+                                        onPressed: () => _controller.isVer
+                                            .value = !_controller.isVer.value,
                                         icon: const ImageIcon(
                                             size: 12,
                                             AssetImage(

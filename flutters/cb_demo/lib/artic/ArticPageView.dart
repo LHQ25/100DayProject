@@ -1,41 +1,18 @@
+import 'dart:developer';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:cb_demo/artic/ArticleVideoPageView.dart';
-import 'package:cb_demo/routes/Routes.dart';
+import 'package:cb_demo/artic/controllers/artic_page_viewcontroller.dart';
 import 'package:cb_demo/util/TextStyle.dart';
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
-import '../auction/presentation/controller/AuctionpageView.dart';
+import '../auction/views/AuctionpageView.dart';
 import '../custom_view/UnderlineGradientTabIndicator.dart';
 
-class ArticPageView extends StatefulWidget {
-  const ArticPageView({Key? key}) : super(key: key);
+class ArticPageView extends StatelessWidget {
+  ArticPageView({super.key});
 
-  @override
-  State<ArticPageView> createState() => _ArticPageViewState();
-}
-
-class _ArticPageViewState extends State<ArticPageView>
-    implements TickerProvider {
-  final _images = ["assets/images/banner/1.png", "assets/images/banner/2.png"];
-  final _tabTitles = ["为你推荐", "文章", "视频"];
-  late ScrollController _scrollController;
-  late TabController _tabController;
-
-  @override
-  Ticker createTicker(TickerCallback onTick) {
-    return Ticker(onTick);
-  }
-
-  @override
-  void initState() {
-    _tabController = TabController(length: _tabTitles.length, vsync: this);
-
-    super.initState();
-  }
+  final _controller = Get.put(ArticPageViewController());
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +30,7 @@ class _ArticPageViewState extends State<ArticPageView>
                     image: AssetImage(
                         "assets/images/home/home_appbar_search_bg2.png"))),
             child: GestureDetector(
-              onTap: () => print("去搜索"),
+              onTap: () => log("去搜索"),
               child: Row(
                 children: [
                   Padding(
@@ -99,10 +76,10 @@ class _ArticPageViewState extends State<ArticPageView>
                     // containerHeight: 358,
                     containerWidth: double.infinity,
                     autoplay: true,
-                    itemCount: _images.length,
+                    itemCount: _controller.images.length,
                     itemBuilder: (context, index) {
                       return Image.asset(
-                        _images[index],
+                        _controller.images[index],
                         fit: BoxFit.fitWidth,
                       );
                     },
@@ -116,7 +93,7 @@ class _ArticPageViewState extends State<ArticPageView>
                       child: ColoredBox(
                         color: Colors.white,
                         child: TabBar(
-                            controller: _tabController,
+                            controller: _controller.tabController,
                             indicatorSize: TabBarIndicatorSize.label,
                             indicatorWeight: 1,
                             indicator: const UnderlineGradientTabIndicator(
@@ -131,7 +108,7 @@ class _ArticPageViewState extends State<ArticPageView>
                               fontSize: 14,
                               color: const Color(0xFF333333),
                             ),
-                            tabs: _tabTitles
+                            tabs: _controller.tabTitles
                                 .map((e) => Tab(
                                       text: e,
                                     ))
@@ -140,7 +117,7 @@ class _ArticPageViewState extends State<ArticPageView>
                       height: 40)),
             ];
           },
-          body: TabBarView(controller: _tabController, children: [
+          body: TabBarView(controller: _controller.tabController, children: [
             ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 itemCount: 5,

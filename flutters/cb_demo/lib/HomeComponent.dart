@@ -1,11 +1,10 @@
-import 'package:flutter/gestures.dart';
-
 import 'artic/ArticPageView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'auction/presentation/controller/AuctionpageView.dart';
+import 'auction/views/AuctionpageView.dart';
 import 'category/ShopCategoryPageView.dart';
+import 'category/views/top_page_view.dart';
 import 'mine/MinePageView.dart';
 
 // class HomeComponent extends StatefulWidget {
@@ -69,11 +68,11 @@ class HomeComponent extends GetView<HomeComponentController> {
           itemCount: 4,
           itemBuilder: (context, index) {
             if (index == 0) {
-              return AuctionController();
+              return AuctionMainView();
             } else if (index == 1) {
-              return const GoodsCategoryPageView();
+              return TopPageView();
             } else if (index == 2) {
-              return const ArticPageView();
+              return ArticPageView();
             } else if (index == 3) {
               return const MinePageView();
             }

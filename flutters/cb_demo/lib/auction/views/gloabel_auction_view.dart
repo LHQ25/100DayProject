@@ -1,11 +1,10 @@
-import 'package:cb_demo/auction/presentation/controller/AuctionpageView.dart';
+import 'AuctionpageView.dart';
 import 'package:cb_demo/util/SimpleColor.dart';
 import 'package:cb_demo/util/TextStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 
-import '../presentation/controller/GlobelAuctionController.dart';
+import '../controller/GlobelAuctionController.dart';
 
 class GlobelAuctionView extends StatelessWidget {
   GlobelAuctionView({super.key});
