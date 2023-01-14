@@ -36,27 +36,45 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  # 路由
   fluro: ^2.0.4
+  # 闪屏页
   flutter_native_splash: ^2.2.14
+  # 轮播
   card_swiper: ^2.0.4
   waterfall_flow: ^3.0.2
   # nb_utils: ^4.6.24
+  # Toast
   fluttertoast: ^8.1.1
+  #
   webview_flutter: ^3.0.4
+  #
   video_player: ^2.4.8
+  # 
   provider: ^6.0.4
+  # GetX
   get: ^4.1.1
+  # 瀑布流
   flutter_staggered_grid_view: ^0.6.2
-  
+  # 设备号
   platform_device_id: ^1.0.1
+  # 广告符
   advertising_id: ^2.3.0
-
+  # 网络
   dio: ^4.0.6
-  retrofit: ^3.3.1
+  # 加密
   crypto: ^3.0.2
+  # 日志
   logger: ^1.1.0
+  # json注解
   json_annotation: ^4.7.0
+
+  # 网络框架
+  retrofit: ^3.3.1
+  # retrofit log
   flutter_pretty_dio_logger: ^2.0.3
+  # 刷新
+  easy_refresh: ^3.2.2
 
 dev_dependencies:
   flutter_test:

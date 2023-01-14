@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3>v-text && v-html</h3>
+        <!-- 展示数据，属于单向绑定。即数据的变化会影响插值的变化，而插值的变化，不会影响数据的变化 -->
+        <p v-text="text"></p>
+        <!-- 只能渲染纯文本，浏览器不会对其进行 html 解析 -->
+        <p >{{ text }}</p>
+        <!-- v-html：用于输出 html，浏览器会解析 html -->
+        <div v-html="html"></div>
+
+        <h3>v-if、v-else && v-show: 通过变量控制标签内容的显示或隐藏</h3>
+        <p v-if="isShow">v-if: 在浏览器上表现为整个 DOM 节点不会被渲染</p>
+        <p v-else> v-else: 类似 JS 语法的 if else 判断语句，需要紧跟在 v-if 后面 </p>
+        <p v-show="!isShow">v-show: 呈现形式相当于给 DOM 节点添加了一个 CSS 属性 — display: none</p>
+
+        <h3> v-for 指令解决的是模板循环渲染问题 </h3>
+        <div v-for="(item, index) in list" > {{ index }} -> {{ item}} </div>
+        <!-- index 数组对象所对应的索引值，渲染模版的时候如果需要做一些逻辑运算的时候，会用到这个索引值，比如只让索引值为偶数的项进行渲染，就可以结合之前的 v-if、v-show 指令去实现需求 -->
+
+        <h4> 小知识1: v-for 和 v-if 不要一起使用
+            v-for 的优先级高于 v-if , 当它们处于同一节点, v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环。比较好的解决方式是，先通过 computed 属性将需要渲染的列表提前过滤，再将过滤后的列表放到模板中渲染，这样做的目的是让页面渲染效率更高，避免不必要的资源浪费 </h4>
+        <h4> 小知识2: v-for可以渲染 Object 类型数据 </h4>
+        <div v-for="(val, key, index) in listObj"> {{ index }}{{ val.name }} </div>
+
+        <h3>v-on 就是监听事件，可以用 v-on 指令监听 DOM 事件来触发一些方法函数</h3>
+        <p> v-on 有一种简写形式，用 @ 符号代替。它还能监听一些键盘事件，如键盘的回车键 v-on:keyup.enter 等 </p>
+
+        <!-- v-on -->
+        <p> 数字： {{ count }}</p>
+        <button v-on:click="add">加</button>
+
+        <h3> v-model: v-model 算是举足轻重的，因为它的双向绑定特性 </h3>
+        <p>username: {{ username }}</p>
+        <input v-model="username" v-on:keyup.enter="login">
+        <h4> v-model 结合 复选框 </h4>
+        <label for="apple">苹果</label>
+        <input type="checkbox" v-model="fruit.apple" value="apple">
+        <label for="banana">香蕉</label>
+        <input type="checkbox" v-model="fruit.banana" value="banana">
+        <p>{{ fruit }}</p>
+
+        <h4> v-model 结合 单选框 </h4>
+        <label for="apple">男</label>
+        <input type="radio" v-model="sex" value="男">
+        <label for="banana">女</label>
+        <input type="radio" v-model="sex" value="女">
+        <p>{{ sex }}</p>
+
+        <p>v-model: 几个需要注意的修饰符
+            .lazy: 接管 input 的事件监听事件，输入的时候不会马上响应在展示层，当数据确认改变的时候才会显示出来；
+            .trim: 去掉首尾的空格,不会去除中间的空格;
+            .number: 输入的字符串转化为数字;</p>
+
+        <h3>v-bind: 对变量属性的一个绑定</h3>
+        <p v-bind:style="style"> 绑定 style 属性</p>
+        <p :style="style"> v-bind简写 绑定 style 属性</p>
+        <div :class="className">绑定class</div>
+        <!-- 判断变量 -->
+        <div :class="{classA: isShow}">绑定class中的判断</div>
+        <!-- 三元运算符 -->
+        <div :class="isShow ? classA : classB">绑定class中的三元表达式判断</div>
+        <!-- 绑定 style -->
+        <div :style="{color: blue, fontSize: font}">绑定style</div>
+
+        <p>v-cloak
+            作用：这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 [v-cloak] { display: none } 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕</p>
+        <div v-cloak> {{ username }}</div>
+
+        <p>v-pre
+            直接跳过 Vue 的编译，输出原始值</p>
+        <div v-pre> {{ count }} </div>
+
+        <p>v-once : 只在第一次渲染时执行,之后的操作都被视为静态内容,跳出之后的所有渲染过程s</p>
+        <p v-once>用户名：{{ username }}</p>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            new Vue({
+                el: '#app',
+                data: {
+                    count: 0,
+                    username: '123',
+                    sex: '男',
+                    text: '9527',
+                    html: '<span style="color: brown;">html - txt</span>',
+                    isShow: false, // 控制 v-if 
+                    list: ['小红', '小明', '小智', '小刚'],
+                    listObj: {
+        	            hong: { name: '小红' },
+                        ming: { name: '小明' },
+                        zhi: { name: '小智' },
+                        gang: { name: '小刚' }
+                    },
+                    fruit: {
+                        apple: true,
+                        banana: false,
+                    },
+                    style: 'font-size: 14px; color: cyan;',
+                    className: 'class_a',
+                    classA: 'classA',
+                    classB: 'classB',
+                    blue: 'blue',
+                    font: '12px'
+                },
+                methods: {
+                    add: function (){
+                        this.count ++
+                    },
+                    login: function(){
+                        console.log(this.username)
+                    }
+                }
+            })
+        }
+    </script>
+
+</html>

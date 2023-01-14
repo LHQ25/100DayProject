@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 
-import '../routes/app_routes.dart';
-
 class GoodsCategoryPageView extends StatefulWidget {
   const GoodsCategoryPageView({super.key});
 

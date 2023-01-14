@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>全局 API</h2>
+        <h3>Vue.extend 是什么？</h3>
+        <p>作为全局 API 中的一员，在实际开发中很少会被用到，因为相比我们经常使用的 Vue.component, Vue.extend 在写法上就会显得比较繁琐。但在一些比较特殊的场景下, Vue.extend + $mount 是我们需要去了解的</p> 
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            new Vue({
+                el: '#app',
+                data: {
+                    count: 0,
+                    username: '123',
+                    sex: '男',
+                    text: '9527',
+                    html: '<span style="color: brown;">html - txt</span>',
+                    isShow: false, // 控制 v-if 
+                    list: ['小红', '小明', '小智', '小刚'],
+                    listObj: {
+        	            hong: { name: '小红' },
+                        ming: { name: '小明' },
+                        zhi: { name: '小智' },
+                        gang: { name: '小刚' }
+                    },
+                    fruit: {
+                        apple: true,
+                        banana: false,
+                    },
+                    style: 'font-size: 14px; color: cyan;',
+                    className: 'class_a',
+                    classA: 'classA',
+                    classB: 'classB',
+                    blue: 'blue',
+                    font: '12px'
+                },
+                methods: {
+                    add: function (){
+                        this.count ++
+                    },
+                    login: function(){
+                        console.log(this.username)
+                    }
+                }
+            })
+        }
+    </script>
+
+</html>
