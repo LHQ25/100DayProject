@@ -21,7 +21,13 @@ class AppComponent extends StatelessWidget {
       initialBinding: HomeComponentBinding(),
       initialRoute: AppPages.home,
       getPages: AppPages.routes,
-      home: HomeComponent(),
+      theme: ThemeData(
+          useMaterial3: true,
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.white, elevation: 0),
+          splashFactory: NoSplash.splashFactory,
+          highlightColor: Colors.white),
+      themeMode: ThemeMode.system,
+      home: const HomeComponent(),
     );
   }
 }

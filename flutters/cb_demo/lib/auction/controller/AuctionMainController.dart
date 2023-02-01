@@ -5,10 +5,7 @@ import 'package:cb_demo/login/model/login_api.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
-import '../../util/net_util/rest_api.dart';
-
-class AuctionMainController extends GetxController
-    with GetSingleTickerProviderStateMixin {
+class AuctionMainController extends GetxController with GetSingleTickerProviderStateMixin {
   var navAlpha = RxDouble(0);
   final images = ["assets/images/banner/1.png", "assets/images/banner/2.png"];
   final tabTitles = ["为你推荐", "陶瓷玉器", "艺术品", "书画篆刻", "玉翠珠宝"];
@@ -39,10 +36,10 @@ class AuctionMainController extends GetxController
         cancelClose: false,
         smsCode: "424588",
         YDtoken: ""));
-    response.then((value) => print(value)).catchError((
+    response.then((value) => debugPrint(value.message)).catchError((
       err,
     ) {
-      print("--1--> $err");
+        debugPrint("--1--> $err");
     });
     super.onReady();
   }

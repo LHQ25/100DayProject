@@ -1,10 +1,8 @@
 import 'dart:async';
-
 import 'package:cb_demo/category/models/top_api.dart';
 import 'package:cb_demo/category/models/top_banner_response/top_banner_response.dart';
 import 'package:cb_demo/category/models/top_hot_video_response/top_hot_video_response.dart';
 import 'package:easy_refresh/easy_refresh.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import '../models/top_category/datum.dart' as cd;
 import '../models/top_hot_video_response/datum.dart' as vd;
 import 'package:get/get.dart';
@@ -17,11 +15,7 @@ class TopPageController extends GetxController {
   var banners = RxList<Datum>();
   var cates = RxList<cd.Datum>();
   var videos = RxList<vd.Datum>();
-  final _r = TopHotVideoRequest(
-      lat: "39.9197300889757",
-      lng: "116.44113850911458",
-      cityCode: "010",
-      currentPage: 1);
+  final _r = TopHotVideoRequest(lat: "39.9197300889757", lng: "116.44113850911458", cityCode: "010", currentPage: 1);
 
   @override
   void onReady() {

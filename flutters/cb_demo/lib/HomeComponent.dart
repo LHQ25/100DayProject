@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'auction/views/AuctionpageView.dart';
-import 'category/ShopCategoryPageView.dart';
 import 'category/views/top_page_view.dart';
 import 'mine/MinePageView.dart';
 
@@ -53,7 +52,8 @@ class HomeComponentController extends GetxController {
 }
 
 class HomeComponent extends GetView<HomeComponentController> {
-  HomeComponent({Key? key}) : super(key: key);
+  const HomeComponent({super.key});
+
   // final HomeComponentController c = Get.put(HomeComponentController());
 
   @override
@@ -94,8 +94,6 @@ class HomeComponent extends GetView<HomeComponentController> {
               showUnselectedLabels: false,
               selectedFontSize: 0,
               unselectedFontSize: 0,
-              // selectedIconTheme: const IconThemeData(
-              // color: Color.fromARGB(255, 88, 10, 5), size: 36),
               iconSize: 36,
               items: [
                 _createBottomNavigationBar("tab_pai", "tab_pai_sel", "拍卖"),
@@ -106,16 +104,15 @@ class HomeComponent extends GetView<HomeComponentController> {
         ));
   }
 
-  BottomNavigationBarItem _createBottomNavigationBar(
-      String imageName, String selImageName, String title) {
+  BottomNavigationBarItem _createBottomNavigationBar(String imageName, String selImageName, String title) {
     return BottomNavigationBarItem(
-        icon: ImageIcon(
-          AssetImage("assets/images/tabbar/$imageName.png"),
-        ),
-        activeIcon: ImageIcon(
-          AssetImage("assets/images/tabbar/$selImageName.png"),
-        ),
-        label: title,
-        backgroundColor: Colors.white);
+      icon: ImageIcon(
+        AssetImage("assets/images/tabbar/$imageName.png"),
+      ),
+      activeIcon: ImageIcon(
+        AssetImage("assets/images/tabbar/$selImageName.png"),
+      ),
+      label: title,
+    );
   }
 }

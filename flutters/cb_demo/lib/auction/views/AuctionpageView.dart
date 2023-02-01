@@ -26,10 +26,7 @@ class AuctionMainView extends StatelessWidget {
               padding: const EdgeInsets.all(0),
               height: 46,
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage(
-                          "assets/images/home/home_appbar_search_bg2.png"))),
+                  image: DecorationImage(fit: BoxFit.fill, image: AssetImage("assets/images/home/home_appbar_search_bg2.png"))),
               child: GestureDetector(
                 onTap: () => dev.log("去搜索"),
                 child: Row(
@@ -57,10 +54,7 @@ class AuctionMainView extends StatelessWidget {
                     ),
                     const Text(
                       "搜索更多拍品、场次",
-                      style: TextStyle(
-                          color: Color(0xFFA1A3A6),
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500),
+                      style: TextStyle(color: Color(0xFFA1A3A6), fontSize: 13, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -138,8 +132,7 @@ class AuctionMainView extends StatelessWidget {
                     offset: const Offset(0, -10),
                     child: Text(
                       "拍卖行",
-                      style: mediumStyle(
-                          fontSize: 11, color: const Color(0xFF6B6B6E)),
+                      style: mediumStyle(fontSize: 11, color: const Color(0xFF6B6B6E)),
                     ),
                   )
                 ],
@@ -156,8 +149,7 @@ class AuctionMainView extends StatelessWidget {
                     offset: const Offset(0, -10),
                     child: Text(
                       "拍卖结果",
-                      style: mediumStyle(
-                          fontSize: 11, color: const Color(0xFF6B6B6E)),
+                      style: mediumStyle(fontSize: 11, color: const Color(0xFF6B6B6E)),
                     ),
                   )
                 ],
@@ -174,8 +166,7 @@ class AuctionMainView extends StatelessWidget {
                     offset: const Offset(0, -10),
                     child: Text(
                       "拍卖日历",
-                      style: mediumStyle(
-                          fontSize: 11, color: const Color(0xFF6B6B6E)),
+                      style: mediumStyle(fontSize: 11, color: const Color(0xFF6B6B6E)),
                     ),
                   )
                 ],
@@ -192,8 +183,7 @@ class AuctionMainView extends StatelessWidget {
                     offset: const Offset(0, -10),
                     child: Text(
                       "送拍",
-                      style: mediumStyle(
-                          fontSize: 11, color: const Color(0xFF6B6B6E)),
+                      style: mediumStyle(fontSize: 11, color: const Color(0xFF6B6B6E)),
                     ),
                   )
                 ],
@@ -210,8 +200,7 @@ class AuctionMainView extends StatelessWidget {
                     offset: const Offset(0, -10),
                     child: Text(
                       "鉴定",
-                      style: mediumStyle(
-                          fontSize: 11, color: const Color(0xFF6B6B6E)),
+                      style: mediumStyle(fontSize: 11, color: const Color(0xFF6B6B6E)),
                     ),
                   )
                 ],
@@ -247,10 +236,7 @@ class AuctionMainView extends StatelessWidget {
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
                         "2020年全球当代艺术市场报告——新时代吹响…",
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF4F4F51)),
+                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xFF4F4F51)),
                       ),
                     ),
                   ),
@@ -287,37 +273,27 @@ class AuctionMainView extends StatelessWidget {
                     children: const [
                       Text(
                         "全球拍1",
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF222222),
-                            fontWeight: FontWeight.w600),
+                        style: TextStyle(fontSize: 16, color: Color(0xFF222222), fontWeight: FontWeight.w600),
                       ),
                       Spacer(),
                       Text(
                         "查看更多",
-                        style: TextStyle(
-                            fontSize: 11,
-                            color: Color(0xFF999999),
-                            fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: 11, color: Color(0xFF999999), fontWeight: FontWeight.w500),
                       ),
                       Text(
                         " >",
-                        style: TextStyle(
-                            fontSize: 11,
-                            color: Color(0xFF888888),
-                            fontWeight: FontWeight.w600),
+                        style: TextStyle(fontSize: 11, color: Color(0xFF888888), fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
                 ),
               ),
               Container(
-                height: 105,
+                height: 115,
                 margin: const EdgeInsets.only(top: 15),
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(Radius.circular(4)),
-                    border:
-                        Border.all(color: const Color(0xFFE6E6E8), width: 0.5)),
+                    border: Border.all(color: const Color(0xFFE6E6E8), width: 0.5)),
                 child: PageView.builder(
                     clipBehavior: Clip.none,
                     itemCount: 3,
@@ -341,19 +317,14 @@ class AuctionMainView extends StatelessWidget {
                                       left: 0,
                                       child: Container(
                                         decoration: const BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(4),
-                                                bottomRight:
-                                                    Radius.circular(4)),
+                                            borderRadius:
+                                                BorderRadius.only(topLeft: Radius.circular(4), bottomRight: Radius.circular(4)),
                                             color: Color(0xFF27258F)),
                                         child: Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              4, 2, 4, 2),
+                                          padding: const EdgeInsets.fromLTRB(4, 2, 4, 2),
                                           child: Text(
                                             "全球拍",
-                                            style: mediumStyle(
-                                                fontSize: 9,
-                                                color: Colors.white),
+                                            style: mediumStyle(fontSize: 9, color: Colors.white),
                                           ),
                                         ),
                                       )),
@@ -369,34 +340,23 @@ class AuctionMainView extends StatelessWidget {
                                               alignment: Alignment.center,
                                               decoration: BoxDecoration(
                                                   gradient: LinearGradient(
-                                                      begin:
-                                                          Alignment.centerLeft,
-                                                      end:
-                                                          Alignment.centerRight,
-                                                      colors: [
-                                                    const Color(0xFFF72800),
-                                                    const Color(0xFFF72800)
-                                                        .withAlpha(25)
-                                                  ])),
+                                                      begin: Alignment.centerLeft,
+                                                      end: Alignment.centerRight,
+                                                      colors: [const Color(0xFFF72800), const Color(0xFFF72800).withAlpha(25)])),
                                               width: 55.5,
                                               child: Text(
                                                 "直播中",
-                                                style: mediumStyle(
-                                                    fontSize: 9,
-                                                    color: Colors.white),
+                                                style: mediumStyle(fontSize: 9, color: Colors.white),
                                               ),
                                             ),
                                             Expanded(
                                                 child: Container(
                                               alignment: Alignment.center,
-                                              color:
-                                                  Colors.black.withAlpha(127),
+                                              color: Colors.black.withAlpha(127),
                                               width: 55.5,
                                               child: Text(
                                                 "2330次围观",
-                                                style: mediumStyle(
-                                                    fontSize: 9,
-                                                    color: Colors.white),
+                                                style: mediumStyle(fontSize: 9, color: Colors.white),
                                               ),
                                             ))
                                           ],
@@ -410,21 +370,17 @@ class AuctionMainView extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 4, 10, 0),
+                                  padding: const EdgeInsets.fromLTRB(10, 4, 10, 0),
                                   child: Text(
                                     "中国嘉德2021春季拍卖会 瓷器及古董珍玩集萃",
                                     maxLines: 2,
-                                    style: mediumStyle(
-                                        fontSize: 13,
-                                        color: const Color(0xFF111111)),
+                                    style: mediumStyle(fontSize: 13, color: const Color(0xFF111111)),
                                   ),
                                 ),
                                 const Padding(
                                   padding: EdgeInsets.fromLTRB(10, 14, 10, 0),
                                   child: ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(2.5)),
+                                    borderRadius: BorderRadius.all(Radius.circular(2.5)),
                                     child: LinearProgressIndicator(
                                       value: 0.5,
                                       color: Colors.red,
@@ -433,23 +389,17 @@ class AuctionMainView extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                                   child: Text(
                                     "第102件/345件",
-                                    style: semiBoldStyle(
-                                        fontSize: 11,
-                                        color: const Color(0xFF333333)),
+                                    style: semiBoldStyle(fontSize: 11, color: const Color(0xFF333333)),
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 6, 10, 0),
+                                  padding: const EdgeInsets.fromLTRB(10, 6, 10, 0),
                                   child: Text(
                                     "藏宝拍卖",
-                                    style: regularStyle(
-                                        fontSize: 11,
-                                        color: const Color(0xFF666666)),
+                                    style: regularStyle(fontSize: 11, color: const Color(0xFF666666)),
                                   ),
                                 ),
                               ],
@@ -476,25 +426,16 @@ class AuctionMainView extends StatelessWidget {
                   children: const [
                     Text(
                       "全球拍",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF222222),
-                          fontWeight: FontWeight.w600),
+                      style: TextStyle(fontSize: 16, color: Color(0xFF222222), fontWeight: FontWeight.w600),
                     ),
                     Spacer(),
                     Text(
                       "查看更多",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color(0xFF999999),
-                          fontWeight: FontWeight.w500),
+                      style: TextStyle(fontSize: 11, color: Color(0xFF999999), fontWeight: FontWeight.w500),
                     ),
                     Text(
                       " >",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color(0xFF888888),
-                          fontWeight: FontWeight.w600),
+                      style: TextStyle(fontSize: 11, color: Color(0xFF888888), fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),
@@ -519,16 +460,13 @@ class AuctionMainView extends StatelessWidget {
                                     right: 0,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                          borderRadius: const BorderRadius.only(
-                                              bottomLeft: Radius.circular(4)),
+                                          borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(4)),
                                           color: Colors.black.withAlpha(127)),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            4, 2, 4, 2),
+                                        padding: const EdgeInsets.fromLTRB(4, 2, 4, 2),
                                         child: Text(
                                           "距开拍 16 天",
-                                          style: mediumStyle(
-                                              fontSize: 9, color: Colors.white),
+                                          style: mediumStyle(fontSize: 9, color: Colors.white),
                                         ),
                                       ),
                                     )),
@@ -539,15 +477,12 @@ class AuctionMainView extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(7, 10, 4, 0),
+                                  padding: const EdgeInsets.fromLTRB(7, 10, 4, 0),
                                   child: Row(
                                     children: [
                                       Text(
                                         "现代纸作、印象派及现代艺术",
-                                        style: semiBoldStyle(
-                                            fontSize: 13,
-                                            color: const Color(0xFF333333)),
+                                        style: semiBoldStyle(fontSize: 13, color: const Color(0xFF333333)),
                                       ),
                                       const Spacer(),
                                       Image.asset(
@@ -559,15 +494,12 @@ class AuctionMainView extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(7, 6, 4, 0),
+                                  padding: const EdgeInsets.fromLTRB(7, 6, 4, 0),
                                   child: Row(
                                     children: [
                                       Text(
                                         "佳士得 巴黎",
-                                        style: regularStyle(
-                                            fontSize: 11,
-                                            color: const Color(0xFF666666)),
+                                        style: regularStyle(fontSize: 11, color: const Color(0xFF666666)),
                                       ),
                                       const Spacer(),
                                       Image.asset(
@@ -577,9 +509,7 @@ class AuctionMainView extends StatelessWidget {
                                       ),
                                       Text(
                                         " 1328.6w 次围观",
-                                        style: semiBoldStyle(
-                                            fontSize: 11,
-                                            color: const Color(0xFF666666)),
+                                        style: semiBoldStyle(fontSize: 11, color: const Color(0xFF666666)),
                                       ),
                                     ],
                                   ),
@@ -608,25 +538,16 @@ class AuctionMainView extends StatelessWidget {
                   children: const [
                     Text(
                       "专场拍",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF222222),
-                          fontWeight: FontWeight.w600),
+                      style: TextStyle(fontSize: 16, color: Color(0xFF222222), fontWeight: FontWeight.w600),
                     ),
                     Spacer(),
                     Text(
                       "查看更多",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color(0xFF999999),
-                          fontWeight: FontWeight.w500),
+                      style: TextStyle(fontSize: 11, color: Color(0xFF999999), fontWeight: FontWeight.w500),
                     ),
                     Text(
                       " >",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color(0xFF888888),
-                          fontWeight: FontWeight.w600),
+                      style: TextStyle(fontSize: 11, color: Color(0xFF888888), fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),
@@ -651,16 +572,13 @@ class AuctionMainView extends StatelessWidget {
                                     right: 0,
                                     child: Container(
                                       decoration: BoxDecoration(
-                                          borderRadius: const BorderRadius.only(
-                                              bottomLeft: Radius.circular(4)),
+                                          borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(4)),
                                           color: Colors.black.withAlpha(127)),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            4, 2, 4, 2),
+                                        padding: const EdgeInsets.fromLTRB(4, 2, 4, 2),
                                         child: Text(
                                           "距开拍 16 天",
-                                          style: mediumStyle(
-                                              fontSize: 9, color: Colors.white),
+                                          style: mediumStyle(fontSize: 9, color: Colors.white),
                                         ),
                                       ),
                                     )),
@@ -671,25 +589,19 @@ class AuctionMainView extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(7, 10, 4, 0),
+                                  padding: const EdgeInsets.fromLTRB(7, 10, 4, 0),
                                   child: Text(
                                     "现代纸作、印象派及现代艺术",
-                                    style: semiBoldStyle(
-                                        fontSize: 13,
-                                        color: const Color(0xFF333333)),
+                                    style: semiBoldStyle(fontSize: 13, color: const Color(0xFF333333)),
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(7, 6, 4, 0),
+                                  padding: const EdgeInsets.fromLTRB(7, 6, 4, 0),
                                   child: Row(
                                     children: [
                                       Text(
                                         "主理人：汪达达",
-                                        style: regularStyle(
-                                            fontSize: 11,
-                                            color: const Color(0xFF666666)),
+                                        style: regularStyle(fontSize: 11, color: const Color(0xFF666666)),
                                       ),
                                       const Spacer(),
                                       Image.asset(
@@ -699,9 +611,7 @@ class AuctionMainView extends StatelessWidget {
                                       ),
                                       Text(
                                         " 1328.6w 次围观",
-                                        style: semiBoldStyle(
-                                            fontSize: 11,
-                                            color: const Color(0xFF666666)),
+                                        style: semiBoldStyle(fontSize: 11, color: const Color(0xFF666666)),
                                       ),
                                     ],
                                   ),
@@ -739,18 +649,20 @@ class AuctionMainView extends StatelessWidget {
                             indicatorSize: TabBarIndicatorSize.label,
                             indicatorWeight: 1,
                             indicator: const UnderlineGradientTabIndicator(
-                                borderSide: BorderSide(
-                                    strokeAlign: StrokeAlign.inside)),
-                            automaticIndicatorColorAdjustment: true,
+                                borderSide: BorderSide(strokeAlign: BorderSide.strokeAlignInside)),
+                            // automaticIndicatorColorAdjustment: true,
                             splashFactory: NoSplash.splashFactory,
                             unselectedLabelStyle: mediumStyle(
                               fontSize: 13,
                               color: const Color(0xFF999999),
                             ),
+                            unselectedLabelColor: const Color(0xFF999999),
                             labelStyle: semiBoldStyle(
                               fontSize: 14,
                               color: const Color(0xFF333333),
                             ),
+                            labelColor: const Color(0xFF333333),
+                            physics: const NeverScrollableScrollPhysics(),
                             tabs: _controller.tabTitles
                                 .map((e) => Tab(
                                       text: e,
@@ -774,28 +686,19 @@ class AuctionMainView extends StatelessWidget {
                                     width: 12,
                                     height: 12,
                                     child: IconButton(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 0),
+                                        padding: const EdgeInsets.symmetric(horizontal: 0),
                                         iconSize: 12,
-                                        onPressed: () => _controller.isVer
-                                            .value = !_controller.isVer.value,
-                                        icon: const ImageIcon(
-                                            size: 12,
-                                            AssetImage(
-                                                "assets/images/home/home_cate_open.png"))))),
+                                        onPressed: () => _controller.isVer.value = !_controller.isVer.value,
+                                        icon: const ImageIcon(size: 12, AssetImage("assets/images/home/home_cate_open.png"))))),
                             Expanded(
                                 child: SizedBox(
                                     width: 12,
                                     height: 12,
                                     child: IconButton(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 0),
+                                        padding: const EdgeInsets.symmetric(horizontal: 0),
                                         iconSize: 12,
                                         onPressed: () {},
-                                        icon: const ImageIcon(
-                                            size: 12,
-                                            AssetImage(
-                                                "assets/images/home/home_cate_list.png")))))
+                                        icon: const ImageIcon(size: 12, AssetImage("assets/images/home/home_cate_list.png")))))
                           ],
                         ),
                       ))
@@ -805,8 +708,7 @@ class AuctionMainView extends StatelessWidget {
   }
 }
 
-typedef SliverHeaderBuilder = Widget Function(
-    BuildContext context, double shrinkOffset, bool overlapsContent);
+typedef SliverHeaderBuilder = Widget Function(BuildContext context, double shrinkOffset, bool overlapsContent);
 
 class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   // child 为 header
@@ -846,11 +748,11 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
     //测试代码：如果在调试模式，且子组件设置了key，则打印日志
     assert(() {
       if (child.key != null) {
-        dev.log(
-            '${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
+        dev.log('${child.key}: shrink: $shrinkOffset，overlaps:$overlapsContent');
       }
       return true;
     }());
+
     // 让 header 尽可能充满限制的空间；宽度为 Viewport 宽度，
     // 高度随着用户滑动在[minHeight,maxHeight]之间变化。
     return SizedBox.expand(child: child);
@@ -864,7 +766,6 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(SliverHeaderDelegate oldDelegate) {
-    return oldDelegate.maxExtent != maxExtent ||
-        oldDelegate.minExtent != minExtent;
+    return oldDelegate.maxExtent != maxExtent || oldDelegate.minExtent != minExtent;
   }
 }

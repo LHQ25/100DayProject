@@ -5,7 +5,9 @@ import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
+import 'package:get/route_manager.dart';
 
+import '../../artic/ArticleVideoPageView.dart';
 import '../controller/TopPageController.dart';
 
 class TopPageView extends StatelessWidget {
@@ -34,53 +36,50 @@ class TopPageView extends StatelessWidget {
                   itemCount: _controller.videos.length,
                   cacheExtent: 8,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 3,
-                      crossAxisSpacing: 3,
-                      childAspectRatio: 174.0 / 232.0),
+                      crossAxisCount: 2, mainAxisSpacing: 3, crossAxisSpacing: 3, childAspectRatio: 174.0 / 232.0),
                   itemBuilder: (context, index) {
-                    return ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      child: ColoredBox(
-                        color: Colors.white,
-                        child: Stack(
-                          fit: StackFit.expand,
-                          children: [
-                            Image.network(
-                              _controller.videos[index].cover!,
-                              fit: BoxFit.fill,
-                            ),
-                            Positioned(
-                                left: 10,
-                                right: 10,
-                                bottom: 10,
-                                child: Row(
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 12,
-                                      foregroundImage: NetworkImage(
-                                          _controller.videos[index].head!),
-                                    ),
-                                    const Spacer(),
-                                    SizedBox(
-                                      height: 24,
-                                      child: TextButton.icon(
-                                          onPressed: null,
-                                          style: TextButton.styleFrom(
-                                              elevation: 0,
-                                              padding: EdgeInsets.zero),
-                                          icon: const Icon(
-                                              Icons.heart_broken_rounded),
-                                          label: Text(
-                                            " ${_controller.videos[index].praisedCount ?? 0}",
-                                            style: regularStyle(
-                                                fontSize: 12,
-                                                color: Colors.white),
-                                          )),
-                                    )
-                                  ],
-                                ))
-                          ],
+                    return GestureDetector(
+                      onTap: () {
+                        debugPrint("------> ${_controller.videos[index].resources}");
+                        Get.to(ArticleVideoPageView(videoUrl: _controller.videos[index].resources));
+                      },
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.all(Radius.circular(8)),
+                        child: ColoredBox(
+                          color: Colors.white,
+                          child: Stack(
+                            fit: StackFit.expand,
+                            children: [
+                              Image.network(
+                                _controller.videos[index].cover!,
+                                fit: BoxFit.fill,
+                              ),
+                              Positioned(
+                                  left: 10,
+                                  right: 10,
+                                  bottom: 10,
+                                  child: Row(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 12,
+                                        foregroundImage: NetworkImage(_controller.videos[index].head!),
+                                      ),
+                                      const Spacer(),
+                                      SizedBox(
+                                        height: 24,
+                                        child: TextButton.icon(
+                                            onPressed: null,
+                                            style: TextButton.styleFrom(elevation: 0, padding: EdgeInsets.zero),
+                                            icon: const Icon(Icons.heart_broken_rounded),
+                                            label: Text(
+                                              " ${_controller.videos[index].praisedCount ?? 0}",
+                                              style: regularStyle(fontSize: 12, color: Colors.white),
+                                            )),
+                                      )
+                                    ],
+                                  ))
+                            ],
+                          ),
                         ),
                       ),
                     );
@@ -112,8 +111,7 @@ class TopPageView extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 12),
                           child: Text(
                             "这里是用户昵称昵称昵…",
-                            style:
-                                regularStyle(fontSize: 13, color: color333333),
+                            style: regularStyle(fontSize: 13, color: color333333),
                           ),
                         )
                       ],
@@ -130,8 +128,7 @@ class TopPageView extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       clipBehavior: Clip.hardEdge,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(6))),
+                      decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(6))),
                       child: Image.network(
                         _controller.banners[index].img!,
                         fit: BoxFit.fitWidth,
@@ -143,8 +140,7 @@ class TopPageView extends StatelessWidget {
         ),
       ),
       SliverPadding(
-        padding:
-            const EdgeInsets.only(top: 24, left: 12, right: 12, bottom: 24),
+        padding: const EdgeInsets.only(top: 24, left: 12, right: 12, bottom: 24),
         sliver: SliverToBoxAdapter(
           child: SizedBox(
             width: double.infinity,

@@ -5,38 +5,23 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
-class ArticleVideoPageView extends StatefulWidget {
-  const ArticleVideoPageView({Key? key}) : super(key: key);
+import 'controllers/video_controller.dart';
 
-  @override
-  State<ArticleVideoPageView> createState() => _ArticleVideoPageViewState();
-}
+// class ArticleVideoPageView extends StatefulWidget {
+//   const ArticleVideoPageView({super.key});
+//
+//   @override
+//   State<ArticleVideoPageView> createState() => _ArticleVideoPageViewState();
+// }
 
-class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
-  late VideoPlayerController _playerController;
+class ArticleVideoPageView extends StatelessWidget {
+  ArticleVideoPageView({super.key, required this.videoUrl});
 
-  @override
-  void initState() {
-    super.initState();
+  final _controller = Get.put(VideoManagerController());
 
-    _playerController = VideoPlayerController.network(
-        formatHint: VideoFormat.dash,
-        videoPlayerOptions: VideoPlayerOptions(),
-        "https://vcdn.exampleol.com/cos/dvideo/202107/92c0514437b2437c860fc0b69ca7a284.mp4");
-  }
+  final String? videoUrl;
 
-  Future<bool> started() async {
-    await _playerController.initialize();
-    await _playerController.setLooping(true);
-    await _playerController.play();
-    return true;
-  }
-
-  @override
-  void dispose() {
-    _playerController.dispose();
-    super.dispose();
-  }
+  set videoUrl(String? value) => print("--> $value");
 
   @override
   Widget build(BuildContext context) {
@@ -67,16 +52,15 @@ class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
           child: Stack(
         children: [
           Center(
-            child: FutureBuilder(
-              builder: (context, controller) {
-                return AspectRatio(
-                  aspectRatio: _playerController.value.aspectRatio,
-                  child: VideoPlayer(_playerController),
-                );
-              },
-              future: started(),
-            ),
-          ),
+              child: FutureBuilder(
+            builder: (context, t) {
+              return AspectRatio(
+                aspectRatio: _controller.playerController.value.aspectRatio,
+                child: VideoPlayer(_controller.playerController),
+              );
+            },
+            future: _controller.started(videoUrl),
+          )),
           Positioned(
               bottom: 0,
               left: 0,
@@ -97,8 +81,7 @@ class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
                           SizedBox(
                             width: 35,
                             height: 35,
-                            child: Image.asset(
-                                "assets/images/article/article2.png"),
+                            child: Image.asset("assets/images/article/article2.png"),
                           ),
                           Container(
                             margin: const EdgeInsets.only(left: 8),
@@ -108,15 +91,12 @@ class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
                               children: [
                                 Text(
                                   "藏宝艺术",
-                                  style: mediumStyle(
-                                      fontSize: 13, color: Colors.white),
+                                  style: mediumStyle(fontSize: 13, color: Colors.white),
                                 ),
                                 const Spacer(),
                                 Text(
                                   "2021.01.30 15:00",
-                                  style: regularStyle(
-                                      fontSize: 11,
-                                      color: const Color(0xFF999999)),
+                                  style: regularStyle(fontSize: 11, color: const Color(0xFF999999)),
                                 )
                               ],
                             ),
@@ -133,8 +113,7 @@ class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
                                 ),
                                 Text(
                                   "1376",
-                                  style: regularStyle(
-                                      fontSize: 11, color: Colors.white),
+                                  style: regularStyle(fontSize: 11, color: Colors.white),
                                 )
                               ],
                             ),
@@ -150,8 +129,7 @@ class _ArticleVideoPageViewState extends State<ArticleVideoPageView> {
                                 ),
                                 Text(
                                   "1376",
-                                  style: regularStyle(
-                                      fontSize: 11, color: Colors.white),
+                                  style: regularStyle(fontSize: 11, color: Colors.white),
                                 )
                               ],
                             ),

@@ -15,19 +15,19 @@ class UnderlineGradientTabIndicator extends Decoration {
     return _UnderlineGradientTabIndicator(this, onChanged);
   }
 
-  Rect _indicatorRectFor(Rect rect, TextDirection textDirection) {
-    final Rect indicator = insets.resolve(textDirection).deflateRect(rect);
-    return Rect.fromLTWH(
-      indicator.left,
-      indicator.bottom - borderSide.width,
-      indicator.width,
-      borderSide.width,
-    );
-  }
+// Rect _indicatorRectFor(Rect rect, TextDirection textDirection) {
+//   final Rect indicator = insets.resolve(textDirection).deflateRect(rect);
+//   return Rect.fromLTWH(
+//     indicator.left,
+//     indicator.bottom - borderSide.width,
+//     indicator.width,
+//     borderSide.width,
+//   );
+// }
 }
 
 class _UnderlineGradientTabIndicator extends BoxPainter {
-  _UnderlineGradientTabIndicator(this.decoration, VoidCallback? onChanged);
+  _UnderlineGradientTabIndicator(this.decoration, super.onChanged);
 
   final UnderlineGradientTabIndicator decoration;
 
@@ -40,14 +40,10 @@ class _UnderlineGradientTabIndicator extends BoxPainter {
     //     .deflate(decoration.borderSide.width / 2.0);
     Paint paint = decoration.borderSide.toPaint()
       ..style = PaintingStyle.fill
-      ..shader = ui.Gradient.linear(
-          const Offset(0, 0),
-          Offset(rect.right.toDouble(), rect.bottom.toDouble()),
+      ..strokeCap = StrokeCap.round
+      ..shader = ui.Gradient.linear(const Offset(0, 0), Offset(rect.right.toDouble(), rect.bottom.toDouble()),
           [const Color(0xFFF72800), const Color(0xFFF72800).withOpacity(0.1)]);
-    // ..strokeCap = StrokeCap.square;
-    canvas.drawRect(
-        Rect.fromLTRB(rect.left, rect.bottom - 10, rect.right, rect.bottom - 9),
-        paint);
+    canvas.drawRect(Rect.fromLTRB(rect.left, rect.bottom - 10, rect.right, rect.bottom - 8), paint);
     // canvas.drawLine(indicator.bottomLeft, indicator.bottomRight, paint);
   }
 }
