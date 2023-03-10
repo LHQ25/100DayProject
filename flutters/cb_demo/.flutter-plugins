@@ -1,10 +1,17 @@
 # This is a generated file; do not edit or check into version control.
-flutter_native_splash=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_native_splash-2.2.16/
-fluttertoast=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluttertoast-8.1.2/
-video_player=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/video_player-2.4.10/
-video_player_android=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/video_player_android-2.3.10/
-video_player_avfoundation=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/video_player_avfoundation-2.3.8/
-video_player_web=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/video_player_web-2.0.13/
-webview_flutter=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter-3.0.4/
-webview_flutter_android=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-2.10.4/
-webview_flutter_wkwebview=/Users/louhanqing/Desktop/FlutterSDK/flutter/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-2.9.5/
+advertising_id=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/advertising_id-2.4.0/
+device_info=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/device_info-2.0.3/
+flutter_native_splash=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/flutter_native_splash-2.2.16/
+fluttertoast=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/fluttertoast-8.1.2/
+platform_device_id=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/platform_device_id-1.0.1/
+platform_device_id_linux=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/platform_device_id_linux-1.0.0/
+platform_device_id_macos=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/platform_device_id_macos-1.0.0/
+platform_device_id_web=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/platform_device_id_web-1.0.0/
+platform_device_id_windows=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/platform_device_id_windows-1.0.0/
+video_player=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/video_player-2.4.10/
+video_player_android=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/video_player_android-2.3.10/
+video_player_avfoundation=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/video_player_avfoundation-2.3.8/
+video_player_web=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/video_player_web-2.0.13/
+webview_flutter=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter-3.0.4/
+webview_flutter_android=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_android-2.10.4/
+webview_flutter_wkwebview=/Users/louhanqing/.pub-cache/hosted/pub.flutter-io.cn/webview_flutter_wkwebview-2.9.5/

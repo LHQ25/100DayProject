@@ -16,9 +16,11 @@
 		9D30068128A0A994000E3E1F /* Battleship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30068028A0A994000E3E1F /* Battleship.swift */; };
 		9D30068328A0BBF0000E3E1F /* 一等函数.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30068228A0BBF0000E3E1F /* 一等函数.swift */; };
 		9DC0787C28A63C5800DA323F /* CoreImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0787B28A63C5800DA323F /* CoreImageTest.swift */; };
+		BCB415C9B1225F45478D1092 /* Pods____Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2467F12F0C7AADCE83E47F /* Pods____Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		654C368804B1DAB68BA19E1B /* Pods-函数式Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-函数式Swift.release.xcconfig"; path = "Target Support Files/Pods-函数式Swift/Pods-函数式Swift.release.xcconfig"; sourceTree = "<group>"; };
 		9D30066828A0A93D000E3E1F /* 函数式Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "函数式Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D30066B28A0A93D000E3E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D30066D28A0A93D000E3E1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		9D30068028A0A994000E3E1F /* Battleship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battleship.swift; sourceTree = "<group>"; };
 		9D30068228A0BBF0000E3E1F /* 一等函数.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "一等函数.swift"; sourceTree = "<group>"; };
 		9DC0787B28A63C5800DA323F /* CoreImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageTest.swift; sourceTree = "<group>"; };
+		DA59A2CAB7A2F57121956535 /* Pods-函数式Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-函数式Swift.debug.xcconfig"; path = "Target Support Files/Pods-函数式Swift/Pods-函数式Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		ED2467F12F0C7AADCE83E47F /* Pods____Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods____Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCB415C9B1225F45478D1092 /* Pods____Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				9D30066A28A0A93D000E3E1F /* 函数式Swift */,
 				9D30066928A0A93D000E3E1F /* Products */,
+				FA618402FE736BAB310E06CA /* Pods */,
+				D88366FA0C66DA09CF68285E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +99,24 @@
 			path = "案例-CoreImage";
 			sourceTree = "<group>";
 		};
+		D88366FA0C66DA09CF68285E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED2467F12F0C7AADCE83E47F /* Pods____Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA618402FE736BAB310E06CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA59A2CAB7A2F57121956535 /* Pods-函数式Swift.debug.xcconfig */,
+				654C368804B1DAB68BA19E1B /* Pods-函数式Swift.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,9 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D30067C28A0A93E000E3E1F /* Build configuration list for PBXNativeTarget "函数式Swift" */;
 			buildPhases = (
+				D57D04CB2A61EC23CA655974 /* [CP] Check Pods Manifest.lock */,
 				9D30066428A0A93D000E3E1F /* Sources */,
 				9D30066528A0A93D000E3E1F /* Frameworks */,
 				9D30066628A0A93D000E3E1F /* Resources */,
+				BD399F295DAFB27E449D9FD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +184,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BD399F295DAFB27E449D9FD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-函数式Swift/Pods-函数式Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-函数式Swift/Pods-函数式Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-函数式Swift/Pods-函数式Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D57D04CB2A61EC23CA655974 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-函数式Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D30066428A0A93D000E3E1F /* Sources */ = {
@@ -310,6 +379,7 @@
 		};
 		9D30067D28A0A93E000E3E1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA59A2CAB7A2F57121956535 /* Pods-函数式Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -337,6 +407,7 @@
 		};
 		9D30067E28A0A93E000E3E1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 654C368804B1DAB68BA19E1B /* Pods-函数式Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
