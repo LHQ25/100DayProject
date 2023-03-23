@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.imooc.reader.mapper.EvaluationMapper">
+
+    <select id="selectEvaluationsByBookId" parameterType="Long" resultType="java.util.LinkedHashMap">
+        select e.*, m.nickname from evaluation e, member m where e.member_id = m.member_id and e.book_id = #{value} order by e.create_time desc;
+    </select>
+
+<!--    <insert id="createEvaluate"-->
+<!--            parameterType="com.imooc.reader.pojo.EvaluateRequest"-->
+<!--            keyProperty="evaluationId"-->
+<!--            useGeneratedKeys="true">-->
+<!--        insert into evaluation (content, score, create_time, member_id, book_id)-->
+<!--        values (#{})-->
+<!--    </insert>-->
+</mapper>
+<!--        | evaluation | CREATE TABLE `evaluation` (-->
+<!--        `evaluation_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '评价编号',-->
+<!--        `content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '短评内容',-->
+<!--        `score` int(255) NOT NULL COMMENT '评分-5分制',-->
+<!--        `create_time` datetime NOT NULL COMMENT '创建时间',-->
+<!--        `member_id` bigint(20) NOT NULL COMMENT '会员编号',-->
+<!--        `book_id` bigint(20) NOT NULL COMMENT '图书编号',-->
+<!--        `enjoy` int(255) NOT NULL DEFAULT '0' COMMENT '点赞数量',-->
+<!--        `state` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'enable' COMMENT '审核状态 enable-有效 disable-已禁用',-->
+<!--        `disable_reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '禁用理由',-->
+<!--        `disable_time` datetime DEFAULT NULL COMMENT '禁用时间',-->
+<!--        PRIMARY KEY (`evaluation_id`) USING BTREE-->
+<!--        ) ENGINE=InnoDB AUTO_INCREMENT=2140 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC-->

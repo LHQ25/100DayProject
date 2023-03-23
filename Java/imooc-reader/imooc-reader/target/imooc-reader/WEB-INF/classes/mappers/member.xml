@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.imooc.reader.mapper.MemberMapper">
+
+    <select id="selectReadState" parameterType="com.imooc.reader.pojo.ReadStateRequest" resultType="com.imooc.reader.entity.ReaderState">
+        select * from member_read_state where book_id = #{bookId} and member_id = #{memberId};
+    </select>
+
+    <insert id="insertReadState"
+            parameterType="com.imooc.reader.entity.Member">
+
+        <!-- mysql插入数据后，获取id，该方法LAST_INSERT_ID()与数据库连接绑定，同属统一会话级别。-->
+        <selectKey keyProperty="rsId" resultType="java.lang.Long" order="AFTER" >
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into member_read_state (book_id, member_id, read_state, create_time)
+        values (#{bookId}, #{memberId}, #{readState}, #{createTime})
+    </insert>
+
+    <update id="updateReadState"
+            parameterType="com.imooc.reader.pojo.ReadStateRequest" >
+        update member_read_state set read_state = #{readState}
+        where book_id = #{bookId} and member_id = #{memberId}
+    </update>
+</mapper>

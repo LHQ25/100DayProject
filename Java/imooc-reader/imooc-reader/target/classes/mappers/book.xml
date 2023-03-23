@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.imooc.reader.mapper.BookMapper">
+
+    <select id="bookPage" resultType="com.imooc.reader.pojo.Books">
+        select e.*,c.category_name
+        from book e, category c
+        <where>
+            e.category_id = c.category_id
+        </where>
+    </select>
+
+</mapper>
