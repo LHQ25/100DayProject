@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target '函数式Swift' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for 函数式Swift
+
+  pod 'LookinServer', :configurations => ['Debug']  #层级视图管理
+
+end
